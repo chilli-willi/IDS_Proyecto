@@ -1,15 +1,4 @@
- <nav class="navbar navbar-dark bg-dark">     
-        <a class="navbar-brand" href="">Home Switch Home</a>  
-              <!-- Botones para iniciar session y registrarse -->
-             
-                
-               
-                    <a href=""> <button class="btn btn-sm btn-outline-light" type="button">Iniciar Sesion</button></a>;
-             
-             
-                <a href=""><button class="btn btn-sm btn-outline-light" type="button">Registrarse</button></a>
-                   
-    </nav>
+ 
 
 <table class="table">
 	<thead>
@@ -23,12 +12,17 @@
 			<tr>
 				<td><%= r.name %></td>
 				<td><%= r.des %></td>
-				<td><%=link_to 'editar', edit_residence_path(r)%></td>
-				<td><%=link_to 'eliminar', r, method: :delete%></td>
+				<td></td>
+				<td><%=link_to 'editar', edit_residence_path(r), class: 'btn btn-default'%>
+				<%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger'%>
+					<%=link_to 'show', r, show_residence_path(r),  class: 'btn btn-green'%>
+				</td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
-
-<%= link_to 'Nueva residencia', new_residence_path %>
+<p></p>
+<div class="row">
+<%= link_to 'Nueva residencia', new_residence_path, class: 'btn btn-primary' %>
+</div>
 

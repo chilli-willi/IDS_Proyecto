@@ -1,0 +1,36 @@
+<h1>  Crea un nuevo user </h1>
+
+
+
+
+	<%= form_for @user do |f| %>
+		
+		<div class="row">
+			<div class="col-md-4">
+				<%= f.label :name, 'NOMBRE DE USUARIO' %>
+  				<%= f.text_field :name, class: 'form-control' %>
+  			</div>
+  		</div>
+
+
+		<div class="row">
+			<div class="col-md-6">
+				<%= f.label :password, 'CONTRASEÑA' %>
+  				<%= f.text_field :password, class: 'form-control' %>
+  			</div>
+  		</div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.label :range, 'RANGO: admin, regular, premium' %>
+          <%= f.text_field :range, class: 'form-control' %>
+        </div>
+      </div>
+
+
+  		<%= f.submit "Crear user", class: 'btn btn-primary' %>
+
+
+
+  	</div>
+<% end %>

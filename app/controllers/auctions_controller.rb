@@ -14,6 +14,11 @@ def index
 		end
 	end
 
+	def show
+		@auction = Auction.find(params[:id])
+	end
+
+
 
 	def destroy
 		auction = Auction.find(params[:id])
