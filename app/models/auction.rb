@@ -3,4 +3,6 @@ class Auction < ApplicationRecord
 	validates :des, presence: true
 	validates :monto, presence: true
 	validates :minimapuja, presence: true
+
+	has_many: residences
 end
