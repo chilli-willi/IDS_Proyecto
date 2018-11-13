@@ -4200,6 +4200,22 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/" for 127.0.0.1 at 2018-11-13 16:11:39 -0300
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gali/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gali/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gali/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 28ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/residence/create" for 127.0.0.1 at 2018-11-13 16:11:42 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/residence/create"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+=======
 Started GET "/" for 127.0.0.1 at 2018-11-13 16:12:14 -0300
   
 ActiveRecord::NoDatabaseError (FATAL:  role "gali" does not exist
@@ -4225,6 +4241,7 @@ activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
 actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+>>>>>>> 83290ca4d3ee5629bfef8456621a959d77f484bb
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
 web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
@@ -4251,6 +4268,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2018-11-13 16:13:47 -0300
   
 ActiveRecord::NoDatabaseError (FATAL:  role "gali" does not exist
@@ -4362,3 +4380,17 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 35ms (Views: 16.0ms | ActiveRecord: 0.0ms)
 
 
+=======
+<<<<<<< HEAD
+Started GET "/residences" for 127.0.0.1 at 2018-11-13 16:11:44 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:22
+  Rendered residences/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 297ms (Views: 290.3ms | ActiveRecord: 3.0ms)
+
+
+=======
+>>>>>>> 83290ca4d3ee5629bfef8456621a959d77f484bb
+>>>>>>> 4f9ba1054555dcd280826cda241558ee77dce247
