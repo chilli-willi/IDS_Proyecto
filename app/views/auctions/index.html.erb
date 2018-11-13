@@ -1,0 +1,24 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>NOMBRE</th>
+			<th>DESCRIPCION</th>
+			<th>MONTO</th>
+			<th>PUJA MINIMA</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @auction.each do |r| %>
+			<tr>
+				<td><%= r.name %></td>
+				<td><%= r.des %></td>
+				<td><%= r.monto %></td>
+				<td><%= r.minimapuja %></td>
+				<td><%=link_to 'editar', edit_auction_path(r)%></td>
+				<td><%=link_to 'eliminar', r, method: :delete%></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to 'Nueva subasta', new_auction_path %>

@@ -1,0 +1,31 @@
+<h1>  Crea una nueva residencia </h1>
+
+
+<% if @residence.errors.any? %>
+		<h1>hay errores</h1>
+		<% @residence.errors.full_messages.each do |error| %>
+			<p> <%= error%> </p>
+		<%end%>
+	<% end %>
+
+
+	<%= form_for @residence do |f| %>
+		
+		<div class="row">
+			<div class="col-md-4">
+				<%= f.label :name, 'NOMBRE' %>
+  				<%= f.text_field :name, class: 'form-control' %>
+  			</div>
+  		</div>
+
+
+		<div class="row">
+			<div class="col-md-6">
+				<%= f.label :des, 'DESCRIPCION' %>
+  				<%= f.text_field :des, class: 'form-control' %>
+  			</div>
+  		</div>
+
+  		<%= f.submit "Crear residencia", class: 'btn btn-primary' %>
+  	</div>
+<% end %>
