@@ -17112,6 +17112,64 @@ Processing by ResidencesController#new as HTML
 Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+Started GET "/residences" for 127.0.0.1 at 2018-11-14 04:19:27 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.9ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:57
+  Rendered residences/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 68ms (Views: 63.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-14 04:19:39 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (2.7ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:57
+  Rendered residences/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 84ms (Views: 77.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-14 04:20:00 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:57
+  Rendered residences/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 69ms (Views: 64.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-14 04:20:08 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 98ms (Views: 85.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-14 04:20:17 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.7ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:57
+  Rendered residences/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 60ms (Views: 56.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-14 04:20:21 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:11
+  Rendered auctions/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 64ms (Views: 54.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-11-14 04:20:27 -0300
+=======
+=======
+>>>>>>> 5fc486b0cc683ae5cc58dd6e59d1c58993c60d02
 Started GET "/" for 127.0.0.1 at 2018-11-14 09:19:30 -0300
   
 ActiveRecord::NoDatabaseError (FATAL:  role "santi" does not exist
@@ -17367,10 +17425,51 @@ Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 1.5ms)
 
 
 Started GET "/auctions/new" for 127.0.0.1 at 2018-11-14 09:27:20 -0300
+<<<<<<< HEAD
+>>>>>>> 42f1a96a0044c3cce9598fd0edaf2ba5e673ced6
+=======
+>>>>>>> 5fc486b0cc683ae5cc58dd6e59d1c58993c60d02
 Processing by AuctionsController#new as HTML
   Rendering auctions/new.html.erb within layouts/application
   [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
   ↳ app/views/auctions/new.html.erb:8
+<<<<<<< HEAD
+<<<<<<< HEAD
+  Rendered auctions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 65ms (Views: 51.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-14 10:41:02 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.9ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:57
+  Rendered residences/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 176ms (Views: 165.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-14 10:41:09 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 96ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/residences" for 127.0.0.1 at 2018-11-14 10:41:15 -0300
+Processing by ResidencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gKZ+mwf/538KsdLVw9/rCAJJmStZq/ZINR+w2Xfh9oZ7WjIBbUXi9sCboZ3SIXvmLM6UMtqP24Ca9+/qWc1Gwg==", "residence"=>{"name"=>"wetwetº", "des"=>"wetwry", "location"=>"srgsry"}, "commit"=>"Crear residencia"}
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/residences_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/residences_controller.rb:9
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 152ms (Views: 123.6ms | ActiveRecord: 2.3ms)
+
+
+=======
+=======
+>>>>>>> 5fc486b0cc683ae5cc58dd6e59d1c58993c60d02
   Rendered auctions/new.html.erb within layouts/application (5.1ms)
 Completed 200 OK in 67ms (Views: 45.8ms | ActiveRecord: 2.3ms)
 
@@ -17653,6 +17752,7 @@ Completed 200 OK in 58ms (Views: 54.4ms | ActiveRecord: 0.8ms)
   ↳ /Users/gali/.rbenv/versions/2.5.1/bin/rake:23
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/gali/.rbenv/versions/2.5.1/bin/rake:23
+<<<<<<< HEAD
 Started GET "/residences" for 127.0.0.1 at 2018-11-14 10:34:53 -0300
   [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/alumno/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
@@ -17752,3 +17852,9 @@ Processing by ResidencesController#index as HTML
 Completed 200 OK in 97ms (Views: 95.1ms | ActiveRecord: 0.4ms)
 
 
+=======
+<<<<<<< HEAD
+>>>>>>> 42f1a96a0044c3cce9598fd0edaf2ba5e673ced6
+=======
+>>>>>>> 5fc486b0cc683ae5cc58dd6e59d1c58993c60d02
+>>>>>>> 09d284146329881c281b7f1c3153e56dd3c4cf2b

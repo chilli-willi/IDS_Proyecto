@@ -13,7 +13,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				<%= f.label :name, 'NOMBRE DE USUARIO' %>
-  				<%= f.text_field :name, class: 'form-control' %>
+  				<%= f.text_field :name, class: 'form-control',required: true %>
   			</div>
   		</div>
 
@@ -21,14 +21,14 @@
 		<div class="row">
 			<div class="col-md-6">
 				<%= f.label :password, 'CONTRASEÑA' %>
-  				<%= f.text_field :password, class: 'form-control' %>
+  				<%= f.text_field :password, class: 'form-control',required: true %>
   			</div>
   		</div>
 
     <div class="row">
       <div class="col-md-6">
         <%= f.label :range, 'RANGO: admin, regular, premium' %>
-          <%= f.text_field :range, class: 'form-control' %>
+          <%= f.text_field :range, class: 'form-control',required: true %>
         </div>
       </div>
 
