@@ -1,2 +1,14 @@
 <%= @auction.name %>
 <%= @auction.des %>
+<%= form_for @auction do |f| %>
+<div class="row">
+			<div class="col-md-4">
+				<%= f.label :monto, 'PUJA' %>
+  				<%= f.text_field :monto, class: 'form-control' %>
+  			</div>
+  		</div>
+
+  			<%= f.submit "PUJAR", class: 'btn btn-primary' %>
+
+  			  
+<% end %>

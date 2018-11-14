@@ -14,6 +14,7 @@
 				<td><%= r.des %></td>
 				<td><%= r.monto %></td>
 				<td><%= r.minimapuja %></td>
+				<td><%=link_to 'ver', r, method: :show%></td>
 				<td><%=link_to 'editar', edit_auction_path(r)%></td>
 				<td><%=link_to 'eliminar', r, method: :delete%></td>
 			</tr>
