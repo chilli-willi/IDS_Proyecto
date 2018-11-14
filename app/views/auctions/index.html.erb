@@ -15,8 +15,8 @@
 				<td><%= r.monto %></td>
 				<td><%= r.minimapuja %></td>
 				<td><%=link_to 'ver', r, method: :show%></td>
-				<td><%=link_to 'editar', edit_auction_path(r)%></td>
-				<td><%=link_to 'eliminar', r, method: :delete%></td>
+				<td><%=link_to 'editar', edit_auction_path(r), class:'btn btn-info btn-sm' %></td>
+				<td><%=link_to 'eliminar', r, method: :delete, class:'btn btn-danger btn-sm', data: { confirm: 'Realmente desea eliminar residencia?'}%></td>
 			</tr> 
 		<%end%>
 
