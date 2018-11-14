@@ -17,9 +17,11 @@
 				<td><%=link_to 'ver', r, method: :show%></td>
 				<td><%=link_to 'editar', edit_auction_path(r)%></td>
 				<td><%=link_to 'eliminar', r, method: :delete%></td>
-			</tr>
-		<% end %>
+			</tr> 
+		<%end%>
+
 	</tbody>
 </table>
 
-<%= link_to 'Nueva subasta', new_auction_path %>
+<%= link_to 'Nueva subasta', new_auction_path%>
+

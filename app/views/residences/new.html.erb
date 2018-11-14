@@ -11,18 +11,25 @@
 
 	<%= form_for @residence do |f| %>
 		
-		<div class="row">
-			<div class="col-md-4">
+		<div>
+			<div>
 				<%= f.label :name, 'NOMBRE' %>
   				<%= f.text_field :name, class: 'form-control' %>
   			</div>
   		</div>
 
       <p></p>
-		<div class="row">
-			<div class="col-md-6">
+		<div>
+			<div>
 				<%= f.label :des, 'DESCRIPCION' %>
   				<%= f.text_field :des, class: 'form-control' %>
+  			</div>
+  		</div>
+<p></p>
+  		<div>
+			<div>
+				<%= f.label :location, 'LOCATION (url de imagen por ahora)' %>
+  				<%= f.text_field :location, class: 'form-control' %>
   			</div>
   		</div>
       <p></p>

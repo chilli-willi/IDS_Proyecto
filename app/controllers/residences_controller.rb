@@ -5,7 +5,7 @@ class ResidencesController < ApplicationController
 
 
 	def create
-		@residence = Residence.new(params.require(:residence).permit(:name, :des))
+		@residence = Residence.new(params.require(:residence).permit(:name, :des, :location))
 		if @residence.save
 			redirect_to residences_path, notice: 'Se creo la residencia piola'
 		else
@@ -13,6 +13,9 @@ class ResidencesController < ApplicationController
 		end
 	end
 
+	def show
+		@residence = Residence.find(params[:id])
+	end
 
 	def destroy
 		residence = Residence.find(params[:id])
@@ -31,7 +34,7 @@ class ResidencesController < ApplicationController
 
 	def update
 		@residence = Residence.find(params[:id])
-		if @residence.update(params.require(:residence).permit(:name, :des))
+		if @residence.update(params.require(:residence).permit(:name, :des, :location))
 			redirect_to residences_path, notice: 'La residencia se modifico correctamente'
 		end
 	end

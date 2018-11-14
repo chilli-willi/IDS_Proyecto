@@ -1,4 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  </style>
+</head>
+<body>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
  
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="http://lgtv.cl.s3.amazonaws.com/wp-content/uploads/2015/05/16123335/LG-grupos-socioeconomicos-800x400.jpg" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/noticias/videojuegos/minecraft-bate-records-en-xbox-live-arcade/5550658-1-esl-ES/Minecraft-bate-records-en-Xbox-Live-Arcade.jpg?crop=1xw:0.8888888888888888xh;center,top&resize=1200:*" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="http://www.toursbariloche.com/wp-content/uploads/2016/05/BLEST1-800x400.jpg" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
 
 <table class="table">
 	<thead>
@@ -13,9 +59,10 @@
 				<td><%= r.name %></td>
 				<td><%= r.des %></td>
 				<td></td>
-				<td><%=link_to 'editar', edit_residence_path(r), class: 'btn btn-default'%>
-				<%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger'%>
-					<%=link_to 'show', r, show_residence_path(r),  class: 'btn btn-green'%>
+				<td>
+          <%=link_to 'ver', r, method: :show, class: 'btn btn-default'%>
+          <%=link_to 'editar', edit_residence_path(r), class: 'btn btn-default'%>
+				  <%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger'%>
 				</td>
 			</tr>
 		<% end %>
@@ -26,3 +73,7 @@
 <%= link_to 'Nueva residencia', new_residence_path, class: 'btn btn-primary' %>
 </div>
 
+
+
+</body>
+</html>

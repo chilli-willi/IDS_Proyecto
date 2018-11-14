@@ -3,38 +3,30 @@
 
 
 	<%= form_for @auction do |f| %>
-		
-		<div class="row">
-			<div class="col-md-4">
-				<%= f.label :name, 'NOMBRE' %>
-  				<%= f.text_field :name, class: 'form-control' %>
-  			</div>
+      <div class="form-group">
+        <%= f.label :name, 'NOMBRE' %>
+        <%= f.collection_select :name, Residence.all, :name , :name ,{}, class: 'form-control'%>
+      <p></p>
+		  <div>
+			  <%= f.label :des, 'DESCRIPCION' %>
+  		  <%= f.text_field :des, class: 'form-control' %>
   		</div>
-
-
-
-		<div class="row">
-			<div class="col-md-6">
-
-				<%= f.label :des, 'DESCRIPCION' %>
-  				<%= f.text_field :des, class: 'form-control' %>
-  			</div>
-  		</div>
-
-  		  		<div class="row">
-			<div class="col-md-6">
+  		<p></p>
+  		<div>
 				<%= f.label :monto, 'MONTO' %>
-  				<%= f.text_field :monto, class: 'form-control' %>
+  			<%= f.text_field :monto, class: 'form-control' %>
   			</div>
+  		</div>
+      <p></p>
+  		<div>
+				<%= f.label :minimapuja, 'PUJA MINIMA' %>
+  			<%= f.text_field :minimapuja, class: 'form-control' %>
   		</div>
 
-  		<div class="row">
-			<div class="col-md-6">
-				<%= f.label :minimapuja, 'PUJA MINIMA' %>
-  				<%= f.text_field :minimapuja, class: 'form-control' %>
-  			</div>
-  		</div>
+      <p></p>
 
   		<%= f.submit "Crear subasta", class: 'btn btn-primary' %>
+      <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
+
   	</div>
 <% end %>

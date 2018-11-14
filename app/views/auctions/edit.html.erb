@@ -1,37 +1,34 @@
-<h1>  Crea una nueva subasta </h1>
+<h1>  Editar subasta </h1>
 
 
 	<%= form_for @auction do |f| %>
 		
-		<div class="row">
-			<div class="col-md-4">
-				<%= f.label :name, 'NOMBRE' %>
-  				<%= f.text_field :name, class: 'form-control' %>
-  			</div>
-  		</div>
+		<div class="form-group">
+        <%= f.label :name, 'NOMBRE' %>
+        <%= f.collection_select :name, Residence.all, :name , :name ,{}, class: 'form-control'%>
 
-
-		<div class="row">
-			<div class="col-md-6">
+        <p></p>
+		<div>
+		
 				<%= f.label :des, 'DESCRIPCION' %>
   				<%= f.text_field :des, class: 'form-control' %>
-  			</div>
+  		
   		</div>
-
-  		<div class="row">
-			<div class="col-md-6">
+<p></p>
+  		<div>
+			
 				<%= f.label :monto, 'MONTO' %>
   				<%= f.text_field :monto, class: 'form-control' %>
-  			</div>
+  		
   		</div>
-
-  		<div class="row">
-			<div class="col-md-6">
+<p></p>
+  		<div>
+			
 				<%= f.label :minimapuja, 'PUJA MINIMA' %>
   				<%= f.text_field :minimapuja, class: 'form-control' %>
-  			</div>
+  			
   		</div>
-
+<p></p>
 
   		<%= f.submit "Editar subasta", class: 'btn btn-primary' %>
   	</div>
