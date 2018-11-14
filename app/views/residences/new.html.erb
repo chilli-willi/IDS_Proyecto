@@ -2,9 +2,9 @@
 
 
 <% if @residence.errors.any? %>
-		<div class="alert alert-danger" role="alert"> Hay errores:
+		<h1>hay errores</h1>
 		<% @residence.errors.full_messages.each do |error| %>
-			<p> <%= error%> </p></div>
+			<p> <%= error%> </p>
 		<%end%>
 	<% end %>
 

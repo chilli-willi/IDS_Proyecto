@@ -1,11 +1,6 @@
-<h1>  Crea un nuevo usuario </h1>
+<h1>  Crea un nuevo user </h1>
 
-<% if @user.errors.any? %>
-    <div class="alert alert-danger" role="alert"> Hay errores:
-    <% @user.errors.full_messages.each do |error| %>
-      <p> <%= error%> </p></div>
-    <%end%>
-  <% end %>
+
 
 
 	<%= form_for @user do |f| %>
