@@ -6,7 +6,7 @@
 #
 default: &default
   adapter: postgresql
-  username: santi
+  username: gali
   password: 
 
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
