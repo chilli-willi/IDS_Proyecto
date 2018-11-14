@@ -18,18 +18,19 @@
   		<div>
 			
 				<%= f.label :monto, 'MONTO' %>
-  				<%= f.text_field :monto, class: 'form-control', required: true %>
+  				<%= f.number_field :monto, class: 'form-control', required: true %>
   		
   		</div>
 <p></p>
   		<div>
 			
 				<%= f.label :minimapuja, 'PUJA MINIMA' %>
-  				<%= f.text_field :minimapuja, class: 'form-control',required: true %>
+  				<%= f.number_field :minimapuja, class: 'form-control',required: true %>
   			
   		</div>
 <p></p>
 
   		<%= f.submit "Editar subasta", class: 'btn btn-primary' %>
+      <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
   	</div>
 <% end %>
