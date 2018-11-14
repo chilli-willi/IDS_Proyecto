@@ -17113,6 +17113,7 @@ Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.0ms)
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Started GET "/residences" for 127.0.0.1 at 2018-11-14 04:19:27 -0300
 Processing by ResidencesController#index as HTML
   Rendering residences/index.html.erb within layouts/application
@@ -17167,6 +17168,8 @@ Completed 200 OK in 64ms (Views: 54.8ms | ActiveRecord: 3.4ms)
 
 Started GET "/auctions/new" for 127.0.0.1 at 2018-11-14 04:20:27 -0300
 =======
+=======
+>>>>>>> 5fc486b0cc683ae5cc58dd6e59d1c58993c60d02
 Started GET "/" for 127.0.0.1 at 2018-11-14 09:19:30 -0300
   
 ActiveRecord::NoDatabaseError (FATAL:  role "santi" does not exist
@@ -17422,11 +17425,15 @@ Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 1.5ms)
 
 
 Started GET "/auctions/new" for 127.0.0.1 at 2018-11-14 09:27:20 -0300
+<<<<<<< HEAD
 >>>>>>> 42f1a96a0044c3cce9598fd0edaf2ba5e673ced6
+=======
+>>>>>>> 5fc486b0cc683ae5cc58dd6e59d1c58993c60d02
 Processing by AuctionsController#new as HTML
   Rendering auctions/new.html.erb within layouts/application
   [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
   ↳ app/views/auctions/new.html.erb:8
+<<<<<<< HEAD
 <<<<<<< HEAD
   Rendered auctions/new.html.erb within layouts/application (5.2ms)
 Completed 200 OK in 65ms (Views: 51.9ms | ActiveRecord: 0.4ms)
@@ -17461,6 +17468,8 @@ Completed 200 OK in 152ms (Views: 123.6ms | ActiveRecord: 2.3ms)
 
 
 =======
+=======
+>>>>>>> 5fc486b0cc683ae5cc58dd6e59d1c58993c60d02
   Rendered auctions/new.html.erb within layouts/application (5.1ms)
 Completed 200 OK in 67ms (Views: 45.8ms | ActiveRecord: 2.3ms)
 
@@ -17743,4 +17752,7 @@ Completed 200 OK in 58ms (Views: 54.4ms | ActiveRecord: 0.8ms)
   ↳ /Users/gali/.rbenv/versions/2.5.1/bin/rake:23
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/gali/.rbenv/versions/2.5.1/bin/rake:23
+<<<<<<< HEAD
 >>>>>>> 42f1a96a0044c3cce9598fd0edaf2ba5e673ced6
+=======
+>>>>>>> 5fc486b0cc683ae5cc58dd6e59d1c58993c60d02
