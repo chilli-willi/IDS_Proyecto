@@ -2,9 +2,9 @@
 
 
 <% if @residence.errors.any? %>
-		<div class="alert alert-danger" role="alert"> Hay errores:
+		<h1>hay errores</h1>
 		<% @residence.errors.full_messages.each do |error| %>
-			<p> <%= error%> </p></div>
+			<p> <%= error%> </p>
 		<%end%>
 	<% end %>
 
@@ -14,7 +14,7 @@
 		<div>
 			<div>
 				<%= f.label :name, 'NOMBRE' %>
-  				<%= f.text_field :name, class: 'form-control' %>
+  				<%= f.text_field :name, class: 'form-control', required: true %>
   			</div>
   		</div>
 
@@ -22,14 +22,14 @@
 		<div>
 			<div>
 				<%= f.label :des, 'DESCRIPCION' %>
-  				<%= f.text_field :des, class: 'form-control' %>
+  				<%= f.text_field :des, class: 'form-control', required: true %>
   			</div>
   		</div>
 <p></p>
   		<div>
 			<div>
 				<%= f.label :location, 'LOCATION (url de imagen por ahora)' %>
-  				<%= f.text_field :location, class: 'form-control' %>
+  				<%= f.text_field :location, class: 'form-control', required: true %>
   			</div>
   		</div>
       <p></p>
