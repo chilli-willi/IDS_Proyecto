@@ -8,22 +8,18 @@
 <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Home Switch Home</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
   </head>
 
   <body>
   <a href="/" class="navbar-left"><img src="http://homeswitchhome.herokuapp.com/assets/HSH-Text-0e8f78ee6c54275de75fe97418628799537791ac06416288a02a197d434833e5.svg" width="200" height="50"></a>
   
-  <nav class="navbar navbar-dark bg-light">     
-  <a class="navbar-brand" href=""><strong></strong></a></nav>
+  <nav class="navbar">     
+ </nav>
   
   <div class="col-md-3"></div>
   <div class="col-md-6"><%= yield %></div>
-  <div class="col-md-3"></div>
+  <div class="col-md-3"></div> 
 
     
   </body>
