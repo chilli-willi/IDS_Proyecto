@@ -14,14 +14,20 @@
 				<td><%= r.des %></td>
 				<td><%= r.monto %></td>
 				<td><%= r.minimapuja %></td>
+<<<<<<< HEAD
 				<td><%=link_to 'ver', r, method: :show%></td>
 				<td><%=link_to 'editar', edit_auction_path(r), class:'btn btn-info btn-sm' %></td>
 				<td><%=link_to 'eliminar', r, method: :delete, class:'btn btn-danger btn-sm', data: { confirm: 'Realmente desea eliminar residencia?'}%></td>
+=======
+				<td><%=link_to 'ver', r, method: :show ,  class: 'btn btn-info'%></td>
+				<td><%=link_to 'editar', edit_auction_path(r),  class: 'btn btn-basic' %></td>
+				<td><%=link_to 'eliminar', r, method: :delete ,  class: 'btn btn-danger'%></td>
+>>>>>>> dcef5225d428c666e277fcc49ae5056308b9153e
 			</tr> 
 		<%end%>
 
 	</tbody>
 </table>
 
-<%= link_to 'Nueva subasta', new_auction_path%>
+<%= link_to 'Nueva subasta', new_auction_path, class: 'btn btn-primary'%>
 

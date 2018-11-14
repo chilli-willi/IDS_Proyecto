@@ -60,9 +60,13 @@
 				<td><%= r.des %></td>
 				<td></td>
 				<td>
-          <%=link_to 'ver', r, method: :show, class: 'btn btn-default'%>
+          <%=link_to 'ver', r, method: :show, class: 'btn btn-info'%>
           <%=link_to 'editar', edit_residence_path(r), class: 'btn btn-default'%>
+<<<<<<< HEAD
 				  <%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar residencia?'} %>
+=======
+		 <%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger'%>
+>>>>>>> dcef5225d428c666e277fcc49ae5056308b9153e
 				</td>
 			</tr> 
 		<% end %>
