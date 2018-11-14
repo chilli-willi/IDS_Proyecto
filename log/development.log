@@ -7831,3 +7831,92 @@ Processing by AuctionsController#show as HTML
 Completed 200 OK in 68ms (Views: 62.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/auctions" for 127.0.0.1 at 2018-11-14 01:10:24 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:11
+  Rendered auctions/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 45ms (Views: 41.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auctions/" for 127.0.0.1 at 2018-11-14 01:10:28 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.9ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:11
+  Rendered auctions/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 56ms (Views: 49.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/auctions/2" for 127.0.0.1 at 2018-11-14 01:10:31 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"authenticity_token"=>"FAPJzd5QBLCdDgYVQ0Tz8vDZZqfXfbUgDm/KKF/thGxN4j+KO7tfL3bPS0xXzER/ZihDGTUcDiFZQf2YgmXibg==", "id"=>"2"}
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  Rendered auctions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 42ms (Views: 37.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auctions/2/edit" for 127.0.0.1 at 2018-11-14 01:10:33 -0300
+Processing by AuctionsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuction Load (1.2ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:34
+  Rendering auctions/edit.html.erb within layouts/application
+  Rendered auctions/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 55ms (Views: 40.5ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/auctions/2" for 127.0.0.1 at 2018-11-14 01:10:35 -0300
+Processing by AuctionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FAPJzd5QBLCdDgYVQ0Tz8vDZZqfXfbUgDm/KKF/thGxN4j+KO7tfL3bPS0xXzER/ZihDGTUcDiFZQf2YgmXibg==", "id"=>"2"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:25
+  [1m[36mAuction Destroy (43.8ms)[0m  [1m[31mDELETE FROM "auctions" WHERE "auctions"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/auctions_controller.rb:25
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/auctions_controller.rb:25
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 51ms (ActiveRecord: 45.4ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-14 01:10:35 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:11
+  Rendered auctions/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 48ms (Views: 43.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-11-14 01:10:37 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  Rendered auctions/new.html.erb within layouts/application (43.4ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `residence_id' for #<Auction:0x00007f9693ea9e18>
+Did you mean?  presence_in):
+    14:       <div class="row">
+    15:         <div class="col-md-6">
+    16:           <%= f.label :residence_id %> <br/>
+    17:           <% f.collection_select :residence_id, Residence.order(:name), :id , :name, include_blank: true %>
+    18: 
+    19: 
+    20: 		<div class="row">
+  
+app/views/auctions/new.html.erb:17:in `block in _app_views_auctions_new_html_erb___177604698833645749_70142351721540'
+app/views/auctions/new.html.erb:5:in `_app_views_auctions_new_html_erb___177604698833645749_70142351721540'
+Started GET "/auctions/new" for 127.0.0.1 at 2018-11-14 01:11:06 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  Rendered auctions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 53ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
