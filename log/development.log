@@ -17653,3 +17653,102 @@ Completed 200 OK in 58ms (Views: 54.4ms | ActiveRecord: 0.8ms)
   ↳ /Users/gali/.rbenv/versions/2.5.1/bin/rake:23
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/gali/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/residences" for 127.0.0.1 at 2018-11-14 10:34:53 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alumno/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (1.0ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:57
+  Rendered residences/index.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 8178ms (Views: 8135.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-14 10:35:08 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 122ms (Views: 120.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-14 10:35:10 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (1.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:57
+  Rendered residences/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 109ms (Views: 106.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-14 10:35:16 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:11
+  Rendered auctions/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 156ms (Views: 118.5ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/auctions/1/edit" for 127.0.0.1 at 2018-11-14 10:35:28 -0300
+Processing by AuctionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:34
+  Rendering auctions/edit.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/edit.html.erb:8
+  Rendered auctions/edit.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 129ms (Views: 105.3ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/auctions/1" for 127.0.0.1 at 2018-11-14 10:35:30 -0300
+Processing by AuctionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VOBF4dm88dR3LG2MqGAGiRmqzj9N3MJKdm+y09uE7XEjSRRcY3Ymk1W6H8zXABFlucVotkYgHJCGB+JI2wuTOQ==", "auction"=>{"name"=>"pedro", "des"=>"m", "monto"=>"5", "minimapuja"=>"7"}, "commit"=>"Editar subasta", "id"=>"1"}
+  [1m[36mAuction Load (2.8ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:39
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:40
+  [1m[36mAuction Update (6.0ms)[0m  [1m[33mUPDATE "auctions" SET "name" = $1, "updated_at" = $2 WHERE "auctions"."id" = $3[0m  [["name", "pedro"], ["updated_at", "2018-11-14 13:35:30.558503"], ["id", 1]]
+  ↳ app/controllers/auctions_controller.rb:40
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/auctions_controller.rb:40
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 47ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-14 10:35:30 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (5.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:11
+  Rendered auctions/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 204ms (Views: 191.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-14 10:36:16 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (2.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:11
+  Rendered auctions/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 139ms (Views: 134.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-14 10:36:18 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:57
+  Rendered residences/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 128ms (Views: 126.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-14 10:36:35 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:57
+  Rendered residences/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 97ms (Views: 95.1ms | ActiveRecord: 0.4ms)
+
+

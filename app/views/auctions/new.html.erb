@@ -1,5 +1,11 @@
 <h1>  Crea una nueva subasta </h1>
 
+<% if @auction.errors.any? %>
+    <div class="alert alert-danger">Hay errores
+    <% @auction.errors.full_messages.each do |error| %>
+      <p> <%= error%> </p>
+    <%end%></div>
+  <% end %>
 
 
 	<%= form_for @auction do |f| %>
