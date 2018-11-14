@@ -5,3 +5,6 @@ log/development.log
 config/database.yml
 >>>>>>> 83290ca4d3ee5629bfef8456621a959d77f484bb
 config/database.yml
+tmp/cache/bootsnap-compile-cache/61/4f2eb7e1331b3f
+tmp/cache/bootsnap-compile-cache/c1/099ca0d438e9ac
+tmp/cache/bootsnap-load-path-cache
