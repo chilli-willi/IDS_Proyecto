@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-   
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
 
     <title>Home Switch Home</title>
-  
+     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
 
   <body>
-  <a href="/" class="navbar-left"><img src="http://homeswitchhome.herokuapp.com/assets/HSH-Text-0e8f78ee6c54275de75fe97418628799537791ac06416288a02a197d434833e5.svg" width="200" height="50"></a>
-  
-  <nav class="navbar">     
- </nav>
+   
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">
+   <img src="https://afternoon-spire-44316.herokuapp.com/assets/HSH-Logo-d6525150416d3897e223d2c4ef52723f8b172e958f86c712a0d31987bdb6700e.png" width="30" height="30" alt=""> Home Switch Home</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/residences">Residencias<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/auctions">Subastas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/sign_in">Usuarios</a>
+      </li>
+           
+    </ul>
+    <% if user_signed_in? %>
+   <%=link_to 'Cerrar Sesion', destroy_user_session_path, class: 'btn btn-danger', :method => :delete %>    
+ <% else %>
+
+   <%= link_to 'Iniciar Sesion', new_user_session_path, class: 'btn btn-success'  %>
+   <li>
+   <%= link_to 'Registrarse', new_user_registration_path, class: 'btn btn-info'  %> </li> 
+  <% end %>
+   
+         
+  </div>
+</nav>
  
-
   <%= alert %>
   <%= notice %>
-  <div class="col-md-3"></div>
-  <div class="col-md-6"><%= yield %></div>
-  <div class="col-md-3"></div> 
-
-  <%=link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete %>
-
   
-    
+  
+<%= yield %>
+
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+      
+          <div class="col-12 col-md">
+            <img class="p-0 m-0" width="48px" src="https://afternoon-spire-44316.herokuapp.com/assets/HSH-Logo-d6525150416d3897e223d2c4ef52723f8b172e958f86c712a0d31987bdb6700e.png" />
+                <small class="d-block mb-3 text-muted">&copy; 2018</small>
+            </div>  
+      
+    </footer>
   </body>
 </html>

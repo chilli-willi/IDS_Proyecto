@@ -3,5 +3,18 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#user = User.new
+#user.email = 'admin2@admin.com'
+#user.encrypted_password = 'admin123'
+#user.admin = 'true'
+#user.save!
+ 
+#user = User.create! :name => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret' , :admin => 'true'
+
+User.create!([
+  {email: "testadmin@mail.com", password: "testadmin", password_confirmation: "testadmin",  admin: true},
+  {email: "testuser@mail.com", password: "testuser", password_confirmation: "testuser",  admin: false},
+  {email: "testcustomer@mail.com", password: "testcustomer", password_confirmation: "testcustomer", admin: false}
+])
+
+p 'cargo algo'
