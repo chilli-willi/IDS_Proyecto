@@ -34,7 +34,9 @@
            
     </ul>
     <% if user_signed_in? %>
-   <%=link_to 'Cerrar Sesion', destroy_user_session_path, class: 'btn btn-danger', :method => :delete %>    
+   <%= link_to "Mi Perfil", current_user, class: 'btn btn-info' %>
+   <li>
+   <%=link_to 'Cerrar Sesion', destroy_user_session_path, class: 'btn btn-danger', :method => :delete %></li>    
  <% else %>
 
    <%= link_to 'Iniciar Sesion', new_user_session_path, class: 'btn btn-success'  %>
