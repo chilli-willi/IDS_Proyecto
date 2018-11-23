@@ -28,10 +28,11 @@
       <li class="nav-item">
         <a class="nav-link" href="/auctions">Subastas</a>
       </li>
+      <% if current_user.try(:admin?) %>
       <li class="nav-item">
-        <a class="nav-link" href="/users/sign_in">Usuarios</a>
+        <a class="nav-link" href="/users">Usuarios</a>
       </li>
-           
+      <% end %>
     </ul>
     <% if user_signed_in? %>
    <%= link_to "Mi Perfil", current_user, class: 'btn btn-info' %>

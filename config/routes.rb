@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  devise_for :users
  resources :users, :only => [:show]
+ match '/users',   to: 'users#index',   via: 'get'
   resources :auctions
   resources :residences
   resources :home
