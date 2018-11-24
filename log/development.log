@@ -34565,3 +34565,699 @@ Processing by ResidencesController#new as HTML
 Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-24 02:23:17 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 306ms (Views: 291.9ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 02:23:18 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 89ms (Views: 86.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 02:23:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 111ms (Views: 109.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 02:23:23 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 52ms (Views: 48.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 02:23:32 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:34:01 -0300
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 801ms (Views: 783.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-24 12:34:05 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (131.2ms)
+Completed 200 OK in 323ms (Views: 220.4ms | ActiveRecord: 66.3ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 12:34:08 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (45.8ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:42
+  Rendered residences/index.html.erb within layouts/application (76.5ms)
+Completed 200 OK in 167ms (Views: 105.8ms | ActiveRecord: 52.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-24 12:34:10 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 57ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-24 12:34:15 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gvI8zVFGPaswvKejVKzF/+Zfry+1e8DNaXxaIFoYHQqm/efnZZDaPtQyWpIgoYIATQXpI5xArRL9IxYFK0Wovg==", "user"=>{"email"=>"ad@ad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (129.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ad@ad.com"], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 376ms (ActiveRecord: 129.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:34:15 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 12:34:17 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:46
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-24 12:34:19 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Ic3BqvzwCN4lXLxPGFhMwqGz67aQSaPQ+r76RlmmkdbdPXG2Nth9Hkv0MSWYi5ug+LMW+DMS3G7MgMSLUZDjA==", "email"=>"basantacristian", "commit"=>"Search"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:34:19 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 12:34:22 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:46
+  Rendered users/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 57ms (Views: 54.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users?method=get" for 127.0.0.1 at 2018-11-24 12:34:27 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CUKnGvveRtD4j6ZjtlOIxfdHkSPNf2Bwn7jhekVt6OmqsWXaiPbnB/k1BFYcUMeYfiOS1vfyDY5nYBmBcU0xIg==", "email"=>"admin", "method"=>"get"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:34:27 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 47ms (Views: 44.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 12:34:32 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:46
+  Rendered users/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 50ms (Views: 46.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-24 12:34:35 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oawOLrRojKa+CRV7LMn0H4QKNOLvInjvexewz2TLQHICX8zux0Atcb+zt06GyrtCDW43F9WvFRGDz0g0UOuZuQ==", "email"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:34:35 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 12:34:36 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:29
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:46
+  Rendered users/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users?method=get" for 127.0.0.1 at 2018-11-24 12:34:37 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S4TWJnykYjtagVkqSam4rDy2oHuCzVyXkh6N7LMs1wfodxTmD4zD7Fs7+x/jqvfxtdKjjrhAMWlqxnUXhwwOzA==", "email"=>"", "method"=>"get"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:34:37 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 12:35:38 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:30
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:47
+  Rendered users/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 61ms (Views: 56.4ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/users?method=get" for 127.0.0.1 at 2018-11-24 12:35:42 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Sd+EfVNqjuqqj0bROn4XmQz91/nxk68BYQoC4I7CKhS1LzRhmUL7KsQny7u6rcD7Vf0qt1LI0L9XNDwthvRYw==", "email"=>"admin", "method"=>"get"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:35:42 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 12:37:29 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:36
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:53
+  Rendered users/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users?method=get" for 127.0.0.1 at 2018-11-24 12:37:34 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tpduZ9CFomDjuBZoJmV7cehOWql9EcvtveWYIH8aTMgVZKyno60Dt+ICtF2MZjQsYSpZXEecphNFPWDbSzqVAw==", "email"=>"admin", "commit"=>"Search", "method"=>"get"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:37:34 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:37:57 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users?method=get" for 127.0.0.1 at 2018-11-24 12:38:00 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"24/vaU9Pu2Hl6M4lqBAs8quiqxOD/nJ8YY6Xo2vSbdUQ2f47OhlJWrNA6a4g99jqQd88wMKAZGK1KWYlimruyQ==", "email"=>"admin", "commit"=>"Search", "method"=>"get"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:38:00 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 51ms (Views: 49.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-24 12:38:02 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gY7lRMFBX1I74SVuVPhsWMP241vlHqo2ewoHygS/AwZK2PQWtBetaW1JAuXcH5hAKYt0iKRgvCivrfZM5QeAGg==", "email"=>"admin", "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:38:02 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users?method=get" for 127.0.0.1 at 2018-11-24 12:38:04 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EC5lL7HHGdNzdZH4gtXum3eFgBccYedI+GwM3YWh/LTbeHR9xJHr6CXdtnMKMhqDnfgXxF0f8VYsy/1bZBl/qA==", "email"=>"admin", "method"=>"get"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:38:04 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 12:43:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 71ms (Views: 62.4ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 12:43:22 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    18: 
+    19:   <tbody>
+    20:     <tr>
+    21:       <% for user in @users %>
+    22:         <div class='task'>
+    23:             <strong> <%= user.email %> </strong>
+    24:         </div>
+  
+app/views/users/index.html.erb:21:in `_app_views_users_index_html_erb__2881402542700219652_69983888429980'
+Started GET "/users" for 127.0.0.1 at 2018-11-24 13:37:35 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/users/index.html.erb:26: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+'.freeze;       end 
+                    ^):
+  
+app/views/users/index.html.erb:26: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+Started GET "/users" for 127.0.0.1 at 2018-11-24 13:38:37 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    18: 
+    19:   <tbody>
+    20:     <tr>
+    21:       <% for user in @users %>
+    22:         <div class='task'>
+    23:             <strong> <%= user.email %> </strong>
+    24:         </div>
+  
+app/views/users/index.html.erb:21:in `_app_views_users_index_html_erb__2881402542700219652_69983887980960'
+Started GET "/users" for 127.0.0.1 at 2018-11-24 15:04:41 -0300
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `all' for nil:NilClass):
+  
+app/controllers/users_controller.rb:16:in `index'
+Started GET "/users" for 127.0.0.1 at 2018-11-24 15:04:42 -0300
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `all' for nil:NilClass):
+  
+app/controllers/users_controller.rb:16:in `index'
+Started GET "/users" for 127.0.0.1 at 2018-11-24 15:05:20 -0300
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/users_controller.rb:16:in `index'
+Started GET "/users" for 127.0.0.1 at 2018-11-24 15:06:24 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:53
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:70
+  Rendered users/index.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 78ms (Views: 66.8ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&term=admin&commit=Search" for 127.0.0.1 at 2018-11-24 15:06:32 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"admin", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (email LIKE '%admin%')[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:53
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:70
+  Rendered users/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 15:06:58 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.7ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:48
+  Rendered residences/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 61ms (Views: 53.2ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/residences/1" for 127.0.0.1 at 2018-11-24 15:10:19 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"Ya4d9PSnuQiKrvFbK2J6JhPB5+rxv/GZTuvWCdK6oHGq+AymgfFLM9wG1tCjhY4++bxwObDB54eaTCePMwIjbQ==", "id"=>"1"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:29
+  Rendering residences/show.html.erb within layouts/application
+  Rendered residences/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 86ms (Views: 62.4ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/residences/1/edit" for 127.0.0.1 at 2018-11-24 15:10:22 -0300
+Processing by ResidencesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:43
+  Rendering residences/edit.html.erb within layouts/application
+  Rendered residences/edit.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 64ms (Views: 61.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/residences/1/editgfdgdfg" for 127.0.0.1 at 2018-11-24 15:10:28 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/residences/1/editgfdgdfg"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2018-11-24 15:10:57 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    18: 
+    19:   <tbody>
+    20:     <tr>
+    21:       <% for user in @users %>
+    22:         <div class='task'>
+    23:             <strong> <%= user.email %> </strong>
+    24:         </div>
+  
+app/views/users/index.html.erb:21:in `_app_views_users_index_html_erb__2881402542700219652_69983809048780'
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 15:11:17 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (1.1ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:48
+  Rendered residences/index.html.erb within layouts/application (280.1ms)
+Completed 500 Internal Server Error in 286ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007f4cd80afba0>:0x00007f4cc90e0f20>):
+    49:         <div class='task'>
+    50:             <strong> <%= residence.name %> </strong>
+    51:         </div>
+    52:         <%= link_to 'Edit', edit_residence_path(user) %>
+    53:       <% end %>
+    54:      </tr>       
+    55:   </tbody>
+  
+app/views/residences/index.html.erb:52:in `block in _app_views_residences_index_html_erb__1655626330902864820_69983883695620'
+app/views/residences/index.html.erb:48:in `_app_views_residences_index_html_erb__1655626330902864820_69983883695620'
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 15:11:33 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:48
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:79
+  Rendered residences/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 72ms (Views: 69.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=6&commit=Buscar" for 127.0.0.1 at 2018-11-24 15:11:39 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"6", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%6%')[0m
+  ↳ app/views/residences/index.html.erb:48
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:79
+  Rendered residences/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=6&commit=Buscar" for 127.0.0.1 at 2018-11-24 15:13:17 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"6", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%6%')[0m
+  ↳ app/views/residences/index.html.erb:47
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:53
+  Rendered residences/index.html.erb within layouts/application (299.2ms)
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `r' for #<#<Class:0x00007f4cd80afba0>:0x00007f4cc03ac320>):
+    51:         <td></td>
+    52:         <td>
+    53:           <% if current_user.try(:admin?) %>
+    54:           <%=link_to 'ver', r, method: :show, class: 'btn btn-success'%>
+    55:           <%=link_to 'editar', edit_residence_path(r), class: 'btn btn-info'%>
+    56:           <%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar residencia?'} %>
+    57:           <% end %>
+  
+app/views/residences/index.html.erb:54:in `block in _app_views_residences_index_html_erb__1655626330902864820_69983809660460'
+app/views/residences/index.html.erb:47:in `_app_views_residences_index_html_erb__1655626330902864820_69983809660460'
+Started GET "/residences?utf8=%E2%9C%93&term=6&commit=Buscar" for 127.0.0.1 at 2018-11-24 15:13:36 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"6", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%6%')[0m
+  ↳ app/views/residences/index.html.erb:47
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:53
+  Rendered residences/index.html.erb within layouts/application (282.1ms)
+Completed 500 Internal Server Error in 285ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `r' for #<#<Class:0x00007f4cd80afba0>:0x00007f4cd42f9ea0>):
+    52:         <td>
+    53:           <% if current_user.try(:admin?) %>
+    54:           <%=link_to 'ver', residence, method: :show, class: 'btn btn-success'%>
+    55:           <%=link_to 'editar', edit_residence_path(r), class: 'btn btn-info'%>
+    56:           <%=link_to 'eliminar', residence, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar residencia?'} %>
+    57:           <% end %>
+    58:         </td>
+  
+app/views/residences/index.html.erb:55:in `block in _app_views_residences_index_html_erb__1655626330902864820_69983977067580'
+app/views/residences/index.html.erb:47:in `_app_views_residences_index_html_erb__1655626330902864820_69983977067580'
+Started GET "/residences?utf8=%E2%9C%93&term=6&commit=Buscar" for 127.0.0.1 at 2018-11-24 15:13:45 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"6", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%6%')[0m
+  ↳ app/views/residences/index.html.erb:47
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:53
+  Rendered residences/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 60ms (Views: 58.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 15:13:54 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:47
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:53
+  Rendered residences/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 74ms (Views: 71.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 15:14:39 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:48
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:54
+  Rendered residences/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=6&commit=Buscar" for 127.0.0.1 at 2018-11-24 15:14:43 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"6", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%6%')[0m
+  ↳ app/views/residences/index.html.erb:48
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:54
+  Rendered residences/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=6&commit=Buscar" for 127.0.0.1 at 2018-11-24 15:15:08 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"6", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%6%')[0m
+  ↳ app/views/residences/index.html.erb:48
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:54
+  Rendered residences/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.7ms)
+
+

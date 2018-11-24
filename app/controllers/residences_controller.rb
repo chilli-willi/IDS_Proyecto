@@ -3,11 +3,23 @@ class ResidencesController < ApplicationController
 		@residences = Residence.all
 	end
 
+def residence_params
+  params.require(:residence).permit(:name, :term)
+end
+
+def index
+  @tasks = if params[:term]
+    @residences = Residence.where('name LIKE ?', "%#{params[:term]}%")
+  else
+    @residences = Residence.all
+  end
+end
+
 
 	def create
 		@residence = Residence.new(params.require(:residence).permit(:name, :des, :location))
 		if @residence.save
-			redirect_to residences_path, notice: 'Se creo la residencia piola'
+			redirect_to residences_path, notice: 'Se creo la residencia'
 		else
 			render :new
 		end

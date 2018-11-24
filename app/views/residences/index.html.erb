@@ -30,30 +30,36 @@
   </a>
 </div>
 
+<p>
+<%= form_tag(residences_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Buscar' %>
+<% end %>
+</p>
 
 <table class="table">
-	<thead>
-		<tr>
-			<th>NOMBRE</th>
-			<th>DESCRIPCION</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @residences.each do |r| %>
-			<tr>
-				<td><%= r.name %></td>
-				<td><%= r.des %></td>
-				<td></td>
-				<td>
+  <thead>
+    <tr>
+      <th>NOMBRE</th>
+      <th>DESCRIPCION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for residence in @residences %>
+      <tr>
+        <td><strong> <%= residence.name %> </strong></td>
+        <td><%= residence.des %></td>
+        <td></td>
+        <td>
           <% if current_user.try(:admin?) %>
-          <%=link_to 'ver', r, method: :show, class: 'btn btn-success'%>
-          <%=link_to 'editar', edit_residence_path(r), class: 'btn btn-info'%>
-				  <%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar residencia?'} %>
+          <%=link_to 'ver', residence, method: :show, class: 'btn btn-success'%>
+          <%=link_to 'editar', edit_residence_path(residence), class: 'btn btn-info'%>
+          <%=link_to 'eliminar', residence, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar residencia?'} %>
           <% end %>
-				</td>
-			</tr> 
-		<% end %>
-	</tbody>
+        </td>
+      </tr> 
+    <% end %>
+  </tbody>
 </table>
 <p></p>
 <div class="row">
@@ -62,8 +68,7 @@
 <% end %>
 </div>
 
-
-  <div class="col-md-3"></div> 
+<div class="col-md-3"></div> 
 
 </div>
 </div>
