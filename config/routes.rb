@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
  devise_for :users
  resources :users, :only => [:show]
+ resources :users do
+  		member do
+    		get 'be_premium'
+        get 'apply_premium'
+        get 'enable_premium'
+        get 'disable_premium'
+ 		end
+	end
  match '/users',   to: 'users#index',   via: 'get'
   resources :auctions
   resources :residences
