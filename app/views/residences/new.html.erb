@@ -6,15 +6,8 @@
 
 <h1>  Crea una nueva residencia </h1>
 
+
 <% if current_user.try(:admin?) %>
-<% if @residence.errors.any? %>
-		<div class="alert alert-danger">Hay errores
-		<% @residence.errors.full_messages.each do |error| %>
-			<p> <%= error%> </p>
-		<%end%></div>
-	
-
-
 	<%= form_for @residence do |f| %>
 		
 		<div>
@@ -45,5 +38,4 @@
 <% end %>
   <div class="col-md-3"></div> 
 
-</div>
 </div>

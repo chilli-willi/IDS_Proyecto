@@ -33795,3 +33795,773 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-24 01:44:48 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 319ms (Views: 304.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 01:44:51 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 82ms (Views: 77.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 01:44:55 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 89ms (Views: 86.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 01:57:22 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 75ms (Views: 62.9ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 01:57:24 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=a" for 127.0.0.1 at 2018-11-24 01:57:26 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"a"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `search' for #<Class:0x00007f61d006b2e0>):
+  
+app/controllers/users_controller.rb:17:in `index'
+Started GET "/users?utf8=%E2%9C%93&search=1" for 127.0.0.1 at 2018-11-24 01:57:35 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"1"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `search' for #<Class:0x00007f61d006b2e0>):
+  
+app/controllers/users_controller.rb:17:in `index'
+Started GET "/users?utf8=%E2%9C%93&search=1" for 127.0.0.1 at 2018-11-24 01:58:21 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"1"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `search' for #<Class:0x00007f61d4366f40>):
+  
+app/controllers/users_controller.rb:19:in `index'
+Started GET "/users?utf8=%E2%9C%93&search=1" for 127.0.0.1 at 2018-11-24 01:58:23 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"1"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `search' for #<Class:0x00007f61d4366f40>):
+  
+app/controllers/users_controller.rb:19:in `index'
+Started GET "/users?utf8=%E2%9C%93&search=1" for 127.0.0.1 at 2018-11-24 01:58:49 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"1"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 82ms (Views: 74.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 01:58:53 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 54ms (Views: 50.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=a" for 127.0.0.1 at 2018-11-24 01:58:55 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"a"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 01:59:02 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 01:59:05 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=ad" for 127.0.0.1 at 2018-11-24 01:59:08 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ad"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 01:59:14 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=ab%40ab.com" for 127.0.0.1 at 2018-11-24 01:59:17 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ab@ab.com"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=1" for 127.0.0.1 at 2018-11-24 01:59:23 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"1"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 02:00:26 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 69ms (Views: 60.9ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 02:00:26 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-24 02:00:28 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 82ms (Views: 70.9ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 02:00:29 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 51ms (Views: 47.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=ab%40ab.com&commit=Search" for 127.0.0.1 at 2018-11-24 02:00:32 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ab@ab.com", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=1&commit=Search" for 127.0.0.1 at 2018-11-24 02:00:39 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"1", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=1&commit=Search" for 127.0.0.1 at 2018-11-24 02:03:56 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"1", "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 79ms (Views: 72.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 02:03:58 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/users/show.html.erb:68: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/users/show.html.erb:68: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 02:04:31 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 61ms (Views: 58.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 02:04:54 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (306.7ms)
+Completed 500 Internal Server Error in 310ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tags_path' for #<#<Class:0x0000558321674888>:0x00007f61d4527910>
+Did you mean?  asset_path):
+    4: 
+    5:   <div class="col-md-3"></div>
+    6:   <div class="col-md-6">
+    7: <% form_tag tags_path, :method => 'get' do %>
+    8:     <p>
+    9:       <%= text_field_tag :search, params[:search], :class => "textfield-search" %>
+   10:       <%= submit_tag "Search", :email => nil, :class => "search-button" %>
+  
+app/views/users/show.html.erb:7:in `_app_views_users_show_html_erb___2793325091598385866_70029075398960'
+Started GET "/users/7" for 127.0.0.1 at 2018-11-24 02:06:50 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 95ms (Views: 68.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 02:06:52 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 75ms (Views: 72.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 02:06:53 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/16/enable_premium" for 127.0.0.1 at 2018-11-24 02:06:58 -0300
+Processing by UsersController#enable_premium as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:80
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:82
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "premium" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["premium", 0], ["updated_at", "2018-11-24 05:06:58.252751"], ["id", 16]]
+  ↳ app/controllers/users_controller.rb:82
+  [1m[35m (27.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:82
+Redirected to http://localhost:3000/users
+Completed 302 Found in 34ms (ActiveRecord: 27.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-24 02:06:58 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:38
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-24 02:07:08 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 02:11:56 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:48
+  Rendered residences/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 73ms (Views: 65.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-24 02:11:57 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 64ms (Views: 56.7ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/auctions/1" for 127.0.0.1 at 2018-11-24 02:12:02 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"authenticity_token"=>"zLyYs+/aQhrlNjFWl2DDFVqtn804tu61f8P3VIw33JmK1uUkD5atQwZU2VBKSI+H3L5qabjO9AgkGbkViW1GqA==", "id"=>"1"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:8
+  Rendered auctions/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 55ms (Views: 51.1ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/auctions/1" for 127.0.0.1 at 2018-11-24 02:12:04 -0300
+Processing by AuctionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fUno/tZIW+8UBrrJr9a6WJOUcxSNfxm3cCCA55yJFFY7I5VpNgS0tvdkUs9y/vbKFYeGsA0HAwor+s6mmdOOZw==", "auction"=>{"monto"=>"4"}, "commit"=>"PUJAR", "id"=>"1"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/auctions_controller.rb:40
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-24 02:12:04 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 56ms (Views: 54.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 02:12:10 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:48
+  Rendered residences/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 63ms (Views: 60.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:12:12 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:12:39 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:12:53 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:13:51 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:14:22 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:52: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:54: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:52: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/residences/new.html.erb:54: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:15:01 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:54: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:54: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:15:29 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:16:17 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 53ms (Views: 51.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:16:47 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:19:14 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:52: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:54: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:52: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/residences/new.html.erb:54: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:19:33 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/cristian/IDS_Proyecto/app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/residences/new.html.erb:51: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/residences/new.html.erb:53: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:19:55 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:19:55 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/residences" for 127.0.0.1 at 2018-11-24 02:20:04 -0300
+Processing by ResidencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w0S6LxMeDVtLkTdWXwC5bkVIxOHG8tR4I4AHP47deJ6FLse481LiAqjz31CCKPX8w1sxRUaKzsV4Wkl+i4firw==", "residence"=>{"name"=>"sadasd", "des"=>"sdasdasd sd asasd", "location"=>"https://www.w3schools.com/bootstrap4/chicago.jpg"}, "commit"=>"Crear residencia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/residences_controller.rb:9
+  [1m[36mResidence Create (0.4ms)[0m  [1m[32mINSERT INTO "residences" ("name", "des", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "sadasd"], ["des", "sdasdasd sd asasd"], ["location", "https://www.w3schools.com/bootstrap4/chicago.jpg"], ["created_at", "2018-11-24 05:20:04.160185"], ["updated_at", "2018-11-24 05:20:04.160185"]]
+  ↳ app/controllers/residences_controller.rb:9
+  [1m[35m (79.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/residences_controller.rb:9
+Redirected to http://localhost:3000/residences
+Completed 302 Found in 83ms (ActiveRecord: 79.9ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 02:20:04 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:48
+  Rendered residences/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 52ms (Views: 49.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:20:15 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 52ms (Views: 50.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/residences" for 127.0.0.1 at 2018-11-24 02:20:22 -0300
+Processing by ResidencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yN2KKircXn4JCCg0ns7w0d60PQIzviyAs4d/pWrfdUTntOgJG1CmLNsQ4UcoGTHbYY6D4w4cCuuqw+XFth0FtA==", "residence"=>{"name"=>"Vill6", "des"=>"Una ", "location"=>"https://www.w3schools.com/bootstrap4/chicago.jpg"}, "commit"=>"Crear residencia"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/residences_controller.rb:9
+  [1m[36mResidence Create (0.4ms)[0m  [1m[32mINSERT INTO "residences" ("name", "des", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vill6"], ["des", "Una "], ["location", "https://www.w3schools.com/bootstrap4/chicago.jpg"], ["created_at", "2018-11-24 05:20:22.213058"], ["updated_at", "2018-11-24 05:20:22.213058"]]
+  ↳ app/controllers/residences_controller.rb:9
+  [1m[35m (91.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/residences_controller.rb:9
+Redirected to http://localhost:3000/residences
+Completed 302 Found in 97ms (ActiveRecord: 92.5ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 02:20:22 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:48
+  Rendered residences/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/residences/4" for 127.0.0.1 at 2018-11-24 02:20:27 -0300
+Processing by ResidencesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2s6dtfRm4mhrHD0cu21U9IL1wH3rd1MzSOAttpKJ/g6cpOAiFCoNMYh+1RpmRRhmBOY12WsPSY4TOmP3l9NkPw==", "id"=>"4"}
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/residences_controller.rb:22
+  [1m[36mResidence Destroy (0.3ms)[0m  [1m[31mDELETE FROM "residences" WHERE "residences"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/residences_controller.rb:22
+  [1m[35m (46.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/residences_controller.rb:22
+Redirected to http://localhost:3000/residences
+Completed 302 Found in 51ms (ActiveRecord: 47.4ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-24 02:20:27 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:48
+  Rendered residences/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 64ms (Views: 61.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:20:34 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:21:09 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  Rendered residences/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin?' for nil:NilClass):
+     7: <h1>  Crea una nueva residencia </h1>
+     8: 
+     9: 
+    10: <% if @user.admin? %>
+    11: 	<%= form_for @residence do |f| %>
+    12: 		
+    13: 		<div>
+  
+app/views/residences/new.html.erb:10:in `_app_views_residences_new_html_erb__2340675975960414384_70029042222760'
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-24 02:21:53 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/new.html.erb:10
+  Rendered residences/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.4ms)
+
+
