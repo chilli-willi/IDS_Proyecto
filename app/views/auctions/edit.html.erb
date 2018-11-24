@@ -9,7 +9,7 @@
 
 <h1>  Editar subasta </h1>
 
-
+<% if current_user.try(:admin?) %>
 	<%= form_for @auction do |f| %>
 		
 		<div class="form-group">
@@ -43,7 +43,7 @@
       <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
   	</div>
 <% end %>
-
+<% end %>
   <div class="col-md-3"></div> 
 
 </div>

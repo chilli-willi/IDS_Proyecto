@@ -12,9 +12,10 @@
 #user = User.create! :name => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret' , :admin => 'true'
 
 User.create!([
-  {email: "testadmin@mail.com", password: "testadmin", password_confirmation: "testadmin",  admin: true},
-  {email: "testuser@mail.com", password: "testuser", password_confirmation: "testuser",  admin: false},
-  {email: "testcustomer@mail.com", password: "testcustomer", password_confirmation: "testcustomer", admin: false}
+  {email: "testadmin2@mail.com", password: "testadmin", password_confirmation: "testadmin",  admin: true},
+  {email: "testuser2@mail.com", password: "testuser", password_confirmation: "testuser",  admin: false},
+  {email: "ad@ad.com", password: "testad", password_confirmation: "testad", admin: true},
+  {email: "testcustomer2@mail.com", password: "testcustomer", password_confirmation: "testcustomer", admin: false}
 ])
 
 p 'cargo algo'

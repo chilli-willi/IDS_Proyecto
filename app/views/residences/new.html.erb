@@ -6,13 +6,13 @@
 
 <h1>  Crea una nueva residencia </h1>
 
-
+<% if current_user.try(:admin?) %>
 <% if @residence.errors.any? %>
 		<div class="alert alert-danger">Hay errores
 		<% @residence.errors.full_messages.each do |error| %>
 			<p> <%= error%> </p>
 		<%end%></div>
-	<% end %>
+	
 
 
 	<%= form_for @residence do |f| %>
@@ -42,7 +42,7 @@
   		<%= f.submit "Crear residencia", class: 'btn btn-primary' %>
   	</div>
 <% end %>
-
+<% end %>
   <div class="col-md-3"></div> 
 
 </div>

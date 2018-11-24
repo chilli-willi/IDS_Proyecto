@@ -30,7 +30,7 @@
   </a>
 </div>
 
-
+<% if current_user.try(:admin?) %>
 <table class="table">
 	<thead>
 		<tr>
@@ -61,7 +61,7 @@
 <%= link_to 'Nueva residencia', new_residence_path, class: 'btn btn-primary' %>
 <% end %>
 </div>
-
+<% end %>
 
   <div class="col-md-3"></div> 
 

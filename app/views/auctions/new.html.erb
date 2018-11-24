@@ -7,7 +7,7 @@
 
 
 <h1>  Crea una nueva subasta </h1>
-
+<% if current_user.try(:admin?) %>
 <% if @auction.errors.any? %>
     <div class="alert alert-danger">Hay errores
     <% @auction.errors.full_messages.each do |error| %>
@@ -44,7 +44,7 @@
 
   	</div>
 <% end %>
-
+<% end %>
   <div class="col-md-3"></div> 
 
 </div>
