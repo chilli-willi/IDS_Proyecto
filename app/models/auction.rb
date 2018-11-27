@@ -1,4 +1,9 @@
 class Auction < ApplicationRecord
-	belongs_to :residence
-	has_and_belongs_to_many :users
+	validates :name, presence: true
+	validates :des, presence: true
+	validates :monto, presence: true
+	validates :minimapuja, presence: true
+
+	has_many :residences
+	#belongs_to:residence
 end

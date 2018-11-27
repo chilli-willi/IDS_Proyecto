@@ -1,31 +1,28 @@
-<div class="centered">
-<h1> Listado de Subastas </h1>  
-<br>
-<%= link_to "Crear Subasta", new_auction_path ,class: 'btn btn-info'%>
-<br>
-<br>
-<table class="table">
+<div class="container">
+  <div class="row">
 
-  <tr>
-    <th> Id </th>
-    <th> Puja maxima </th>
-    <th> Para la residencia </th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% auctions = Auction.all %>
-  <% auctions.each do |auction| %>
-    <tr>
-      <td> <%= auction.id %> </td>
-          <td> <%= auction.maxbid %> </td>
-          <td> <%= auction.residence.name %> </td>
-      <td><%= link_to "Ver", auction, class: 'btn btn-info btn-sm'%></td>
-      <td><%= link_to "Finalizar", auction, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Realmente desea finalizar la subasta?'} %></td>
-    </tr>
-    <% end %>
-  <% if auctions.size == 0 %>
-    <tr> <td colspan="3"> No hay subastas </td> </tr>     
-  <% end %>
-</table>
-<p> <%= link_to "Volver", root_path, class: 'btn btn-info' %> </p>
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+
+<% if user_signed_in? %>
+<%= @auction.name %>
+<%= @auction.des %>
+<%= form_for @auction do |f| %>
+<div class="row">
+			<div class="col-md-4">
+				<%= f.label :monto, 'PUJA' %>
+  				<%= f.text_field :monto, class: 'form-control' %>
+  			</div>
+  		</div>
+
+  			<%= f.submit "PUJAR", class: 'btn btn-primary' %>
+  			<%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
+
+  			  
+<% end %>
+<% end %>
+  <div class="col-md-3"></div> 
+
+</div>
 </div>

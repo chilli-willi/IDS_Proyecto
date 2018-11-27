@@ -1,24 +1,51 @@
 <div class="container">
-  <%= form_for @auction do |f| %>
-
-  <div class="form_group">
-    <%= f.label :residence, 'Elija la residencia:' %>
-    <%= f.collection_select :residence, Residence.all, :id, :name, {}, class: 'form-control' %>
-  </div>
-  <br>
   <div class="row">
-    <%= f.label :"Puja maxima:" %>
-    <%= f.number_field :maxbid, required: true, class: 'form-control' %>
-  </div>
-  <br>
-  <div class="form_group">
-    <%= f.label :dateStart, 'Indique la fecha de inicio de la subasta:' %>
-    <%= f.date_select :dateStart, start_year: Date.today.year, :use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'], :order => [:day, :month, :year], required: true, class: 'form-control' %>
-  </div>
-  <br>
-  <%= link_to "Volver", auctions_path, class: 'btn btn-secondary' %>
-  <%= f.submit 'Guardar', class: 'btn btn-primary' %>
 
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+
+
+<h1>  Crea una nueva subasta </h1>
+<% if current_user.try(:admin?) %>
+<% if @auction.errors.any? %>
+    <div class="alert alert-danger">Hay errores
+    <% @auction.errors.full_messages.each do |error| %>
+      <p> <%= error%> </p>
+    <%end%></div>
   <% end %>
 
+
+	<%= form_for @auction do |f| %>
+      <div class="form-group">
+        <%= f.label :name, 'NOMBRE' %>
+        <%= f.collection_select :name, Residence.all, :name , :name ,{}, class: 'form-control'%>
+      <p></p>
+		  <div>
+			  <%= f.label :des, 'DESCRIPCION' %>
+  		  <%= f.text_field :des, class: 'form-control' , required: true %>
+  		</div>
+  		<p></p>
+  		<div>
+				<%= f.label :monto, 'MONTO' %>
+  			<%= f.number_field :monto, class: 'form-control', required: true %>
+  			</div>
+  		</div>
+      <p></p>
+  		<div>
+				<%= f.label :minimapuja, 'PUJA MINIMA' %>
+  			<%= f.number_field :minimapuja, class: 'form-control', required: true %>
+  		</div>
+
+      <p></p>
+
+  		<%= f.submit "Crear subasta", class: 'btn btn-primary' %>
+      <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
+
+  	</div>
+<% end %>
+<% end %>
+  <div class="col-md-3"></div> 
+
+</div>
 </div>
