@@ -51,8 +51,8 @@
         <td><%= residence.des %></td>
         <td></td>
         <td>
-          <% if current_user.try(:admin?) %>
           <%=link_to 'ver', residence, method: :show, class: 'btn btn-success'%>
+          <% if current_user.try(:admin?) %>
           <%=link_to 'editar', edit_residence_path(residence), class: 'btn btn-info'%>
           <%=link_to 'eliminar', residence, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar residencia?'} %>
           <% end %>
