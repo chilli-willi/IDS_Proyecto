@@ -10,7 +10,7 @@
 <h1>  Editar subasta </h1>
 
 <% if current_user.try(:admin?) %>
-	<%= form_for @auction do |f| %>
+	<%= form_for @auctions do |f| %>
 		
 		<div class="form-group">
         <%= f.label :name, 'NOMBRE' %>
