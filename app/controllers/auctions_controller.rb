@@ -1,50 +1,56 @@
 class AuctionsController < ApplicationController
 
-def index
-		@auction = Auction.all
-	end
+  def index
+    @auction = Auction.all
+  end
 
+  def show
+    @auction = Auction.find(params[:id]) 
+    @user = User.new
+  end
 
-	def create
-		@auction = Auction.new(params.require(:auction).permit(:name, :des, :monto, :minimapuja))
-		if @auction.save
-			redirect_to auctions_path, notice: 'Se creo la subasta piola'
-		else
-			render :new
-		end
-	end
+  def destroy            
+      @auction = Auction.destroy(params[:id])
+      redirect_to auctions_path
+    end
 
-	def show
-		@auction = Auction.find(params[:id])
-	end
+  def new
+    @auction = Auction.new 
+  end
 
+  def create
+    @auction = Auction.new(params.require(:auction).permit(:residence_id, :maxbid, :dateStart))
+    @auction.dateEnd =  @auction.dateStart + 3
+    if @auction.save
+      redirect_to auctions_path, notice: "Se creo la subasta exitosamente."  
+    else
+      render :new
+    end
+  end
 
+  def update
+    @user = User.new(params.require(:user).permit(:email, :password, :credits))
+    #@user.credits -= 1
+    @user.save
 
-	def destroy
-		auction = Auction.find(params[:id])
-		if auction.destroy
-			redirect_to auctions_path, notice: "La subasta fue borrada"
-		else
-			redirect_to auctions_path, notice: "La subasta no fue borrada"	
-		end
-	end
+    @auction = Auction.find(params[:id])
+    #@auction.user.email = params[:user][:email]
+    if @auction.maxbid.nil?
+      @auction.maxbid = params[:addtobid].to_f
+    else
+      @auction.maxbid += params[:addtobid].to_f
+    end
+    @auction.save
+  end
 
-
-	def edit
-		@auction = Auction.find(params[:id])
-	end
-
-
-	def update
-		@auction = Auction.find(params[:id])
-		if @auction.update(params.require(:auction).permit(:name, :des, :minimapuja, :monto))
-			redirect_to auctions_path, notice: 'La subasta se modifico correctamente'
-		end
-	end
-
-
-	def new
-		@auction = Auction.new
-	end
+  def enterBid
+    @user = User.new(credits: 2)
+    if @user.credits >= 0
+      @auction = Auction.find(params[:id])
+      @addtobid = 0;
+    else
+      redirect_to auctions_path
+    end
+  end
 
 end
