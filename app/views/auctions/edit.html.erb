@@ -10,11 +10,11 @@
 <h1>  Editar subasta </h1>
 
 <% if current_user.try(:admin?) %>
-	<%= form_for @auctions do |f| %>
+	<%= form_for @auction do |f| %>
 		
 		<div class="form-group">
         <%= f.label :name, 'NOMBRE' %>
-        <%= f.collection_select :name, Residence.all, :name , :name ,{}, class: 'form-control'%>
+       
 
         <p></p>
 		<div>

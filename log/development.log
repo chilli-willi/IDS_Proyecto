@@ -152,3 +152,288 @@ ActionView::Template::Error (First argument in form cannot contain nil or be emp
     16:         <%= f.label :name, 'NOMBRE' %>
   
 app/views/auctions/edit.html.erb:13:in `_app_views_auctions_edit_html_erb__3669832961960945534_70190669399540'
+Started GET "/residences" for 127.0.0.1 at 2018-11-27 19:02:14 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (1.1ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:48
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:55
+  Rendered residences/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 148ms (Views: 143.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/residences/1/edit" for 127.0.0.1 at 2018-11-27 19:02:20 -0300
+Processing by ResidencesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mResidence Load (2.5ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:43
+  Rendering residences/edit.html.erb within layouts/application
+  Rendered residences/edit.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 143ms (Views: 129.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-27 19:04:58 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 145ms (Views: 136.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-27 19:05:00 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 106ms (Views: 100.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-27 19:05:03 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 123ms (Views: 116.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-27 19:05:04 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:20
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:37
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 99ms (Views: 95.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-27 19:05:06 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (1.0ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:48
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:55
+  Rendered residences/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 115ms (Views: 100.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-27 19:05:07 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (16.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 121ms (Views: 98.9ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/auctions/5/edit" for 127.0.0.1 at 2018-11-27 19:05:15 -0300
+Processing by AuctionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  Rendering auctions/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/edit.html.erb:12
+  Rendered auctions/edit.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    10: <h1>  Editar subasta </h1>
+    11: 
+    12: <% if current_user.try(:admin?) %>
+    13: 	<%= form_for @auctions do |f| %>
+    14: 		
+    15: 		<div class="form-group">
+    16:         <%= f.label :name, 'NOMBRE' %>
+  
+app/views/auctions/edit.html.erb:13:in `_app_views_auctions_edit_html_erb__3669832961960945534_70190669418980'
+Started GET "/auctions/5/edit" for 127.0.0.1 at 2018-11-27 19:05:31 -0300
+Processing by AuctionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  Rendering auctions/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/edit.html.erb:12
+  Rendered auctions/edit.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    10: <h1>  Editar subasta </h1>
+    11: 
+    12: <% if current_user.try(:admin?) %>
+    13: 	<%= form_for @auction do |f| %>
+    14: 		
+    15: 		<div class="form-group">
+    16:         <%= f.label :name, 'NOMBRE' %>
+  
+app/views/auctions/edit.html.erb:13:in `_app_views_auctions_edit_html_erb__3669832961960945534_70190704488920'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-27 19:07:05 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-27 19:07:07 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 133ms (Views: 119.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/auctions/4/edit" for 127.0.0.1 at 2018-11-27 19:07:12 -0300
+Processing by AuctionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Rendering auctions/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/edit.html.erb:12
+  Rendered auctions/edit.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    10: <h1>  Editar subasta </h1>
+    11: 
+    12: <% if current_user.try(:admin?) %>
+    13: 	<%= form_for @auction do |f| %>
+    14: 		
+    15: 		<div class="form-group">
+    16:         <%= f.label :name, 'NOMBRE' %>
+  
+app/views/auctions/edit.html.erb:13:in `_app_views_auctions_edit_html_erb__3669832961960945534_70190692676620'
+Started GET "/auctions/3/edit" for 127.0.0.1 at 2018-11-27 19:07:18 -0300
+Processing by AuctionsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  Rendering auctions/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/edit.html.erb:12
+  Rendered auctions/edit.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    10: <h1>  Editar subasta </h1>
+    11: 
+    12: <% if current_user.try(:admin?) %>
+    13: 	<%= form_for @auction do |f| %>
+    14: 		
+    15: 		<div class="form-group">
+    16:         <%= f.label :name, 'NOMBRE' %>
+  
+app/views/auctions/edit.html.erb:13:in `_app_views_auctions_edit_html_erb__3669832961960945534_70190670767580'
+Started GET "/auctions" for 127.0.0.1 at 2018-11-27 19:07:21 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 148ms (Views: 141.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-11-27 19:11:14 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 170ms (Views: 153.7ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-27 19:11:16 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ki8lPCprYBMAL5tF/xOYvi91MgNSo9snW+aQSRBkn61aTOvhzcmH8uacq3P6tZXvYt6iqt7b2A35sgjvminIAA=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 33ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-27 19:11:16 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 126ms (Views: 122.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-27 19:11:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 139ms (Views: 136.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-27 19:11:24 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I8mUTOnpLpKzxpLcy0lx7XK0wd9Xe3gwXkRG15dM+KzbhWZRxK2F8I0s/RUl7Y/xyuwjQhRArzAMx1+duefkDg==", "user"=>{"email"=>"a@aaaaa.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "a@aaaaa.com"], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 235ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-27 19:11:24 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 92ms (Views: 88.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-27 19:11:28 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:14
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  Rendered auctions/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 96ms (Views: 83.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/11" for 127.0.0.1 at 2018-11-27 19:16:52 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:32
+  Rendered users/show.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 270ms (Views: 235.1ms | ActiveRecord: 6.0ms)
+
+
