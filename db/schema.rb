@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2018_11_28_054940) do
     t.integer "maxbid"
     t.date "dateStart"
     t.date "dateEnd"
+    t.bigint "residence_id"
+    t.index ["residence_id"], name: "index_auctions_on_residence_id"
   end
 
   create_table "auctions_users", force: :cascade do |t|
@@ -81,4 +83,5 @@ ActiveRecord::Schema.define(version: 2018_11_28_054940) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "auctions", "residences"
 end
