@@ -42,6 +42,10 @@ def index
 		end
 	end
 
+	def puja
+		@auction = Auction.find(params[:id])
+	end
+
 
 	def new
 		@auction = Auction.new

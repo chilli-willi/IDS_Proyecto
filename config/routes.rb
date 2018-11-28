@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   #      sessions: 'users/sessions'
   #    }
   post '/auctions/:id', to: 'auctions#show'
+  post '/auctions/:id', to: 'auctions#puja'
   post '/residences/:id', to: 'residences#show'
   root :to => "home#index"
 end
