@@ -9,5 +9,6 @@ class User < ApplicationRecord
   scope :admins, -> {where(admin: 1)}
 
   has_and_belongs_to_many :auctions
+  has_and_belongs_to_many :residences
 
 end

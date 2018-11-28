@@ -19,13 +19,12 @@ def index
 	end
 
 
-
 	def destroy
-		auction = Auction.find(params[:id])
-		if auction.destroy
-			redirect_to auctions_path, notice: "La subasta fue borrada"
+		@auction = Auction.find(params[:id])
+		if @auction.destroy
+			redirect_to auctions_path, notice: "La auction fue borrada"
 		else
-			redirect_to auctions_path, notice: "La subasta no fue borrada"	
+			redirect_to auctions_path, notice: "La auction no fue borrada"	
 		end
 	end
 
