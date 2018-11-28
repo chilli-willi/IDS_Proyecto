@@ -5,5 +5,6 @@ class Auction < ApplicationRecord
 	validates :minimapuja, presence: true
 
 	has_many :residences
+	belongs_to :residences
 	#belongs_to:residence
 end

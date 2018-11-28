@@ -26,8 +26,12 @@
 			
 				<td><%= r.monto %></td>
 				<td><%= r.minimapuja %></td>
+				<td><%=link_to 'ver', r, method: :show , class: 'btn btn-success'%></td>
 				<td><%=link_to 'editar', edit_auction_path(r), class: 'btn btn-info'%></td>
-				<td><%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar subasta?'} %></td>
+				<td><%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar subasta?'} %>
+					
+
+				</td>
 				<% end %>
 			</tr> 
 		
