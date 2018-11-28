@@ -10,7 +10,7 @@ def index
 		if @auction.save
 			redirect_to auctions_path, notice: 'Se creo la subasta piola'
 		else
-			render :new
+			redirect_to auctions_path, notice: 'NO Se creo la subasta piola'
 		end
 	end
 
@@ -39,11 +39,9 @@ def index
 		@auction = Auction.find(params[:id])
 		if @auction.update(params.require(:auction).permit(:name, :des, :minimapuja, :monto))
 			redirect_to auctions_path, notice: 'La subasta se modifico correctamente'
-		end
+		
 	end
 
-	def puja
-		@auction = Auction.find(params[:id])
 	end
 
 

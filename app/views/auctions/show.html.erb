@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class="row">
 
@@ -7,15 +5,25 @@
   <div class="col-md-6">
 
 
+<% if user_signed_in? %>
+<%= @auction.name %>
+<%= @auction.des %>
+<%= form_for @auction do |f| %>
+<div class="row">
+   <div class="col-md-4">
+    <%= f.label :monto, 'PUJA' %>
+      <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
+     </div>
+    </div>
 
+     <%= f.submit "PUJAR", class: 'btn btn-primary' %>
+     <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
 
-<h1><%= @auction.name %></h1>
-<p><%= @auction.des %></p>
-
-<%= link_to "Pujar", puja_path(:id), class: 'btn btn-secondary' %>
-<%= link_to "Volver", auctions_path, class: 'btn btn-link' %>
-
+       
+<% end %>
+<% end %>
   <div class="col-md-3"></div> 
 
-</div>
-</div>
+
+
+

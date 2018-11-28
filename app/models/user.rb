@@ -7,4 +7,7 @@ class User < ApplicationRecord
   enum premium: { si: 0, solicitado: 1, no: 2 }
 
   scope :admins, -> {where(admin: 1)}
+
+  has_and_belongs_to_many :auctions
+
 end

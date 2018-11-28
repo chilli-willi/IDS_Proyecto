@@ -7,13 +7,7 @@ def residence_params
   params.require(:residence).permit(:name, :term)
 end
 
-def index
-  @tasks = if params[:term]
-    @residences = Residence.where('name LIKE ?', "%#{params[:term]}%")
-  else
-    @residences = Residence.all
-  end
-end
+
 
 
 	def create
