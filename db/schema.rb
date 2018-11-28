@@ -37,9 +37,6 @@ ActiveRecord::Schema.define(version: 2018_11_27_233317) do
     t.integer "maxbid"
     t.date "dateStart"
     t.date "dateEnd"
-    t.string "provincia"
-    t.string "localidad"
-    t.string "pais"
   end
 
   create_table "homes", force: :cascade do |t|
@@ -53,6 +50,9 @@ ActiveRecord::Schema.define(version: 2018_11_27_233317) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provincia"
+    t.string "localidad"
+    t.string "pais"
   end
 
   create_table "users", force: :cascade do |t|

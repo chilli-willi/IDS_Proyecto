@@ -25,9 +25,29 @@
   			</div>
   		</div>
 <p></p>
-  		<div>
+<div>
+      <div>
+        <%= f.label :des, 'PAIS' %>
+          <%= f.text_field :pais, class: 'form-control',required: true %>
+        </div>
+      </div>
+<p></p>
+  		<div><div>
+      <div>
+        <%= f.label :des, 'PROVINCIA' %>
+          <%= f.text_field :des, class: 'form-control',required: true %>
+        </div>
+      </div>
+<p></p>
+<div>
+      <div>
+        <%= f.label :des, 'LOCALIDAD' %>
+          <%= f.text_field :des, class: 'form-control',required: true %>
+        </div>
+      </div>
+<p></p>
 			<div>
-				<%= f.label :location, 'LOCATION (url de imagen por ahora)' %>
+				<%= f.label :location, 'URL IMAGEN' %>
   				<%= f.text_field :location, class: 'form-control', required: true %>
   			</div>
   		</div>

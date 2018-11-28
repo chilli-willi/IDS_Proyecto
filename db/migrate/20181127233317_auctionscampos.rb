@@ -1,7 +1,7 @@
 class Auctionscampos < ActiveRecord::Migration[5.2]
   def change
-  	add_column :auctions, :provincia, :string
-  	add_column :auctions, :localidad, :string
-	add_column :auctions, :pais, :string
+  	add_column :residences, :provincia, :string
+  	add_column :residences, :localidad, :string
+	add_column :residences, :pais, :string
   end
 end
