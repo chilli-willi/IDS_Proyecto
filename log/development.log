@@ -12,3 +12,202 @@
   ↳ /Users/santi/.rbenv/versions/2.5.1/bin/rake:23
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/santi/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/residences" for 127.0.0.1 at 2018-11-28 11:50:24 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Auctionscampos (20181127233317)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (73.0ms)[0m  [1m[35mALTER TABLE "residences" ADD "provincia" character varying[0m
+  ↳ db/migrate/20181127233317_auctionscampos.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "residences" ADD "localidad" character varying[0m
+  ↳ db/migrate/20181127233317_auctionscampos.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "residences" ADD "pais" character varying[0m
+  ↳ db/migrate/20181127233317_auctionscampos.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181127233317"]]
+  ↳ bin/rails:9
+  [1m[35m (16.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (17.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/residences" for 127.0.0.1 at 2018-11-28 11:50:44 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (30.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (81.9ms)
+Completed 200 OK in 436ms (Views: 381.7ms | ActiveRecord: 45.1ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-11-28 11:50:49 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/new.html.erb:10
+  Rendered residences/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 61ms (Views: 59.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/residences" for 127.0.0.1 at 2018-11-28 11:51:06 -0300
+Processing by ResidencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+BA473wpfjHfWirt/FpmqM+ed2Vpx5kcfSgdnTNp0XR6FZC7aXkhSJgp9+7Ps2sVbeAyF1EPbIMoewPqYY+jNw==", "residence"=>{"name"=>"Villa3333333333", "des"=>"sdasdasd sd asasd", "pais"=>"Argentina", "provincia"=>"Buenos Aires", "localidad"=>"Capital", "location"=>"https://www.w3schools.com/bootstrap4/chicago.jpg"}, "commit"=>"Crear residencia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/residences_controller.rb:22
+  [1m[36mResidence Create (155.9ms)[0m  [1m[32mINSERT INTO "residences" ("name", "des", "location", "created_at", "updated_at", "provincia", "localidad", "pais") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Villa3333333333"], ["des", "sdasdasd sd asasd"], ["location", "https://www.w3schools.com/bootstrap4/chicago.jpg"], ["created_at", "2018-11-28 14:51:06.806281"], ["updated_at", "2018-11-28 14:51:06.806281"], ["provincia", "Buenos Aires"], ["localidad", "Capital"], ["pais", "Argentina"]]
+  ↳ app/controllers/residences_controller.rb:22
+  [1m[35m (39.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/residences_controller.rb:22
+Redirected to http://localhost:3000/residences
+Completed 302 Found in 201ms (ActiveRecord: 195.4ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-28 11:51:07 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=capital&commit=Buscar" for 127.0.0.1 at 2018-11-28 11:51:18 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"capital", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (location LIKE '%capital%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:74
+  Rendered residences/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 56ms (Views: 53.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=capital&commit=Buscar" for 127.0.0.1 at 2018-11-28 11:51:20 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"capital", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (location LIKE '%capital%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:74
+  Rendered residences/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=capital&commit=Buscar" for 127.0.0.1 at 2018-11-28 11:51:32 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"capital", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%capital%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:74
+  Rendered residences/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 88ms (Views: 74.6ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-28 11:51:35 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (104.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:41
+  Rendered auctions/index.html.erb within layouts/application (132.7ms)
+Completed 200 OK in 182ms (Views: 62.7ms | ActiveRecord: 112.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-11-28 11:51:37 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:21
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:41
+  Rendered auctions/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-28 11:51:39 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 65ms (Views: 58.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=6&commit=Buscar" for 127.0.0.1 at 2018-11-28 11:51:44 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"6", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%6%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.9ms)
+
+
