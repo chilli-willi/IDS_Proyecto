@@ -17,7 +17,7 @@ end
 
 
 	def create
-		@residence = Residence.new(params.require(:residence).permit(:name, :des, :location))
+		@residence = Residence.new(params.require(:residence).permit(:name, :des, :location, :pais, :provincia, :localidad))
 		if @residence.save
 			redirect_to residences_path, notice: 'Se creo la residencia'
 		else
@@ -46,7 +46,7 @@ end
 
 	def update
 		@residence = Residence.find(params[:id])
-		if @residence.update(params.require(:residence).permit(:name, :des, :location))
+		if @residence.update(params.require(:residence).permit(:name, :des, :location, :pais, :provincia, :localidad))
 			redirect_to residences_path, notice: 'La residencia se modifico correctamente'
 		end
 	end

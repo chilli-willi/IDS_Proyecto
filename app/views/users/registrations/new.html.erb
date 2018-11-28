@@ -27,6 +27,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+    <div class="form_group">
+    <%= f.label :dateStart, 'Indique la fecha de inicio de la subasta:' %>
+    <%= f.date_select :dateStart, start_year: Date.today.year, :use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'], :order => [:day, :month, :year], required: true, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Registrarse" %>
   </div>
