@@ -12,7 +12,13 @@
 <div class="row">
 			<div class="col-md-4">
 				<%= f.label :monto, 'PUJA' %>
-  				<%= f.text_field :monto, class: 'form-control' %>
+  
+
+<div class="row">
+    <%= "Subir la puja" %>
+    <%= number_field_tag :monto, {required: true }, {min: 0, class: 'form-control'} %>
+
+  </div>
   			</div>
   		</div>
 
