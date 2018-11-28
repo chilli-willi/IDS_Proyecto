@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   #devise_for :users, controllers: {
   #      sessions: 'users/sessions'
   #    }
-  post '/auctions/:id', to: 'auctions#show'
+  get '/puja', to:'auctions#puja'
   post '/auctions/:id', to: 'auctions#puja'
   post '/residences/:id', to: 'residences#show'
   root :to => "home#index"

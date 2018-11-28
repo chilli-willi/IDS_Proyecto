@@ -42,6 +42,10 @@
     <tr>
       <th>NOMBRE</th>
       <th>DESCRIPCION</th>
+      <th>PAIS</th>
+      <th>PROVINCIA</th>
+      <th>LOCALIDAD </th>
+      <th>IMAGEN </th>
     </tr>
   </thead>
   <tbody>
@@ -49,6 +53,10 @@
       <tr>
         <td><strong> <%= residence.name %> </strong></td>
         <td><%= residence.des %></td>
+        <td><%= residence.pais %></td>
+        <td><%= residence.provincia %></td>
+        <td><%= residence.localidad %></td>
+        <td><%= residence.location %></td>
         <td></td>
         <td>
           <%=link_to 'ver', residence, method: :show, class: 'btn btn-success'%>
