@@ -9,7 +9,7 @@ end
 
 def index
   @tasks = if params[:term]
-    @residences = Residence.where('name LIKE ?', "%#{params[:term]}%")
+    @residences = Residence.where('name LIKE ? OR pais LIKE ? OR localidad LIKE ? OR provincia LIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
   else
     @residences = Residence.all
   end

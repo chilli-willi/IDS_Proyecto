@@ -1,0 +1,109 @@
+Started GET "/" for 127.0.0.1 at 2018-11-29 21:38:38 -0300
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/cristian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 355ms (Views: 348.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-11-29 21:38:43 -0300
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/controllers/residences_controller.rb:12: syntax error, unexpected tCONSTANT, expecting ')'
+...esidence.where('name LIKE ?' OR 'pais LIKE ?', "%#{params[:t...
+...                             ^~
+/home/cristian/IDS_Proyecto/app/controllers/residences_controller.rb:12: syntax error, unexpected ')', expecting keyword_end
+...term]}%", "%#{params[:term]}%")
+...                              ^):
+  
+app/controllers/residences_controller.rb:12: syntax error, unexpected tCONSTANT, expecting ')'
+app/controllers/residences_controller.rb:12: syntax error, unexpected ')', expecting keyword_end
+Started GET "/residences" for 127.0.0.1 at 2018-11-29 21:39:11 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (136.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  Rendered residences/index.html.erb within layouts/application (187.7ms)
+Completed 200 OK in 240ms (Views: 66.2ms | ActiveRecord: 172.0ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=una&commit=Buscar" for 127.0.0.1 at 2018-11-29 21:39:16 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"una", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.7ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%una%' OR pais LIKE '%una%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  Rendered residences/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=Una&commit=Buscar" for 127.0.0.1 at 2018-11-29 21:39:20 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"Una", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%Una%' OR pais LIKE '%Una%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  Rendered residences/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=Una&commit=Buscar" for 127.0.0.1 at 2018-11-29 21:39:22 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"Una", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%Una%' OR pais LIKE '%Una%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  Rendered residences/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=6&commit=Buscar" for 127.0.0.1 at 2018-11-29 21:39:28 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"6", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.8ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%6%' OR pais LIKE '%6%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  Rendered residences/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=una&commit=Buscar" for 127.0.0.1 at 2018-11-29 21:39:32 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"una", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%una%' OR pais LIKE '%una%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  Rendered residences/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=Argentina&commit=Buscar" for 127.0.0.1 at 2018-11-29 21:39:41 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"Argentina", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%Argentina%' OR pais LIKE '%Argentina%')[0m
+  ↳ app/views/residences/index.html.erb:52
+  Rendered residences/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=Argentina&commit=Buscar" for 127.0.0.1 at 2018-11-29 21:41:11 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"Argentina", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%Argentina%' OR pais LIKE '%Argentina%' OR localidad LIKE '%Argentina%' OR provincia LIKE '%Argentina%' )[0m
+  ↳ app/views/residences/index.html.erb:52
+  Rendered residences/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 62ms (Views: 54.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/residences?utf8=%E2%9C%93&term=Buenos+Aires&commit=Buscar" for 127.0.0.1 at 2018-11-29 21:41:24 -0300
+Processing by ResidencesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"Buenos Aires", "commit"=>"Buscar"}
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE (name LIKE '%Buenos Aires%' OR pais LIKE '%Buenos Aires%' OR localidad LIKE '%Buenos Aires%' OR provincia LIKE '%Buenos Aires%' )[0m
+  ↳ app/views/residences/index.html.erb:52
+  Rendered residences/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.5ms)
+
+
