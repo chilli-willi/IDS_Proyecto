@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_054940) do
+ActiveRecord::Schema.define(version: 2018_11_28_173922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 2018_11_28_054940) do
     t.integer "maxbid"
     t.date "dateStart"
     t.date "dateEnd"
-    t.bigint "residence_id"
-    t.index ["residence_id"], name: "index_auctions_on_residence_id"
   end
 
   create_table "auctions_users", force: :cascade do |t|
@@ -47,6 +45,18 @@ ActiveRecord::Schema.define(version: 2018_11_28_054940) do
   end
 
   create_table "homes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservas", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "residence_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -83,5 +93,4 @@ ActiveRecord::Schema.define(version: 2018_11_28_054940) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "auctions", "residences"
 end

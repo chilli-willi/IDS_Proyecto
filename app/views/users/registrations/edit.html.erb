@@ -20,7 +20,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(dejar en blanco si no la quiere modificar)</i><br />
+    <%= f.label :password, 'Contraseña' %> <i>(dejar en blanco si no la quiere modificar)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
@@ -29,25 +29,39 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, 'Repetir contraseña' %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(Contraseña actual)</i><br />
+    <%= f.label :current_password, 'Contraseña actual' %> <i></i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
-
+<p></p>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Actualizar" %>
   </div>
-<% end %>
 
-<h3>Cancel my account</h3>
+<p></p>
+<h2>Datos de tarjeta</h2>
+<div>
+  <%= f.label :card, 'Numero de tarjeta' %>
+          <%= f.text_field :card, class: 'form-control',required: true %>
+        </div>
+<div>
+          <%= f.label :cvv, 'CVV' %>
+          <%= f.text_field :cvv, class: 'form-control',required: true %>
+        </div>
+  <div class="actions">
+    <%= f.submit "Actualizar" %>
+  </div>
 
-<p>Unhappy? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Esta seguro?" }, method: :delete %></p>
+        <% end %>
+<h2>Dar de baja la subscripcion</h2>
 
-<%= link_to "Back", :back %>
+<p><%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Esta seguro?" }, method: :delete %></p>
+
+<%= link_to "Volver", :back %>
  <div class="col-md-3"></div> 
 
 </div>

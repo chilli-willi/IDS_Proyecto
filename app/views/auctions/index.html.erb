@@ -13,7 +13,10 @@
 			<th>DESCRIPCION</th>
 			
 			<th>MONTO</th>
+				<% if current_user.try(:admin?) %>
 			<th>PUJA MINIMA</th>
+							<% end %>
+
 		
 		</tr>
 	</thead>
@@ -25,11 +28,14 @@
 				
 			
 				<td><%= r.monto %></td>
+	<% if current_user.try(:admin?) %>
 				<td><%= r.minimapuja %></td>
+					<% end %>
 				<td><%=link_to 'ver', r, class: 'btn btn-success'%></td>
+				<% if current_user.try(:admin?) %>
 				<td><%=link_to 'editar', edit_auction_path(r), class: 'btn btn-info'%></td>
 				<td><%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar subasta?'} %>
-					
+						<% end %>
 
 				</td>
 				<% end %>
