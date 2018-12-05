@@ -131,3 +131,4 @@ tmp/cache/assets/sprockets/v3.0/3l/3lY4ROqn7rCM7eJLmk5BPmW1E4QI1avGwOHn2ysxIto.c
 tmp/cache/assets/sprockets/v3.0/-C/-c8b7FXt7-i8ECze-hEaNMpGoe1_J6A-IXVh5CKQAyg.cache
 log/development.log
 app/views/auctions/index.html.erb
+*.cache

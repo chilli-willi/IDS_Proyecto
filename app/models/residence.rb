@@ -7,6 +7,6 @@ class Residence < ApplicationRecord
 	
 	
 	has_many :reservation
-
+	
 
 end

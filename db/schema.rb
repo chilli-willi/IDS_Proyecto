@@ -34,22 +34,9 @@ ActiveRecord::Schema.define(version: 2018_11_28_173922) do
     t.integer "minimapuja"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "maxbid"
-    t.date "dateStart"
-    t.date "dateEnd"
-  end
-
-  create_table "auctions_users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "homes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "reservas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
