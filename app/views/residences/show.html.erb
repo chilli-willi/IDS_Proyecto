@@ -11,7 +11,7 @@
 
 <h1><%= @residence.name %></h1>
 <p><%= @residence.des %></p>
-
+<%= link_to 'Reservar', new_reservation_path, class: 'btn btn-primary' %>
 <%= link_to "Volver", residences_path, class: 'btn btn-link' %>
 
   <div class="col-md-3"></div> 

@@ -10,8 +10,8 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :auctions
   #has_and_belongs_to_many :residences
+  
+
   has_many :reservation
-
-
 
 end

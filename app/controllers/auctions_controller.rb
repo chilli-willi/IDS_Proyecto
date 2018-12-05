@@ -8,9 +8,9 @@ def index
 	def create
 		@auction = Auction.new(params.require(:auction).permit(:name, :des, :monto, :minimapuja))
 		if @auction.save
-			redirect_to auctions_path, notice: 'Se creo la subasta piola'
+			redirect_to auctions_path, notice: 'Se creo la subasta exitosamente'
 		else
-			redirect_to auctions_path, notice: 'NO Se creo la subasta piola'
+			redirect_to auctions_path, notice: 'NO Se creo la subasta'
 		end
 	end
 

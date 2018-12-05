@@ -45,7 +45,33 @@
 
     
   <% end %>
-  
+
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th>RESERVA</th>
+      <th>RESIDENCIA</th>
+   
+
+    
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservas = @user.reservation %>
+    <% @reservas.each do |r| %>
+      <tr>
+        <td><%= r.user_id %></td>
+        <td><%= r.residence_id %></td>
+        
+
+ 
+        <% end %>
+      </tr> 
+    
+
+  </tbody>
+</table>
   <td><%= link_to "Volver", root_path, class: 'btn btn-secondary' %></td>
   <td><%= link_to "Editar perfil", edit_user_registration_path(@user), class: 'btn btn-dark '%></td>
 

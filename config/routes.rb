@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :auctions
   resources :residences
   resources :home
+    resources :reservations
   #devise_for :users, controllers: {
   #      sessions: 'users/sessions'
   #    }
