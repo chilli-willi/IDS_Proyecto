@@ -58,7 +58,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @reservas = @user.reservation %>
+    <% @reservas = @user.reservations %>
     <% @reservas.each do |r| %>
       <tr>
         <td><%= r.user_id %></td>

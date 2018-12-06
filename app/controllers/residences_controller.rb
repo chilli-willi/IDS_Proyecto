@@ -1,19 +1,21 @@
 class ResidencesController < ApplicationController
+	
+
 	def index
-		@residences = Residence.all
+			@residences = Residence.all
 	end
 
-def residence_params
-  params.require(:residence).permit(:name, :term)
-end
+	def residence_params
+	  params.require(:residence).permit(:name, :term)
+	end
 
-def index
-  @tasks = if params[:term]
-    @residences = Residence.where('name LIKE ? OR pais LIKE ? OR localidad LIKE ? OR provincia LIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
-  else
-    @residences = Residence.all
-  end
-end
+	def index
+	  @tasks = if params[:term]
+	    @residences = Residence.where('name LIKE ? OR pais LIKE ? OR localidad LIKE ? OR provincia LIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
+	  else
+	    @residences = Residence.all
+	  end
+	end
 
 
 
