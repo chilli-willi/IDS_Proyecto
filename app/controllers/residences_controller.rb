@@ -2,7 +2,7 @@ class ResidencesController < ApplicationController
 	
 
 	def index
-			@residences = Residence.all
+		@residences = Residence.all
 	end
 
 	def residence_params
