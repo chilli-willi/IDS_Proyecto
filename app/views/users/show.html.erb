@@ -52,19 +52,18 @@
     <tr>
       <th>RESERVA</th>
       <th>RESIDENCIA</th>
-   
-
-    
+      <th>Semana</th>
+          
     </tr>
   </thead>
   <tbody>
-    <% @reservas = @user.reservation %>
+    <% @reservas = @user.reservations %>
     <% @reservas.each do |r| %>
       <tr>
         <td><%= r.user_id %></td>
         <td><%= r.residence_id %></td>
+        <td><%= r.weekdate  %></td>
         
-
  
         <% end %>
       </tr> 

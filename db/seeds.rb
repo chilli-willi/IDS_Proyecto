@@ -14,7 +14,7 @@
 User.create!([
   {email: "testadmin3@mail.com", password: "testadmin", password_confirmation: "testadmin",  admin: true},
   {email: "testuser3@mail.com", password: "testuser", password_confirmation: "testuser",  admin: false, premium: 'si'},
-  {email: "ad3@ad.com", password: "testad", password_confirmation: "testad", admin: false, premium: 'solicitado'},
+  {email: "ad@ad.com", password: "testad", password_confirmation: "testad", admin: true, premium: 'solicitado'},
   {email: "testcustomer3@mail.com", password: "testcustomer", password_confirmation: "testcustomer", admin: false}
 ])
 
