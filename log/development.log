@@ -11305,3 +11305,71 @@ ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
   
 app/views/users/show.html.erb:65:in `block in _app_views_users_show_html_erb___4052394225031093772_70010167981860'
 app/views/users/show.html.erb:61:in `_app_views_users_show_html_erb___4052394225031093772_70010167981860'
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Adddate (20181207112547)
+  [1m[35m (40.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (7.0ms)[0m  [1m[35mALTER TABLE "reservations" ADD "startdate" date[0m
+  ↳ db/migrate/20181207112547_adddate.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reservations" ADD "enddate" date[0m
+  ↳ db/migrate/20181207112547_adddate.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reservations" ADD "modo" integer[0m
+  ↳ db/migrate/20181207112547_adddate.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207112547"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Addcreditss (20181207114741)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (95.8ms)[0m  [1m[35mALTER TABLE "users" ADD "creditos" integer DEFAULT 2[0m
+  ↳ db/migrate/20181207114741_addcreditss.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207114741"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (50.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Addtext (20181207124224)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (42.7ms)[0m  [1m[35mALTER TABLE "reservations" ADD "weekdate" text[0m
+  ↳ db/migrate/20181207124224_addtext.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207124224"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (43.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (34.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Addweek (20181207223611)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (48.8ms)[0m  [1m[35mALTER TABLE "hotsales" ADD "weekdate" text[0m
+  ↳ db/migrate/20181207223611_addweek.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207223611"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

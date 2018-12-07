@@ -24,6 +24,13 @@
 
 	<%= f.submit "Reservar", :class=>'btn btn-primary' %>
 	<% end %>
+   <% if current_user.try(:admin?) %>
+          <%= form_for Hotsale.new() do |h| %>
 
+	<%= h.hidden_field :residence_id, value: params[:id] %>
+	<%= h.number_field :price, class: 'form-control', required: true %>
+		<%= h.submit "Crear hotsale", :class=>'btn btn-primary' %>
+   <% end %>
+    <% end %>
 </div>
 </div>
