@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_112547) do
+ActiveRecord::Schema.define(version: 2018_12_07_124224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_112547) do
     t.date "startdate"
     t.date "enddate"
     t.integer "modo"
+    t.text "weekdate"
   end
 
   create_table "residences", force: :cascade do |t|
@@ -99,6 +100,8 @@ ActiveRecord::Schema.define(version: 2018_12_07_112547) do
     t.integer "card"
     t.integer "cvv"
     t.date "exp"
+    t.integer "credits"
+    t.integer "creditos", default: 2
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

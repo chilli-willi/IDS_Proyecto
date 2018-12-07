@@ -17,8 +17,8 @@
   <div class="col-md-3"></div> 
 
 	<%= form_for Reservation.new() do |f| %>
-	<%= f.date_field :startdate %>
-	<%= f.date_field :enddate %>
+	<%= f.week_field :weekdate %>
+	
 	<%= f.hidden_field :user_id, value: current_user.id %>	
 	<%= f.hidden_field :residence_id, value: params[:id] %>
 
