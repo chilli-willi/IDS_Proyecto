@@ -1,23 +1,17 @@
 class ReservationsController < ApplicationController
-attr_reader :reservation
+
 
 def new
 
-  	@reservation = Reservation.new()
-  	@reservation.residence_id = params[:residence_id]
-  end
- 
- def create
-  	@reservation = Reservation.new(reservation_params)
-  	@reservation.user_id = current_user.id
-  	@reservation.residence_id = params[:residence_id]
-  	@reservation.save
+	@reservation = Reservation.new(params.permit(:residence_id,:user_id))
+	@reservation.residence_id = Residence.find(params[:id])
+	
+  	if @reservation.save
 
   	redirect_to home_index_path, notice: 'Reservaste la residencia exitosamente'
- end
-
- def reservation_params
-  params.permit(:user_id, :residence_id)
+  else 
+  	render :new
+  end
  end
 
 end

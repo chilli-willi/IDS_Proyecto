@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+		
+			<th>PRECIO</th>
+			<th>RESIDENCIA ID</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @hotsale.each do |r| %>
+			<tr>
+				
+				<td><%= r.price %></td>
+				
+			
+				<td><%= r.residence_id %></td>
+
+				<td><%=link_to 'ver', r, class: 'btn btn-success'%></td>
+				<% if current_user.try(:admin?) %>
+				<td><%=link_to 'editar', edit_hotsale_path(r), class: 'btn btn-info'%></td>
+				<td><%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar subasta?'} %>
+						<% end %>
+
+				</td>
+				<% end %>
+			</tr> 
+		
+
+	</tbody>
+</table>
+<% if current_user.try(:admin?) %>
+<%= link_to 'Nuevo hotsale', new_hotsale_path, class: 'btn btn-primary'%>
+<% end %>
+
+  <div class="col-md-3"></div> 
+
+</div>
+</div>
+

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 	end
  match '/users',   to: 'users#index',   via: 'get'
   resources :auctions
+  resources :hotsales
   resources :residences
   resources :home
     resources :reservations

@@ -1,0 +1,2 @@
+class Hotsale < ApplicationRecord
+end
