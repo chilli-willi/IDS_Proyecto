@@ -34,14 +34,6 @@ ActiveRecord::Schema.define(version: 2018_12_07_223611) do
     t.integer "minimapuja"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "maxbid"
-    t.date "dateStart"
-    t.date "dateEnd"
-  end
-
-  create_table "auctions_users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "homes", force: :cascade do |t|
@@ -50,17 +42,12 @@ ActiveRecord::Schema.define(version: 2018_12_07_223611) do
   end
 
   create_table "hotsales", force: :cascade do |t|
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price"
     t.bigint "residence_id"
     t.text "weekdate"
     t.index ["residence_id"], name: "index_hotsales_on_residence_id"
-  end
-
-  create_table "reservas", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "reservations", force: :cascade do |t|

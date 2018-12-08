@@ -11373,3 +11373,873 @@ Migrating to Addweek (20181207223611)
   ↳ bin/rails:9
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-12-07 19:39:21 -0300
+  [1m[35m (48.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 17475ms (Views: 17431.5ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-07 19:39:48 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (1.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 219ms (Views: 190.0ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-07 19:39:51 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:10
+  [1m[36mResidence Load (5.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:17
+  Rendered auctions/new.html.erb within layouts/application (86.8ms)
+Completed 200 OK in 300ms (Views: 226.4ms | ActiveRecord: 45.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-07 21:00:59 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (14.0ms)
+  [1m[36mUser Load (87.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 902ms (Views: 786.7ms | ActiveRecord: 87.6ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-07 21:01:07 -0300
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-07 21:01:07 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (122.1ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:18
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (2.4ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:18
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:27
+  Rendered hotsales/index.html.erb within layouts/application (381.6ms)
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:27
+  Rendered hotsales/index.html.erb within layouts/application (218.2ms)
+Completed 200 OK in 666ms (Views: 524.8ms | ActiveRecord: 134.8ms)
+
+
+Completed 200 OK in 886ms (Views: 547.5ms | ActiveRecord: 316.7ms)
+
+
+  [1m[35m (47.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (8725.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto"[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (346.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto"[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (417.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto_test"[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1090.5ms)[0m  [1m[35mCREATE DATABASE "bd_proyecto" ENCODING = 'utf8'[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (605.0ms)[0m  [1m[35mCREATE DATABASE "bd_proyecto_test" ENCODING = 'utf8'[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (133.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (44.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateResidences (20181105040243)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (36.0ms)[0m  [1m[35mCREATE TABLE "residences" ("id" bigserial primary key, "name" character varying, "des" character varying, "location" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181105040243_create_residences.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (14.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181105040243"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateAuctions (20181105162825)
+  [1m[35m (41.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (97.7ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "name" character varying, "des" character varying, "monto" integer, "minimapuja" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181105162825_create_auctions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181105162825"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateUsers (20181113220631)
+  [1m[35m (41.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (127.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "password" character varying, "range" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181113220631_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181113220631"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateHomes (20181114041708)
+  [1m[35m (31.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "homes" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181114041708_create_homes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181114041708"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to AddDeviseToUsers (20181120024434)
+  [1m[35m (41.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (10.9ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:7
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:15
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:40
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181120024434"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to DeviseCreateAdmins (20181120030410)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (50.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181120030410_devise_create_admins.rb:5
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/migrate/20181120030410_devise_create_admins.rb:39
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/migrate/20181120030410_devise_create_admins.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181120030410"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to AddAdminToUsers (20181121023029)
+  [1m[35m (38.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean[0m
+  ↳ db/migrate/20181121023029_add_admin_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181121023029"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to AddPremiumEnumToUsers (20181124031514)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "premium" integer[0m
+  ↳ db/migrate/20181124031514_add_premium_enum_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181124031514"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Def (20181124041152)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "premium" TYPE integer, ALTER COLUMN "premium" SET DEFAULT 0[0m
+  ↳ db/migrate/20181124041152_def.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181124041152"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Def1 (20181124041542)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "premium" TYPE integer, ALTER COLUMN "premium" SET DEFAULT 2[0m
+  ↳ db/migrate/20181124041542_def1.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181124041542"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Def2 (20181124042059)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "premium" TYPE integer, ALTER COLUMN "premium" SET DEFAULT 2[0m
+  ↳ db/migrate/20181124042059_def2.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181124042059"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (33.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Usermodifications (20181127211000)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "age" character varying[0m
+  ↳ db/migrate/20181127211000_usermodifications.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "card" integer[0m
+  ↳ db/migrate/20181127211000_usermodifications.rb:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "cvv" integer[0m
+  ↳ db/migrate/20181127211000_usermodifications.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "exp" date[0m
+  ↳ db/migrate/20181127211000_usermodifications.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181127211000"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Auctionscampos (20181127233317)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "residences" ADD "provincia" character varying[0m
+  ↳ db/migrate/20181127233317_auctionscampos.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "residences" ADD "localidad" character varying[0m
+  ↳ db/migrate/20181127233317_auctionscampos.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "residences" ADD "pais" character varying[0m
+  ↳ db/migrate/20181127233317_auctionscampos.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181127233317"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateReservations (20181128173922)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (43.0ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181128173922_create_reservations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181128173922"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Adddate (20181207112547)
+  [1m[35m (35.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "reservations" ADD "startdate" date[0m
+  ↳ db/migrate/20181207112547_adddate.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reservations" ADD "enddate" date[0m
+  ↳ db/migrate/20181207112547_adddate.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reservations" ADD "modo" integer[0m
+  ↳ db/migrate/20181207112547_adddate.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207112547"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Addcreditss (20181207114741)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (46.1ms)[0m  [1m[35mALTER TABLE "users" ADD "creditos" integer DEFAULT 2[0m
+  ↳ db/migrate/20181207114741_addcreditss.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207114741"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Addtext (20181207124224)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (41.8ms)[0m  [1m[35mALTER TABLE "reservations" ADD "weekdate" text[0m
+  ↳ db/migrate/20181207124224_addtext.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207124224"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Hotsales (20181207204757)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (41.7ms)[0m  [1m[35mALTER TABLE "hotsales" ADD "price" integer[0m
+  ↳ db/migrate/20181207204757_hotsales.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Started GET "/" for 127.0.0.1 at 2018-12-07 21:03:27 -0300
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Hotsales (20181207204757)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (43.7ms)[0m  [1m[35mALTER TABLE "hotsales" ADD "price" integer[0m
+  ↳ db/migrate/20181207204757_hotsales.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Hotsales (20181207204757)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (41.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (26.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-08 00:07:53.148569"], ["updated_at", "2018-12-08 00:07:53.148569"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (8564.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto"[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (301.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto"[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (224.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto_test"[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (731.5ms)[0m  [1m[35mCREATE DATABASE "bd_proyecto" ENCODING = 'utf8'[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (587.9ms)[0m  [1m[35mCREATE DATABASE "bd_proyecto_test" ENCODING = 'utf8'[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (72.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (82.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateResidences (20181105040243)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (44.2ms)[0m  [1m[35mCREATE TABLE "residences" ("id" bigserial primary key, "name" character varying, "des" character varying, "location" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181105040243_create_residences.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181105040243"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateAuctions (20181105162825)
+  [1m[35m (40.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "name" character varying, "des" character varying, "monto" integer, "minimapuja" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181105162825_create_auctions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181105162825"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateUsers (20181113220631)
+  [1m[35m (40.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "password" character varying, "range" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181113220631_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181113220631"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateHomes (20181114041708)
+  [1m[35m (25.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "homes" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181114041708_create_homes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181114041708"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to AddDeviseToUsers (20181120024434)
+  [1m[35m (25.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (9.8ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:7
+  [1m[35m (11.6ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:15
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:40
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20181120024434_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181120024434"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to DeviseCreateAdmins (20181120030410)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (45.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181120030410_devise_create_admins.rb:5
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/migrate/20181120030410_devise_create_admins.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/migrate/20181120030410_devise_create_admins.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181120030410"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to AddAdminToUsers (20181121023029)
+  [1m[35m (39.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean[0m
+  ↳ db/migrate/20181121023029_add_admin_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181121023029"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to AddPremiumEnumToUsers (20181124031514)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "premium" integer[0m
+  ↳ db/migrate/20181124031514_add_premium_enum_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181124031514"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Def (20181124041152)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "premium" TYPE integer, ALTER COLUMN "premium" SET DEFAULT 0[0m
+  ↳ db/migrate/20181124041152_def.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181124041152"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Def1 (20181124041542)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (18.0ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "premium" TYPE integer, ALTER COLUMN "premium" SET DEFAULT 2[0m
+  ↳ db/migrate/20181124041542_def1.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181124041542"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (36.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Def2 (20181124042059)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "premium" TYPE integer, ALTER COLUMN "premium" SET DEFAULT 2[0m
+  ↳ db/migrate/20181124042059_def2.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181124042059"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Usermodifications (20181127211000)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "age" character varying[0m
+  ↳ db/migrate/20181127211000_usermodifications.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "card" integer[0m
+  ↳ db/migrate/20181127211000_usermodifications.rb:4
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "cvv" integer[0m
+  ↳ db/migrate/20181127211000_usermodifications.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "exp" date[0m
+  ↳ db/migrate/20181127211000_usermodifications.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181127211000"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Auctionscampos (20181127233317)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "residences" ADD "provincia" character varying[0m
+  ↳ db/migrate/20181127233317_auctionscampos.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "residences" ADD "localidad" character varying[0m
+  ↳ db/migrate/20181127233317_auctionscampos.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "residences" ADD "pais" character varying[0m
+  ↳ db/migrate/20181127233317_auctionscampos.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181127233317"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateReservations (20181128173922)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (86.0ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181128173922_create_reservations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181128173922"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Adddate (20181207112547)
+  [1m[35m (40.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "reservations" ADD "startdate" date[0m
+  ↳ db/migrate/20181207112547_adddate.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reservations" ADD "enddate" date[0m
+  ↳ db/migrate/20181207112547_adddate.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reservations" ADD "modo" integer[0m
+  ↳ db/migrate/20181207112547_adddate.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207112547"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Addcreditss (20181207114741)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (50.1ms)[0m  [1m[35mALTER TABLE "users" ADD "creditos" integer DEFAULT 2[0m
+  ↳ db/migrate/20181207114741_addcreditss.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207114741"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Addtext (20181207124224)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (41.7ms)[0m  [1m[35mALTER TABLE "reservations" ADD "weekdate" text[0m
+  ↳ db/migrate/20181207124224_addtext.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207124224"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Hotsales (20181207204757)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Hotsales (20181207204757)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (50.1ms)[0m  [1m[35mCREATE TABLE "hotsales" ("id" bigserial primary key, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181207204757_hotsales.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207204757"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Addweek (20181207223611)
+  [1m[35m (41.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "hotsales" ADD "residence_id" bigint[0m
+  ↳ db/migrate/20181207223611_addweek.rb:3
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_hotsales_on_residence_id" ON "hotsales"  ("residence_id")[0m
+  ↳ db/migrate/20181207223611_addweek.rb:3
+  [1m[35m (40.0ms)[0m  [1m[35mALTER TABLE "hotsales" ADD CONSTRAINT "fk_rails_7f1de5b177"
+FOREIGN KEY ("residence_id")
+  REFERENCES "residences" ("id")
+[0m
+  ↳ db/migrate/20181207223611_addweek.rb:3
+  [1m[35m (4.3ms)[0m  [1m[35mALTER TABLE "hotsales" ADD "weekdate" text[0m
+  ↳ db/migrate/20181207223611_addweek.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181207223611"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Create (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-08 00:10:00.653440"], ["updated_at", "2018-12-08 00:10:00.653440"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Started GET "/" for 127.0.0.1 at 2018-12-07 21:10:18 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (43.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 1363ms (Views: 1278.2ms | ActiveRecord: 53.4ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-07 21:10:28 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (4.4ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:18
+  Rendered hotsales/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 228ms (Views: 197.6ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-07 21:10:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (90.9ms)
+Completed 200 OK in 278ms (Views: 233.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-07 21:10:33 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HPc9jXZKdFsdG3YF4OvxF7bYuFzINzDq0Fpkh+ghIWOso4Nfoa+XGkzdvZndPBJPfhs05BHXDe9y0xCHDrxYQg==", "user"=>{"email"=>"ad@ad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ad@ad.com"], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 10ms (ActiveRecord: 1.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HPc9jXZKdFsdG3YF4OvxF7bYuFzINzDq0Fpkh+ghIWOso4Nfoa+XGkzdvZndPBJPfhs05BHXDe9y0xCHDrxYQg==", "user"=>{"email"=>"ad@ad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 573ms (Views: 315.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testadmin3@mail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (44.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2018-12-08 00:11:22.192648"], ["updated_at", "2018-12-08 00:11:22.192648"], ["email", "testadmin3@mail.com"], ["encrypted_password", "$2a$11$NQcN4/xd6XRilRYHaMph8OnPX.4pxc1pD7az9BDN.YPf7EFVNLmZ2"], ["admin", true]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser3@mail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "premium") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2018-12-08 00:11:22.427850"], ["updated_at", "2018-12-08 00:11:22.427850"], ["email", "testuser3@mail.com"], ["encrypted_password", "$2a$11$lk2fbO1OCREEh3Cr0FQ07ePrg4vesA9QLFXSGkN7o3JAMdDYOR7fy"], ["admin", false], ["premium", 0]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ad@ad.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "premium") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2018-12-08 00:11:22.618149"], ["updated_at", "2018-12-08 00:11:22.618149"], ["email", "ad@ad.com"], ["encrypted_password", "$2a$11$4sskRmxIJ.spDMHR1XQ3nuZBUFwRisE9YpKh9.YLP8wiDgsnFPnrC"], ["admin", true], ["premium", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testcustomer3@mail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2018-12-08 00:11:22.806547"], ["updated_at", "2018-12-08 00:11:22.806547"], ["email", "testcustomer3@mail.com"], ["encrypted_password", "$2a$11$.9C9ybWtvl8hoh5PFzIKfOKRjXsddYgtBA.EV9.gfBcu4osQMKzr6"], ["admin", false]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-07 21:11:38 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 1043ms (Views: 949.0ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-07 21:11:40 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 199ms (Views: 196.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-07 21:11:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 256ms (Views: 255.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-07 21:11:49 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OcW7/L1H+2359IW8mfBzeu9VcCEEJSI62QsyF58fn90fGzpeUS8aMFqpzCsBcuH1+H6LgDdhPK634//P/ggtSA==", "user"=>{"email"=>"ad@ad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (58.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ad@ad.com"], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 342ms (ActiveRecord: 58.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-07 21:11:49 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 183ms (Views: 167.8ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-07 21:11:54 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (1.0ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:18
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:39
+  Rendered hotsales/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 164ms (Views: 151.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/hotsales/new" for 127.0.0.1 at 2018-12-07 21:11:56 -0300
+Processing by HotsalesController#new as HTML
+  Rendering hotsales/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/new.html.erb:10
+  Rendered hotsales/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 164ms (Views: 135.6ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-07 21:12:01 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zIsWGyTvL780+VFZMlrpyghn2WQbkAarBNkX3FWcGx7QiNcoNjRnXStziPSxfwD1Sx+D95604I3iEUg5sicyvQ==", "hotsale"=>{"price"=>"123123"}, "commit"=>"Crear hotsale"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/hotsales_controller.rb:10
+  [1m[36mHotsale Create (6.5ms)[0m  [1m[32mINSERT INTO "hotsales" ("price", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["price", 123123], ["created_at", "2018-12-08 00:12:01.132471"], ["updated_at", "2018-12-08 00:12:01.132471"]]
+  ↳ app/controllers/hotsales_controller.rb:10
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/hotsales_controller.rb:10
+Redirected to http://localhost:3000/hotsales
+Completed 302 Found in 16ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-07 21:12:01 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.6ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:18
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:27
+  Rendered hotsales/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 235ms (Views: 228.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/hotsales/1" for 127.0.0.1 at 2018-12-07 21:12:04 -0300
+Processing by HotsalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHotsale Load (15.5ms)[0m  [1m[34mSELECT  "hotsales".* FROM "hotsales" WHERE "hotsales"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:18
+  Rendering hotsales/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/show.html.erb:8
+  Rendered hotsales/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 171ms (Views: 144.1ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-07 21:12:07 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 130ms (Views: 125.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-12-07 21:12:09 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:40
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (2.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:61
+  Rendered users/show.html.erb within layouts/application (25.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 195ms (Views: 141.5ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-12-07 21:12:10 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:40
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:61
+  Rendered users/show.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 165ms (Views: 144.8ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-07 21:12:12 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 158ms (Views: 151.6ms | ActiveRecord: 0.6ms)
+
+
