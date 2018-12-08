@@ -24,10 +24,11 @@
 				
 
 	<td><%= form_for Reservation.new() do |f| %>
+	<%= f.hidden_field :modo, value: "hotsale" %>
 	<%= f.hidden_field  :weekdate, value: @hotsale.weekdate %>
 	<%= f.hidden_field :user_id, value: current_user.id %>	
 	<%= f.hidden_field :residence_id, value: @hotsale.residence_id %>
-	<%= f.submit "Comprar HotSale", :class=>'btn btn-primary' %>
+	<%= f.submit "Comprar HotSale" %>
 	<% end %>
 
 	<% end %>

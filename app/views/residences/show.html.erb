@@ -17,8 +17,8 @@
   <div class="col-md-3"></div> 
 
 	<%= form_for Reservation.new() do |f| %>
+	<%= f.hidden_field :modo, value: "reserva" %>
 	<%= f.week_field :weekdate %>
-	
 	<%= f.hidden_field :user_id, value: current_user.id %>	
 	<%= f.hidden_field :residence_id, value: params[:id] %>
 
@@ -33,11 +33,11 @@
 </p>
 
 
- <p><h5>Crear Hotsale</h5></p>
-  <p>
    <% if current_user.try(:admin?) %>
-    
-<p>
+
+ <p><h5>Crear Hotsale</h5></p>
+
+     <p>
     <%= form_for Hotsale.new() do |h| %>
     <%= h.label :weekdate, 'Semana' %>
     <%= h.week_field :weekdate %></p>

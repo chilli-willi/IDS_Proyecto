@@ -55,9 +55,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_223611) do
     t.integer "residence_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "startdate"
-    t.date "enddate"
-    t.integer "modo"
+    t.integer "modo", default: 0
     t.text "weekdate"
   end
 
