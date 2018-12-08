@@ -8,12 +8,15 @@ end
 def create
 		@reservation = Reservation.new( reservation_params )
 		
-		if @reservation.save
+		
+		if current_user.creditos > 0 
+		 if @reservation.save
 		  current_user.update(creditos: current_user.creditos - 1)
 	      redirect_to  home_index_path, notice: 'Reservaste la residencia exitosamente'
 		else 
 			redirect_to  home_index_path, notice: 'Fecha imposible de reservar, vuelva a intentar'
 		end
+	end
 	end
 
 
