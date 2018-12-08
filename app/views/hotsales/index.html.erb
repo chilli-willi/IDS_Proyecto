@@ -10,23 +10,24 @@
 	<thead>
 		<tr>
 		
-			<th>PRECIO</th>
-			<th>RESIDENCIA ID</th>
+			<th>Residencia ID</th>
+			<th>Precio</th>
+			<th>Semana</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @hotsale.each do |r| %>
 			<tr>
-				
-				<td><%= r.price %></td>
-				
-			
 				<td><%= r.residence_id %></td>
+				<td>$<%= r.price %></td>
+				<td><%= r.weekdate %></td>
+				
+				
 
 				<td><%=link_to 'ver', r, class: 'btn btn-success'%></td>
 				<% if current_user.try(:admin?) %>
 				<td><%=link_to 'editar', edit_hotsale_path(r), class: 'btn btn-info'%></td>
-				<td><%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar subasta?'} %>
+				<td><%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar hotsale?'} %>
 						<% end %>
 
 				</td>
@@ -36,9 +37,6 @@
 
 	</tbody>
 </table>
-<% if current_user.try(:admin?) %>
-<%= link_to 'Nuevo hotsale', new_hotsale_path, class: 'btn btn-primary'%>
-<% end %>
 
   <div class="col-md-3"></div> 
 

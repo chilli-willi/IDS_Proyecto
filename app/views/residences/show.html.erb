@@ -11,8 +11,8 @@
 
 <h1><%= @residence.name %></h1>
 <p><%= @residence.des %></p>
-<%= link_to 'ni', new_reservation_path, class: 'btn btn-primary' %>
-<%= link_to "Volver", residences_path, class: 'btn btn-link' %>
+
+
 
   <div class="col-md-3"></div> 
 
@@ -24,13 +24,32 @@
 
 	<%= f.submit "Reservar", :class=>'btn btn-primary' %>
 	<% end %>
-   <% if current_user.try(:admin?) %>
-          <%= form_for Hotsale.new() do |h| %>
+  
 
+  <p>
+	<%if Hotsale.exists?(residence_id: params[:id]) %>
+	<%= link_to "ESTA EN HOTSALE", hotsale_path, :class=>'btn btn-primary' %>
+	<% end %>
+</p>
+
+
+ <p><h5>Crear Hotsale</h5></p>
+  <p>
+   <% if current_user.try(:admin?) %>
+    
+<p>
+    <%= form_for Hotsale.new() do |h| %>
+    <%= h.label :weekdate, 'Semana' %>
+    <%= h.week_field :weekdate %></p>
 	<%= h.hidden_field :residence_id, value: params[:id] %>
-	<%= h.number_field :price, class: 'form-control', required: true %>
+<p>
+	<%= h.label :price, 'Precio' %>
+	<%= h.number_field :price, class: 'form-control', required: true %></p>
 		<%= h.submit "Crear hotsale", :class=>'btn btn-primary' %>
    <% end %>
     <% end %>
+
+
+    <%= link_to "Volver", residences_path, class: 'btn btn-link' %>
 </div>
 </div>

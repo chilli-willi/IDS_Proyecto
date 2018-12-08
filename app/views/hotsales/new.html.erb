@@ -12,12 +12,13 @@
 
 
 	<%= form_for @hotsale do |f| %>
-    <!--  <div class="form-group">
-
-      <p></p> FALTA ESTO DE RESIDENCIA ID -->
+   
 		  <div>
 			  <%= f.label :price, 'PRECIO' %>
   		  <%= f.text_field :price, class: 'form-control' , required: true %>
+        <%= f.label :weekdate, 'Semana' %>
+        <%= f.text_field :weekdate, class: 'form-control' , required: true %>
+
   		</div>
   		<p></p>
   	
