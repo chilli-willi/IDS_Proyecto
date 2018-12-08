@@ -1,4 +1,4 @@
-<div class="container">
+  <div class="container">
   <div class="row">
 
   <div class="col-md-3"></div>
@@ -23,11 +23,11 @@
 				
 				
 
-				<td><%= form_for Reservation.new() do |f| %>
+	<td><%= form_for Reservation.new() do |f| %>
 	<%= f.hidden_field  :weekdate, value: @hotsale.weekdate %>
 	<%= f.hidden_field :user_id, value: current_user.id %>	
 	<%= f.hidden_field :residence_id, value: @hotsale.residence_id %>
-	<td><%= f.submit "Comprar HotSale", :class=>'btn btn-primary' %></th>
+	<%= f.submit "Comprar HotSale", :class=>'btn btn-primary' %>
 	<% end %>
 
 	<% end %>
