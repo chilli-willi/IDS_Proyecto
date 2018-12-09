@@ -29,15 +29,21 @@ end
 
 def destroy
 		reservation = Reservation.find(params[:id])
+	if reservation.modo == "hotsale"
 		if reservation.destroy
-			current_user.update(creditos: current_user.creditos + 1)
-			redirect_to home_index_path, notice: "La reserva fue cancelada exitosamente"
-		else
-			redirect_to home_index_path, notice: "La reserva no fue borrada"	
+		  	redirect_to  home_index_path, notice: 'Cancelaste la reserva exitosamente'
+		else 
+			redirect_to  home_index_path, notice: 'Reserva no fue cancelada'
 		end
-	end
-
-
+	else
+		if reservation.destroy
+			  	current_user.update(creditos: current_user.creditos + 1)
+		      	redirect_to  home_index_path, notice: 'Cancelaste la reserva exitosamente'
+		else 
+			redirect_to  home_index_path, notice: 'Reserva no fue cancelada'
+		end
+	end	
+end
 
 
 def reservation_params
