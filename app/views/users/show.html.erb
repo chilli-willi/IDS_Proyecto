@@ -53,7 +53,7 @@
       <th>RESERVA</th>
       <th>RESIDENCIA</th>
       <th>Semana</th>
-          
+       <th>      </th>   
     </tr>
   </thead>
   <tbody>
@@ -63,7 +63,7 @@
         <td><%= r.user_id %></td>
         <td><%= r.residence_id %></td>
         <td><%= r.weekdate  %></td>
-        
+        <td><%=link_to 'Cancelar reserva', r , method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar reserva?'} %></td>
  
         <% end %>
       </tr> 

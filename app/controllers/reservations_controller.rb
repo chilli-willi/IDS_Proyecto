@@ -27,6 +27,19 @@ def create
 	end
 end
 
+def destroy
+		reservation = Reservation.find(params[:id])
+		if reservation.destroy
+			current_user.update(creditos: current_user.creditos + 1)
+			redirect_to home_index_path, notice: "La reserva fue cancelada exitosamente"
+		else
+			redirect_to home_index_path, notice: "La reserva no fue borrada"	
+		end
+	end
+
+
+
+
 def reservation_params
 	 params.require(:reservation).permit(:modo, :weekdate, :user_id, :residence_id)
 end
