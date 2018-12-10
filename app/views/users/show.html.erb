@@ -4,10 +4,9 @@
 
   <div class="col-md-3"></div>
   <div class="col-md-6">
-  	<p> Creditos: <%= @user.creditos %> </p>
-    <p> Card: <%= @user.age %> </p>
+ 
   <h1>Perfil</h1>
-  <% if @user.admin? %> <!--SI SOY USUARIO VEO ESTO-->
+  
 <div class="profile">
   <table class="profile-table">
     
@@ -19,7 +18,7 @@
       <td class="bold"> Creado el </td>
       <td class="profile-field"><%= @user.created_at %></td>
     </tr>
-    <tr>
+    <tr><% if @user.admin? %>
       <td class="bold"> Administrador </td>
       <td class="profile-field"><%= @user.admin %></td>
     </tr>
@@ -51,7 +50,7 @@
   <table class="table">
   <thead>
     <tr>
-      <th>RESERVA</th>
+      
       <th>RESIDENCIA</th>
       <th>Semana del:</th>
       <th>Modo </th>
@@ -62,8 +61,10 @@
     <% @reservas = @user.reservations %>
     <% @reservas.each do |r| %>
       <tr>
-        <td><%= r.user_id %></td>
-        <td><%= r.residence_id %></td>
+              
+        <% @r = Residence.find(r.residence_id) %>
+        <td><%=  @r.name  %></td>
+
         <% date = DateTime.parse(r.weekdate)%>
          <td><%= date.strftime('%d/%m/%Y')   %></td>
         <td><%= r.modo  %></td>
