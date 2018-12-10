@@ -17,7 +17,8 @@
 	<tbody>
 		<% if user_signed_in? %>
 			<tr>
-				<td><%= @hotsale.residence_id %></td>
+				<% @r = Residence.find(r.residence_id) %>
+        <td><%=  @r.name  %></td>
 				<td>$<%= @hotsale.price %></td>
 				<td><%= @hotsale.weekdate %></td>
 		
