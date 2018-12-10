@@ -5,17 +5,20 @@
   <div class="col-md-5">
 
 <% if user_signed_in? %>
-       <h6>Residencia ID: <%= @auction.residence_id %></h6>
+       <h6> 
+       <% @r = Residence.find(@auction.residence_id) %>
+        <td>Residencia: <%=  @r.name  %></td>
        <h6>Puja Maxima Actual: <%= @auction.monto %></h6>
         <h6>Minima Puja: <%= @auction.minimapuja %></h6>
         
     <%= form_for @auction do |f| %>
          <strong><h4> <%= f.label :monto, 'Monto a pujar:' %></h4></strong>
-        <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>    
+        <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
+
          <%= f.submit "PUJAR", class: 'btn btn-primary' %>
          <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
     <% end %>
-    
+
 
 <% end %>
 

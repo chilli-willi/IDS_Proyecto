@@ -37,7 +37,7 @@ class AuctionsController < ApplicationController
 	def update
 		@auction = Auction.find(params[:id])
 		if @auction.update(auction_params)
-			redirect_to auctions_path, notice: 'La auction se modifico correctamente'
+			redirect_to auctions_path, notice: 'Su puja se guardo correctamente'
 		
 	end
 

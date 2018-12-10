@@ -9,12 +9,12 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>Residence ID</th>
-			<th>Semana</th>
+			<th>Residencia</th>
+			<th>Semana del:</th>
 			
-			<th>MONTO</th>
+			<th>Base</th>
 				<% if current_user.try(:admin?) %>
-			<th>PUJA MINIMA</th>
+			<th>Puja Minima</th>
 							<% end %>
 
 		
@@ -22,9 +22,11 @@
 	</thead>
 	<tbody>
 		<% @auction.each do |r| %>
-			<tr>
-				<td><%= r.residence_id %></td>
-				<td><%= r.weekdate %></td>
+			<tr> <% @r = Residence.find(r.residence_id) %>
+        <td> <%=  @r.name  %></td>
+				  <% date = DateTime.parse(r.weekdate)%>
+         <td><%= date.strftime('%d/%m/%Y')   %></td>
+				
 				
 			
 				<td><%= r.monto %></td>
