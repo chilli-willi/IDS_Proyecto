@@ -53,7 +53,7 @@
     <tr>
       <th>RESERVA</th>
       <th>RESIDENCIA</th>
-      <th>Semana</th>
+      <th>Semana del:</th>
       <th>Modo </th>
        <th>      </th>   
     </tr>
@@ -64,7 +64,8 @@
       <tr>
         <td><%= r.user_id %></td>
         <td><%= r.residence_id %></td>
-        <td><%= r.weekdate  %></td>
+        <% date = DateTime.parse(r.weekdate)%>
+         <td><%= date.strftime('%d/%m/%Y')   %></td>
         <td><%= r.modo  %></td>
         <td><%=link_to 'Cancelar reserva', r , method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar reserva?'} %></td>
  
