@@ -9,27 +9,53 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+ <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> caracteres minimos)</em>
-    <% end %><br />
+    <%= f.label :password, 'Contraseña' %> <i>(dejar en blanco si no la quiere modificar)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> caracteres minimos</em>
+    <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, 'Repetir contraseña' %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-   
+    <%= f.label :age, 'Cumpleaños' %><br />
+   <%= f.date_field :age, class: 'form-control',required: true %>
+  
+<h5>Datos de tarjeta</h5>
 
-  <div class="actions">
+
+  <div class="field">
+  
+      <%= f.label :card, 'Numero de tarjeta' %>
+      <%= f.text_field :card, class: 'form-control',required: true %>
+  </div>
+  
+  <div class="field">
+  
+      <%= f.label :cvv, 'CVV' %>
+      <%= f.text_field :cvv, class: 'form-control',required: true %>
+  </div>
+
+  <div class="field">
+      <%= f.label :exp, 'exp' %>
+      <%= f.date_field :exp, class: 'form-control',required: true %>
+  </div>
+
+  <div class="field">
     <%= f.submit "Registrarse" %>
   </div>
 <% end %>

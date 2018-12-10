@@ -2,8 +2,9 @@ class UsersController < ApplicationController
 
 	def show
 	@user = User.find(params[:id])
-  
-	end
+  	end
+
+
 
  def indexAdmins
     @admin = User.admins
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new( params.require(:user).permit(:userName, :email, :password, :credits, :admin) )
+    @user = User.new( user_params )
     if @user.save
         redirect_to users_path, notice: "Se añadio un usuario exitosamente."
     else
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def createAdmin
-    @admin = User.new( params.require(:user).permit(:userName, :email, :password, :credits, :admin) )
+    @admin = User.new( user_params)
     if @admin.save
       redirect_to admins_path, notice: "Se añadio un admin exitosamente."
     else
@@ -63,7 +64,7 @@ class UsersController < ApplicationController
   #Usado para mandar parametros del usuario. Lo uso en la modificacion del usuario para actualizar los datos.
   #Se puede usar para otros metdos, como por ej. create.
   def user_params
-    params.require(:user).permit(:userName, :email, :password, :credits)
+    params.require(:user).permit(:name, :email, :password, :creditos, :admin, :age, :card, :cvv, :exp)
   end
 
   def be_premium

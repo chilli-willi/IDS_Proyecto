@@ -4,6 +4,18 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+
+  validates :age, :presence => true
+  validate :validate_age
+
+  private
+
+  def validate_age
+      if age.present? && age > 18.years.ago.to_date
+          errors.add(:age, 'Debes ser mayor de 18 años.')
+      end
+  end
 
   enum premium: { si: 0, solicitado: 1, no: 2 }
 
