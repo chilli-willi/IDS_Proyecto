@@ -28,7 +28,7 @@
 <% end %>
   <p>
 	<%if Hotsale.exists?(residence_id: params[:id]) %>
-	<%= link_to "ESTA EN HOTSALE", :class=>'btn btn-primary' %>
+	<%= link_to "FECHAS EN HOTSALE DISPONIBLES", hotsales_path , :class=>'btn btn-warning' %>
 	<% end %>
 </p>
 
