@@ -1,2 +1,5 @@
 config/database.yml
 tmp/*
+tmp/**
+tmp/cache/bootsnap-compile-cache/*
+tmp/cache/bootsnap-compile-cache/**

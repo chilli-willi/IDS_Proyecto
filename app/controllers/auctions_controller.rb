@@ -1,6 +1,6 @@
 class AuctionsController < ApplicationController
 
-def index
+	def index
 		@auction = Auction.all
 	end
 
@@ -42,9 +42,11 @@ def index
 	end
 
 	end
-def auction_params
-params.require(:auction).permit(:weekdate, :residence_id, :monto, :minimapuja)
-end
+
+	def auction_params
+		params.require(:auction).permit(:weekdate, :residence_id, :monto, :minimapuja)
+	end
+
 	def new
 		@auction = Auction.new
 	end
