@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+
+
+
+<h1>  Editar hotsale </h1>
+
+<% if current_user.try(:admin?) %>
+	<%= form_for @hotsale do |f| %>
+		
+
+<p></p>
+  		<div>
+			
+				<%= f.label :price, 'MONTO' %>
+  				<%= f.number_field :price, class: 'form-control', required: true %>
+  		
+  		</div>
+<p></p>
+
+  		<%= f.submit "Editar hotsale", class: 'btn btn-primary' %>
+      <%= link_to "Volver", hotsales_path, class: 'btn btn-primary' %>
+  	</div>
+<% end %>
+<% end %>
+  <div class="col-md-3"></div> 
+
+</div>
+</div>

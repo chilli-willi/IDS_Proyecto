@@ -4,7 +4,8 @@
 
   <div class="col-md-3"></div>
   <div class="col-md-6">
-  	
+  	<p> Creditos: <%= @user.creditos %> </p>
+    <p> Card: <%= @user.age %> </p>
   <h1>Perfil</h1>
   <% if @user.admin? %> <!--SI SOY USUARIO VEO ESTO-->
 <div class="profile">
@@ -25,7 +26,7 @@
   </table>
 </div>
   <%else%>
-    
+    <p> Creditos: <%= @user.creditos %> </p>
     <p> Usuario Premium: <%= @user.premium %> </p>
 
     
@@ -53,7 +54,8 @@
       <th>RESERVA</th>
       <th>RESIDENCIA</th>
       <th>Semana</th>
-          
+      <th>Modo </th>
+       <th>      </th>   
     </tr>
   </thead>
   <tbody>
@@ -63,7 +65,8 @@
         <td><%= r.user_id %></td>
         <td><%= r.residence_id %></td>
         <td><%= r.weekdate  %></td>
-        
+        <td><%= r.modo  %></td>
+        <td><%=link_to 'Cancelar reserva', r , method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar reserva?'} %></td>
  
         <% end %>
       </tr> 

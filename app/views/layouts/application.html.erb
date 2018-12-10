@@ -28,6 +28,9 @@
       <% if user_signed_in? %>
       <li class="nav-item">
         <a class="nav-link" href="/auctions">Subastas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/hotsales">HotSales</a>
       </li><% end %>
       <% if current_user.try(:admin?) %>
       <li class="nav-item">

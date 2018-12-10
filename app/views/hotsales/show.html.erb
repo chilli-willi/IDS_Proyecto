@@ -1,0 +1,45 @@
+  <div class="container">
+  <div class="row">
+
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+
+<table class="table">
+	<thead>
+		<tr>
+		
+			<th>Residencia ID</th>
+			<th>Precio</th>
+			<th>Semana</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% if user_signed_in? %>
+			<tr>
+				<td><%= @hotsale.residence_id %></td>
+				<td>$<%= @hotsale.price %></td>
+				<td><%= @hotsale.weekdate %></td>
+				
+				
+
+	<td><%= form_for Reservation.new() do |f| %>
+	<%= f.hidden_field :modo, value: "hotsale" %>
+	<%= f.hidden_field  :weekdate, value: @hotsale.weekdate %>
+	<%= f.hidden_field :user_id, value: current_user.id %>	
+	<%= f.hidden_field :residence_id, value: @hotsale.residence_id %>
+	<%= f.submit "Comprar HotSale" %>
+	<% end %>
+
+	<% end %>
+
+	</tbody>
+</table>
+
+</div> 
+</div> 
+  
+
+
+
+
