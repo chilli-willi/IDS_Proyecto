@@ -52,7 +52,7 @@
 
   <div class="field">
       <%= f.label :exp, 'exp' %>
-      <%= f.date_field :exp, class: 'form-control',required: true %>
+      <%= f.date_select :exp, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :use_month_numbers => true %>
   </div>
 
   <div class="field">

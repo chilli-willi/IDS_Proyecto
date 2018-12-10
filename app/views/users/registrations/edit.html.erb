@@ -37,21 +37,29 @@
     <%= f.label :current_password, 'Contraseña actual' %> <i></i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
-<p></p>
-  <div class="actions">
-    <%= f.submit "Actualizar" %>
+
+    <%= f.label :age, 'Cumpleaños' %><br />
+   <%= f.date_field :age, class: 'form-control',required: true %>
+  
+<h5>Datos de tarjeta</h5>
+
+
+  <div class="field">
+  
+      <%= f.label :card, 'Numero de tarjeta' %>
+      <%= f.text_field :card, class: 'form-control',required: true %>
+  </div>
+  
+  <div class="field">
+  
+      <%= f.label :cvv, 'CVV' %>
+      <%= f.text_field :cvv, class: 'form-control',required: true %>
   </div>
 
-<p></p>
-<h2>Datos de tarjeta</h2>
-<div>
-  <%= f.label :card, 'Numero de tarjeta' %>
-          <%= f.text_field :card, class: 'form-control',required: true %>
-        </div>
-<div>
-          <%= f.label :cvv, 'CVV' %>
-          <%= f.text_field :cvv, class: 'form-control',required: true %>
-        </div>
+  <div class="field">
+      <%= f.label :exp, 'exp' %>
+      <%= f.date_select :exp, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :use_month_numbers => true %>
+  </div>
   <div class="actions">
     <%= f.submit "Actualizar" %>
   </div>

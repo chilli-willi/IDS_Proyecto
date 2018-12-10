@@ -30374,3 +30374,117 @@ Processing by AuctionsController#index as HTML
 Completed 200 OK in 115ms (Views: 112.3ms | ActiveRecord: 1.3ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-12-10 16:33:04 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 11140ms (Views: 11120.4ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2018-12-10 16:33:17 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:32
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/users/show.html.erb:62
+  Rendered users/show.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 126ms (Views: 85.6ms | ActiveRecord: 4.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-12-10 16:33:19 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zREQwOJdHGL8YN0E9NdzuxSnTQbqiy8tn6EijD2hLN/LkC3zvAAHbrn7RMB/O8OnQ/hNdSY27dYBEP6onseUdg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-10 16:33:19 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 74ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-12-10 16:33:21 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 88ms (Views: 85.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-10 16:33:43 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+HX/BYUL6Y+WoelnFFok/pES8PDPjXg86281aOMUC3TJRmxNJb5cAqGkNypYUBo5yBeZs5H50XOQ9a4cFpmSA==", "user"=>{"email"=>"qwe54@qwe.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "age"=>"1991-12-12", "card"=>"123456", "cvv"=>"444", "exp(3i)"=>"1", "exp(2i)"=>"12", "exp(1i)"=>"2027"}, "commit"=>"Registrarse"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "qwe54@qwe.com"], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "age", "card", "cvv", "exp") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", "2018-12-10 19:33:43.403253"], ["updated_at", "2018-12-10 19:33:43.403253"], ["email", "qwe54@qwe.com"], ["encrypted_password", "$2a$11$HBJd.jxQpSpioNcKIa5HOuyun5rTXKcSoDwzTaphaS7kp0aksig6q"], ["age", "1991-12-12"], ["card", 123456], ["cvv", 444], ["exp", "2027-12-01"]]
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (47.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 205ms (ActiveRecord: 49.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-10 16:33:43 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 84ms (Views: 81.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2018-12-10 16:33:45 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:32
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/users/show.html.erb:62
+  Rendered users/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit.9" for 127.0.0.1 at 2018-12-10 16:33:46 -0300
+Processing by Devise::RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 66ms (Views: 62.9ms | ActiveRecord: 0.4ms)
+
+
