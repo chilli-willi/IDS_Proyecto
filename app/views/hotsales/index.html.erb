@@ -10,17 +10,19 @@
 	<thead>
 		<tr>
 		
-			<th>Residencia ID</th>
+			<th>Residencia</th>
 			<th>Precio</th>
-			<th>Semana</th>
+			<th>Semana del:</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @hotsale.each do |r| %>
 			<tr>
-				<td><%= r.residence_id %></td>
+				<% @r = Residence.find(r.residence_id) %>
+        <td><%=  @r.name  %></td>
 				<td>$<%= r.price %></td>
-				<td><%= r.weekdate %></td>
+				  <% date = DateTime.parse(r.weekdate)%>
+         <td><%= date.strftime('%d/%m/%Y')   %></td>
 				
 				
 
