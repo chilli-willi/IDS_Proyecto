@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_224324) do
     t.boolean "admin"
     t.integer "premium", default: 2
     t.date "age"
-    t.integer "card"
+    t.string "card"
     t.integer "cvv"
     t.date "exp"
     t.integer "creditos", default: 2

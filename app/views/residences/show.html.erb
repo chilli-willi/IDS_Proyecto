@@ -15,7 +15,7 @@
 
 
   <div class="col-md-3"></div> 
-
+<% if current_user.premium == "si" %> 
 	<%= form_for Reservation.new() do |f| %>
 	<%= f.hidden_field :modo, value: "reserva" %>
 	<%= f.week_field :weekdate %>
@@ -25,7 +25,7 @@
 	<%= f.submit "Reservar", :class=>'btn btn-primary' %>
 	<% end %>
   
-
+<% end %>
   <p>
 	<%if Hotsale.exists?(residence_id: params[:id]) %>
 	<%= link_to "ESTA EN HOTSALE", :class=>'btn btn-primary' %>

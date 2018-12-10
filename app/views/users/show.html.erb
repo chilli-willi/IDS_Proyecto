@@ -27,6 +27,7 @@
   <%else%>
     <p> Creditos: <%= @user.creditos %> </p>
     <p> Usuario Premium: <%= @user.premium %> </p>
+    <p> Nacimiento: <%= @user.age %> </p>
 
     
     <% if !current_user.admin? %> 

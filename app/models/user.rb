@@ -5,8 +5,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-
-  validates :age, :presence => true
+  validates_length_of :card, minimum: 12
+  validates_length_of :exp, minimum: 3
+  validates :age, :card, :exp, :presence => true
   validate :validate_age
 
   private
