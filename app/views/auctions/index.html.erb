@@ -9,8 +9,8 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>NOMBRE</th>
-			<th>DESCRIPCION</th>
+			<th>Residence ID</th>
+			<th>Semana</th>
 			
 			<th>MONTO</th>
 				<% if current_user.try(:admin?) %>
@@ -23,8 +23,8 @@
 	<tbody>
 		<% @auction.each do |r| %>
 			<tr>
-				<td><%= r.name %></td>
-				<td><%= r.des %></td>
+				<td><%= r.residence_id %></td>
+				<td><%= r.weekdate %></td>
 				
 			
 				<td><%= r.monto %></td>

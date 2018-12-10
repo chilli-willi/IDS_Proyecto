@@ -47,8 +47,21 @@
 	<%= h.number_field :price, class: 'form-control', required: true %></p>
 		<%= h.submit "Crear hotsale", :class=>'btn btn-primary' %>
    <% end %>
-    <% end %>
+   
 
+<p><h5>Crear Subasta</h5></p>
+    <%= form_for Auction.new() do |j| %>
+   
+	    <%= j.label :weekdate, 'Semana' %>
+	    <%= j.week_field :weekdate %></p>
+		<%= j.hidden_field :residence_id, value: params[:id] %>
+		<%=j.label :monto, 'Precio' %>
+		<%= j.number_field :monto, class: 'form-control', required: true %>
+		<%=j.label :minimapuja, 'Precio' %>
+		<%= j.number_field :minimapuja, class: 'form-control', required: true %>
+		<%= j.submit "Crear Subasta", :class=>'btn btn-primary' %>
+   <% end %>
+    <% end %>
 
     <%= link_to "Volver", residences_path, class: 'btn btn-link' %>
 </div>

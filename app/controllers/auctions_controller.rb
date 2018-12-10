@@ -6,11 +6,11 @@ def index
 
 
 	def create
-		@auction = Auction.new(params.require(:auction).permit(:name, :des, :monto, :minimapuja))
+		@auction = Auction.new(auction_params)
 		if @auction.save
-			redirect_to auctions_path, notice: 'Se creo la subasta exitosamente'
+			redirect_to auctions_path, notice: 'Se creo la auction exitosamente'
 		else
-			redirect_to auctions_path, notice: 'NO Se creo la subasta'
+			redirect_to auctions_path, notice: 'NO Se creo la auction'
 		end
 	end
 
@@ -36,14 +36,15 @@ def index
 
 	def update
 		@auction = Auction.find(params[:id])
-		if @auction.update(params.require(:auction).permit(:name, :des, :minimapuja, :monto))
-			redirect_to auctions_path, notice: 'La subasta se modifico correctamente'
+		if @auction.update(auction_params)
+			redirect_to auctions_path, notice: 'La auction se modifico correctamente'
 		
 	end
 
 	end
-
-
+def auction_params
+params.require(:auction).permit(:weekdate, :residence_id, :monto, :minimapuja)
+end
 	def new
 		@auction = Auction.new
 	end
