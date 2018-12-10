@@ -5,6 +5,12 @@
   <div class="col-md-6">
 
 
+<% if @auction.errors.any? %>
+  <h1>hay errores</h1>
+  <% @auction.errors.full_messages.each do |error| %>
+   <p> <%= error%> </p>
+  <%end%>
+ <% end %>
 
 <table class="table">
 	<thead>

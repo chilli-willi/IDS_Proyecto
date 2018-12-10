@@ -23399,3 +23399,886 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 84ms (Views: 76.6ms | ActiveRecord: 1.1ms)
 
 
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (41.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to CreateBids (20181208220508)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (56.0ms)[0m  [1m[35mCREATE TABLE "bids" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "auction_id" integer, "maxbid" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181208220508_create_bids.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181208220508"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (43.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 19:11:09 -0300
+  [1m[35m (36.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (52.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (170.1ms)
+Completed 200 OK in 23604ms (Views: 23506.3ms | ActiveRecord: 72.1ms)
+
+
+Started GET "/auctions/1" for 127.0.0.1 at 2018-12-08 19:15:38 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (0.9ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:8
+  Rendered auctions/show.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 268ms (Views: 246.2ms | ActiveRecord: 4.6ms)
+
+
+Started PATCH "/auctions/1" for 127.0.0.1 at 2018-12-08 19:16:38 -0300
+Processing by AuctionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2I9uDOvsW+xmWcOsamHIpLU/cQ1OSNVLdf56HUkcS90y7bTnaFNOwCBy5/okrZ2J1MQFgK1SVOLSvWo3KbvZwg==", "auction"=>{"monto"=>"21"}, "commit"=>"PUJAR", "id"=>"1"}
+  [1m[36mAuction Load (0.9ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:39
+  [1m[35m (41.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:39
+No template found for AuctionsController#update, rendering head :no_content
+Completed 204 No Content in 648ms (ActiveRecord: 42.4ms)
+
+
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  [1m[36mBid Load (41.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids"[0m
+Started GET "/auctions/1" for 127.0.0.1 at 2018-12-08 19:30:28 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (14.4ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:8
+  Rendered auctions/show.html.erb within layouts/application (801.9ms)
+Completed 500 Internal Server Error in 942ms (ActiveRecord: 44.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `bids_path' for #<#<Class:0x007f7eec4e9d60>:0x007f7eec4498b0>):
+    19:     <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
+    20:     </div>
+    21:     </div>
+    22:       <td><%= form_for Bid.new() do |b| %>
+    23:   <%= b.hidden_field :user_id, value: current_user.id  %>
+    24:   <%= f.hidden_field :maxbid, value: f.monto %>
+    25:   <%= f.hidden_field :auction_id, value: params[:id] %>  
+  
+app/views/auctions/show.html.erb:22:in `block in _app_views_auctions_show_html_erb__535548871445652837_70091553593680'
+app/views/auctions/show.html.erb:13:in `_app_views_auctions_show_html_erb__535548871445652837_70091553593680'
+Started GET "/auctions/1" for 127.0.0.1 at 2018-12-08 19:31:11 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (1.2ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:8
+  Rendered auctions/show.html.erb within layouts/application (354.0ms)
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `bids_path' for #<#<Class:0x007f7eec4e9d60>:0x007f7ef157b300>):
+    19:     <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
+    20:     </div>
+    21:     </div>
+    22:       <td><%= form_for Bid.new() do |b| %>
+    23:   <%= b.hidden_field :user_id, value: current_user.id  %>
+    24:   <%= b.hidden_field :maxbid, value: f.monto %>
+    25:   <%= b.hidden_field :auction_id, value: params[:id] %>  
+  
+app/views/auctions/show.html.erb:22:in `block in _app_views_auctions_show_html_erb__535548871445652837_70091595832980'
+app/views/auctions/show.html.erb:13:in `_app_views_auctions_show_html_erb__535548871445652837_70091595832980'
+Started GET "/auctions/1" for 127.0.0.1 at 2018-12-08 19:31:28 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (1.4ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:8
+  Rendered auctions/show.html.erb within layouts/application (788.6ms)
+Completed 500 Internal Server Error in 849ms (ActiveRecord: 28.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `bids_path' for #<#<Class:0x007f7eef459348>:0x007f7eef448930>
+Did you mean?  bid_path):
+    19:     <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
+    20:     </div>
+    21:     </div>
+    22:       <td><%= form_for Bid.new() do |b| %>
+    23:   <%= b.hidden_field :user_id, value: current_user.id  %>
+    24:   <%= b.hidden_field :maxbid, value: f.monto %>
+    25:   <%= b.hidden_field :auction_id, value: params[:id] %>  
+  
+app/views/auctions/show.html.erb:22:in `block in _app_views_auctions_show_html_erb__535548871445652837_70091578463420'
+app/views/auctions/show.html.erb:13:in `_app_views_auctions_show_html_erb__535548871445652837_70091578463420'
+Started GET "/auctions/1" for 127.0.0.1 at 2018-12-08 19:31:36 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:8
+  Rendered auctions/show.html.erb within layouts/application (585.4ms)
+Completed 500 Internal Server Error in 637ms (ActiveRecord: 21.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `monto' for #<ActionView::Helpers::FormBuilder:0x007f7ef1e399b0>):
+    21:     </div>
+    22:       <td><%= form_for Bid.new() do |b| %>
+    23:   <%= b.hidden_field :user_id, value: current_user.id  %>
+    24:   <%= b.hidden_field :maxbid, value: f.monto %>
+    25:   <%= b.hidden_field :auction_id, value: params[:id] %>  
+    26:   <%= b.hidden_field :residence_id, value: f.residence_id %>
+    27:   <%= b.submit "Comprar HotSale" %>
+  
+app/views/auctions/show.html.erb:24:in `block (2 levels) in _app_views_auctions_show_html_erb__535548871445652837_70091591763080'
+app/views/auctions/show.html.erb:22:in `block in _app_views_auctions_show_html_erb__535548871445652837_70091591763080'
+app/views/auctions/show.html.erb:13:in `_app_views_auctions_show_html_erb__535548871445652837_70091591763080'
+Started GET "/auctions/1" for 127.0.0.1 at 2018-12-08 19:32:04 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (1.6ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:8
+  Rendered auctions/show.html.erb within layouts/application (46.2ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `residence_id' for #<Auction:0x007f7ef16bf950>
+Did you mean?  residence
+               residence=):
+    23:   <%= b.hidden_field :user_id, value: current_user.id  %>
+    24:   <%= b.hidden_field :maxbid, value: @auction.monto %>
+    25:   <%= b.hidden_field :auction_id, value: params[:id] %>  
+    26:   <%= b.hidden_field :residence_id, value: @auction.residence_id %>
+    27:   <%= b.submit "Comprar HotSale" %>
+    28:   <% end %>
+    29:      <%= f.submit "PUJAR", class: 'btn btn-primary' %>
+  
+app/views/auctions/show.html.erb:26:in `block (2 levels) in _app_views_auctions_show_html_erb__535548871445652837_70091596493680'
+app/views/auctions/show.html.erb:22:in `block in _app_views_auctions_show_html_erb__535548871445652837_70091596493680'
+app/views/auctions/show.html.erb:13:in `_app_views_auctions_show_html_erb__535548871445652837_70091596493680'
+  [1m[36mAuction Load (3.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+Started GET "/auctions/" for 127.0.0.1 at 2018-12-08 19:33:20 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (66.9ms)
+Completed 200 OK in 561ms (Views: 526.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 19:33:39 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:10
+  [1m[36mResidence Load (2.1ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:17
+  Rendered auctions/new.html.erb within layouts/application (113.0ms)
+Completed 200 OK in 253ms (Views: 227.4ms | ActiveRecord: 18.8ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (42.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Addidtoauction (20181208223408)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (47.8ms)[0m  [1m[35mALTER TABLE "auctions" ADD "residence_id" integer[0m
+  ↳ db/migrate/20181208223408_addidtoauction.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181208223408"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mAuction Load (5.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 19:35:41 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (1.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (119.4ms)
+Completed 200 OK in 438ms (Views: 383.9ms | ActiveRecord: 44.0ms)
+
+
+Started GET "/auctions/1" for 127.0.0.1 at 2018-12-08 19:35:42 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (68.8ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:8
+  Rendered auctions/show.html.erb within layouts/application (67.6ms)
+Completed 200 OK in 360ms (Views: 263.9ms | ActiveRecord: 80.7ms)
+
+
+  [1m[36mAuction Load (1.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to Weekauction (20181208224324)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (81.5ms)[0m  [1m[35mALTER TABLE "auctions" ADD "weekdate" text[0m
+  ↳ db/migrate/20181208224324_weekauction.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181208224324"]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/bin/rake:22
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 19:49:17 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (93.3ms)
+Completed 200 OK in 513ms (Views: 478.7ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 19:49:30 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:10
+  [1m[36mResidence Load (3.1ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:17
+  Rendered auctions/new.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 272ms (Views: 240.4ms | ActiveRecord: 21.9ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-08 19:49:33 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 141ms (Views: 132.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/residences/3" for 127.0.0.1 at 2018-12-08 19:49:38 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"IcQnBk50kIrx+kfIpZJ/igZB1BQ5Z+LFHqKjkm8rcitDX7gsZ9Kll95qATCVAnLkU2AcZ7rTSYrX1rZmgcYBNg==", "id"=>"3"}
+  [1m[36mResidence Load (14.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  Rendered residences/show.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 14.7ms)
+
+
+  
+SyntaxError (/Users/santi/Facultad/IDS_Proyecto/app/views/residences/show.html.erb:75: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/residences/show.html.erb:75: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started POST "/residences/3" for 127.0.0.1 at 2018-12-08 19:50:29 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"IcQnBk50kIrx+kfIpZJ/igZB1BQ5Z+LFHqKjkm8rcitDX7gsZ9Kll95qATCVAnLkU2AcZ7rTSYrX1rZmgcYBNg==", "id"=>"3"}
+  [1m[36mResidence Load (1.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:22
+  [1m[36mHotsale Exists (42.7ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:30
+  Rendered residences/show.html.erb within layouts/application (191.8ms)
+Completed 200 OK in 393ms (Views: 322.4ms | ActiveRecord: 64.8ms)
+
+
+Started GET "/residences/4" for 127.0.0.1 at 2018-12-08 19:50:30 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mResidence Load (0.7ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Residence with 'id'=4):
+  
+app/controllers/residences_controller.rb:32:in `show'
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 19:50:45 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g2g49lQLkdrM5xoASKzNd8OHP6zEodaLt0CQjP8fCRTh86fcfa2kx+N3XPh4PMAZlqb330cVfcR+NIV4EfJ6CQ==", "auction"=>{"name"=>"9", "weekdate"=>"2018-W51", "residence_id"=>"3", "monto"=>"0", "minimapuja"=>"444"}, "commit"=>"Crear hotsale"}
+Unpermitted parameters: :weekdate, :residence_id
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 19:50:45 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 248ms (Views: 239.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 19:51:45 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:10
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:17
+  Rendered auctions/new.html.erb within layouts/application (62.9ms)
+Completed 200 OK in 292ms (Views: 247.7ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-08 19:51:47 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 190ms (Views: 181.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/residences/1" for 127.0.0.1 at 2018-12-08 19:51:49 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"uuJh6ZKTciWf7o429L5cq3IrRaWfSSZ7BsePitMi+4/Yef7DuzVHOLB+yM7ELlHFJwqN1hz9jTTPs5p+Pc+Ikg==", "id"=>"1"}
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:22
+  [1m[36mHotsale Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 1], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:30
+  Rendered residences/show.html.erb within layouts/application (110.5ms)
+Completed 200 OK in 337ms (Views: 296.5ms | ActiveRecord: 27.7ms)
+
+
+Started GET "/residences/ojn" for 127.0.0.1 at 2018-12-08 19:51:50 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"ojn"}
+  [1m[36mResidence Load (1.5ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+Completed 404 Not Found in 6ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Residence with 'id'=ojn):
+  
+app/controllers/residences_controller.rb:32:in `show'
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 19:51:57 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R8/BpyMFStUxjHs7sd8df/tgVVU8PJhJoVafyCPEUZ0lVF6NCqN/yB4cPcOBTxARrkGdJr+IMwZoIoo8zSkigA==", "auction"=>{"name"=>"sdf", "weekdate"=>"2018-W51", "residence_id"=>"1", "monto"=>"2", "minimapuja"=>"233"}, "commit"=>"Crear hotsale"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[36mResidence Load (1.9ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 37ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 19:51:57 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 205ms (Views: 198.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/residences/1" for 127.0.0.1 at 2018-12-08 19:52:36 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mResidence Load (1.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:22
+  [1m[36mHotsale Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 1], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:30
+  Rendered residences/show.html.erb within layouts/application (166.8ms)
+Completed 200 OK in 432ms (Views: 312.7ms | ActiveRecord: 63.5ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 19:52:39 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uU8Hgik4Oh69W6WSme1+1KUtzImW+hf2lb2EzqgcJlXb1JioAJ4PA5LL42qpfXO68AwE+hVOvLlcyZE6RvFVSA==", "auction"=>{"name"=>"sdf", "weekdate"=>"2018-W51", "residence_id"=>"1", "monto"=>"2", "minimapuja"=>"233"}, "commit"=>"Crear hotsale"}
+Unpermitted parameter: :residence_id
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 16ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 19:52:39 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 219ms (Views: 210.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 19:53:34 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (1.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 345ms (Views: 338.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-08 19:53:53 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (63.8ms)
+Completed 200 OK in 195ms (Views: 172.8ms | ActiveRecord: 12.3ms)
+
+
+Started POST "/residences/1" for 127.0.0.1 at 2018-12-08 19:53:55 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"J2BF80YPxcrTKm0pA5l8R6ObD+6P9nL2jBSOIJZblCZF+9rZb6nw1/y6K9EzCXEp9rrHnQxC2blFYJvUeLbnOw==", "id"=>"1"}
+  [1m[36mResidence Load (3.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:22
+  [1m[36mHotsale Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 1], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:30
+  Rendered residences/show.html.erb within layouts/application (104.6ms)
+Completed 200 OK in 298ms (Views: 255.9ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/residences/ojn" for 127.0.0.1 at 2018-12-08 19:53:56 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"ojn"}
+  [1m[36mResidence Load (1.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+Completed 404 Not Found in 6ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Residence with 'id'=ojn):
+  
+app/controllers/residences_controller.rb:32:in `show'
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 19:54:17 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pmbx0w3hk9Mg0LFunOmwDol15qn6qnO8+UGgMswT+mpc/W75JEemzg9A95aseb1g3FQu2nke2PMwNbXGIv6Jdw==", "auction"=>{"weekdate"=>"2018-W52", "residence_id"=>"1", "monto"=>"0", "minimapuja"=>"4444"}, "commit"=>"Crear hotsale"}
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 21ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 19:54:17 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 281ms (Views: 269.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-08 20:00:24 -0300
+  [1m[35m (41.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (1.0ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:28
+  Rendered hotsales/index.html.erb within layouts/application (111.3ms)
+Completed 200 OK in 1433ms (Views: 1371.4ms | ActiveRecord: 38.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-12-08 20:00:30 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:40
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (43.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:61
+  Rendered users/show.html.erb within layouts/application (86.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 314ms (Views: 182.8ms | ActiveRecord: 71.1ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:00:35 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (4.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 183ms (Views: 167.5ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 20:00:36 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:10
+  [1m[36mResidence Load (1.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:17
+  Rendered auctions/new.html.erb within layouts/application (97.7ms)
+Completed 200 OK in 242ms (Views: 197.8ms | ActiveRecord: 31.4ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 20:00:45 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f63rXk0/54jUMRmtLUGrrRGdQfBykEsLsj7RJWm9fS7BJWWGSf5fe6Jmv0YPboZiUURNWVi31541BpFiteDsNQ==", "auction"=>{"weekdate"=>"2018-W49", "residence_id"=>"", "monto"=>"0", "minimapuja"=>"4"}, "commit"=>"Crear hotsale"}
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 29ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:00:45 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 231ms (Views: 219.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 20:01:14 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (15.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:10
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:17
+  Rendered auctions/new.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 215ms (Views: 192.7ms | ActiveRecord: 16.2ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 20:01:23 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z3psiIJN3CDCyoje6294Wusl8ijNxarS7BTgmHkbsfLZ8uJQhoxk07SdLjXJQFWVq/z+gefiNkdrLKDfpUYg6Q==", "auction"=>{"name"=>"999", "des"=>"Residencia en China, es una residencia totalmente automatizada con domotica\t", "monto"=>"0", "minimapuja"=>"3"}, "commit"=>"Crear subasta"}
+Unpermitted parameter: :name
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:01:23 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 251ms (Views: 239.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 20:06:08 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:10
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:17
+  Rendered auctions/new.html.erb within layouts/application (166.2ms)
+Completed 200 OK in 535ms (Views: 422.2ms | ActiveRecord: 55.3ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 20:06:16 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BpFZTn6NX+yCrzvx9yE1R6/omAnrEm9YNgynKPt0syK4GdeWekznH/T4nRrVDhiI7zGUoME1882xNOdvJykiOQ==", "auction"=>{"weekdate"=>"2018-W49", "residence_id"=>"", "monto"=>"0", "minimapuja"=>"444"}, "commit"=>"Crear hotsale"}
+  [1m[35m (8.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 26ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:06:16 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 258ms (Views: 250.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 20:06:22 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:10
+  [1m[36mResidence Load (6.1ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:17
+  Rendered auctions/new.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 197ms (Views: 167.6ms | ActiveRecord: 16.5ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 20:06:29 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XcaFedmJ7RLRLGWTx60P4oGOTmm7quSNj58I4iaWj6/jTguh3UhV4ad7w3jlgiItwVdCwJGNeBgIp0il+ssetA==", "auction"=>{"name"=>"999", "des"=>"hola", "monto"=>"0", "minimapuja"=>"250"}, "commit"=>"Crear subasta"}
+Unpermitted parameter: :name
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:06:29 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (1.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 270ms (Views: 259.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 20:15:52 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:15
+  [1m[36mResidence Load (0.8ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:22
+  Rendered auctions/new.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 304ms (Views: 290.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 20:15:58 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8ClR3qfCVWEvwpKQUNsRyHuqerDt2uy+QTar7oF2XnVSCuffl6xpvLorKFjbEGIYTelQ+mQ9yd+PJroZlhIYg==", "auction"=>{"name"=>"9", "des"=>"2", "monto"=>"3", "minimapuja"=>"3"}, "commit"=>"Crear subasta"}
+Unpermitted parameter: :name
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (3.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 27ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:15:58 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (1.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 305ms (Views: 293.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 20:16:30 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:9
+  [1m[36mResidence Load (8.1ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:16
+  Rendered auctions/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 250ms (Views: 234.8ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 20:16:35 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yt+MJ7OqtpzO5UCo8wK4AmS1f8t8x6x6Z3QsCBIlvoh0VwL/t2sOb7iy5kPRLZXNJGxzYlbgMO/gTGxPzngvkw==", "auction"=>{"name"=>"9", "des"=>"hola", "monto"=>"3", "minimapuja"=>"3"}, "commit"=>"Crear subasta"}
+Unpermitted parameter: :name
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 11ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:16:35 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 263ms (Views: 254.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2018-12-08 20:17:14 -0300
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/new.html.erb:9
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/auctions/new.html.erb:16
+  Rendered auctions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 238ms (Views: 233.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-08 20:17:19 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yuxhl07rrWojlGk+CMRxcWZ8/5LwBFtQNxchIt3xnzt0ZO9PSioVmVXDz9Uq61y+JqXzO9ojx8WwL2FlAawOIA==", "auction"=>{"name"=>"9", "des"=>"2", "monto"=>"3", "minimapuja"=>"3"}, "commit"=>"Crear subasta"}
+Unpermitted parameter: :name
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:17:19 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (0.9ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 268ms (Views: 260.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:17:43 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:16
+  [1m[36mAuction Load (1.9ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:24
+  Rendered auctions/index.html.erb within layouts/application (63.9ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for #<Auction::ActiveRecord_Relation:0x007fa3412cd9b8>):
+    50: 
+    51:   <div class="col-md-3"></div> 
+    52: 
+    53: <% if @auction.errors.any? %>
+    54:   <h1>hay errores</h1>
+    55:   <% @auction.errors.full_messages.each do |error| %>
+    56:    <p> <%= error%> </p>
+  
+app/views/auctions/index.html.erb:53:in `_app_views_auctions_index_html_erb___3231549736315810400_70169574924400'
+Started GET "/auctions" for 127.0.0.1 at 2018-12-08 20:18:16 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (1.9ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/santi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered auctions/index.html.erb within layouts/application (20.3ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for #<Auction::ActiveRecord_Relation:0x007fa33c613d98>):
+     5:   <div class="col-md-6">
+     6: 
+     7: 
+     8: <% if @auction.errors.any? %>
+     9:   <h1>hay errores</h1>
+    10:   <% @auction.errors.full_messages.each do |error| %>
+    11:    <p> <%= error%> </p>
+  
+app/views/auctions/index.html.erb:8:in `_app_views_auctions_index_html_erb___3231549736315810400_70169534693580'

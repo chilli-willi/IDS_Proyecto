@@ -4,6 +4,6 @@ class Auction < ApplicationRecord
 	validates :monto, presence: true
 	validates :minimapuja, presence: true
 	
-	belongs_to:residence
-	#has_many: bids
+	belongs_to :residence
+	has_many :bids
 end
