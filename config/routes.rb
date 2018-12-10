@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   resources :hotsales
   resources :residences
   resources :home
-  resources :bids
     resources :reservations
   #devise_for :users, controllers: {
   #      sessions: 'users/sessions'

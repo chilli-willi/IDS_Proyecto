@@ -5,6 +5,7 @@
   <div class="col-md-6">
 
 
+
 <h1>  Crea una nueva subasta </h1>
 <% if current_user.try(:admin?) %>
 
@@ -40,21 +41,6 @@
 <% end %>
 <% end %>
   <div class="col-md-3"></div> 
-    <%= form_for Auction.new() do |a| %>
-    
-    <%= a.label :weekdate, 'Semana' %>
-    <%= a.week_field :weekdate %>
-  <%= a.hidden_field :residence_id, value: params[:id] %>
 
-
-  <%= a.label :monto, 'Precio inicial' %>
-  <%= a.number_field :monto, class: 'form-control', required: true %></p>
-
-<%= a.label :minimapuja, 'Minima puja' %>
-  <%= a.number_field :minimapuja, class: 'form-control', required: true %></p>
-
-    <%= a.submit "Crear hotsale", :class=>'btn btn-primary' %>
-   <% end %>
-   
 </div>
 </div>

@@ -8,24 +8,14 @@
 <% if user_signed_in? %>
 <%= @auction.name %>
 <%= @auction.des %>
-
-
 <%= form_for @auction do |f| %>
 <div class="row">
    <div class="col-md-4">
-   
-
     <%= f.label :monto, 'PUJA' %>
-    <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
+      <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
+     </div>
     </div>
-    </div>
-      <td><%= form_for Bid.new() do |b| %>
-  <%= b.hidden_field :user_id, value: current_user.id  %>
-  <%= b.hidden_field :maxbid, value: @auction.monto %>
-  <%= b.hidden_field :auction_id, value: params[:id] %>  
-  <%= b.hidden_field :residence_id, value: @auction.residence_id %>
-  <%= b.submit "Comprar HotSale" %>
-  <% end %>
+
      <%= f.submit "PUJAR", class: 'btn btn-primary' %>
      <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
 
