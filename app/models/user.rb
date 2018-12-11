@@ -6,8 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates_length_of :card, minimum: 12
-  validates_length_of :exp, minimum: 3
-  validates :age, :card, :exp, :presence => true
+  validates_length_of :cvv, minimum: 3
+  validates :age, :presence => true
   validate :validate_age
 
   private

@@ -18,6 +18,11 @@
       <td class="bold"> Creado el </td>
       <td class="profile-field"><%= @user.created_at %></td>
     </tr>
+    <p> Creditos: <%= @user.creditos %> </p>
+    <p> Usuario Premium: <%= @user.premium %> </p>
+    <p> Nacimiento: <%= @user.age %> </p>
+
+    
     <tr><% if @user.admin? %>
       <td class="bold"> Administrador </td>
       <td class="profile-field"><%= @user.admin %></td>
@@ -25,9 +30,7 @@
   </table>
 </div>
   <%else%>
-    <p> Creditos: <%= @user.creditos %> </p>
-    <p> Usuario Premium: <%= @user.premium %> </p>
-    <p> Nacimiento: <%= @user.age %> </p>
+    
 
     
     <% if !current_user.admin? %> 

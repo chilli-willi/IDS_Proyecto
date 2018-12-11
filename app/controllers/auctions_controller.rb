@@ -8,9 +8,9 @@ class AuctionsController < ApplicationController
 	def create
 		@auction = Auction.new(auction_params)
 		if @auction.save
-			redirect_to auctions_path, notice: 'Se creo la auction exitosamente'
+			redirect_to auctions_path, notice: 'Se creo la subasta exitosamente'
 		else
-			redirect_to auctions_path, notice: 'NO Se creo la auction'
+			redirect_to auctions_path, notice: 'La subasta debe tener 6 meses de anticipacion'
 		end
 	end
 
@@ -22,9 +22,9 @@ class AuctionsController < ApplicationController
 	def destroy
 		@auction = Auction.find(params[:id])
 		if @auction.destroy
-			redirect_to auctions_path, notice: "La auction fue borrada"
+			redirect_to auctions_path, notice: "La subasta fue borrada"
 		else
-			redirect_to auctions_path, notice: "La auction no fue borrada"	
+			redirect_to auctions_path, notice: "La subasta no fue borrada"	
 		end
 	end
 
