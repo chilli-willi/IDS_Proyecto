@@ -25,6 +25,7 @@
 <% end %>
 <% end %>
 <p>
+<% if @auction.name == "iniciada"  %>
 <% if  @auction.user_id.present?  %>
 <% if current_user.try(:admin?) %>
       <td><%= form_for Reservation.new() do |f| %>
@@ -36,7 +37,7 @@
         <% end %>
  <% end %>
 <p>
-<% if @auction.name == "iniciada"  %>
+
     <%= link_to "Finalizar Pujas", finalizar_auction_path(@auction), class: 'btn btn-warning' %>
   </p>
 <% end %>
