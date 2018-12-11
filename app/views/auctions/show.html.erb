@@ -11,7 +11,6 @@
         <td>Residencia: <%=  @r.name  %></td>
        <h6>Puja Maxima Actual: <%= @auction.monto %></h6>
         <h6>Minima Puja: <%= @auction.minimapuja %></h6>
-        
     <%= form_for @auction do |f| %>
          <strong><h4> <%= f.label :monto, 'Monto a pujar:' %></h4></strong>
         <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
@@ -33,7 +32,7 @@
         <%= f.hidden_field  :weekdate, value: @auction.weekdate %>
         <%= f.hidden_field :user_id, value: @auction.user_id %>  
         <%= f.hidden_field :residence_id, value: @auction.residence_id %>
-        <%= f.submit "Finalizar Subasta" %>
+        <%= f.submit "Dar reserva al ganador", class: 'btn btn-success' %>
         <% end %>
  <% end %>
 <p>

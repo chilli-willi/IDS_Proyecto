@@ -13,8 +13,10 @@
 			<th>Semana del:</th>
 			
 			<th>Base</th>
+			<th>Estado</th>
 			<% if current_user.try(:admin?) %>
 			<th>Puja Minima</th>
+<th></th>
 			<% end %>
 
 		
@@ -29,12 +31,17 @@
 				
 				
 				<td><%= r.monto %></td>
+				<td><%=r.name  %></td>
 	<% if current_user.try(:admin?) %>
 				<td><%= r.minimapuja %></td>
 
 
 									<% end %>
+				
+
+
 			<% if r.name == "iniciada" %>
+
 				<td><%=link_to 'ver', r, class: 'btn btn-success'%></td>
 			<% end %>
 				<% if current_user.try(:admin?) %>
