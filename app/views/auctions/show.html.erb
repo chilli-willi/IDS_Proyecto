@@ -35,11 +35,11 @@
         <%= f.hidden_field :residence_id, value: @auction.residence_id %>
         <%= f.submit "Dar reserva al ganador", class: 'btn btn-success' %>
         <% end %>
- <% end %>
+
 <p>
 
     <%= link_to "Finalizar Pujas", finalizar_auction_path(@auction), class: 'btn btn-warning' %>
-  </p>
+  </p><% end %>
 <% end %>
 
 <% end %>

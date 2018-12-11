@@ -45312,3 +45312,143 @@ Processing by AuctionsController#show as HTML
 Completed 200 OK in 54ms (Views: 51.4ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/residences" for 127.0.0.1 at 2018-12-11 13:46:24 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 340ms (Views: 315.9ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-11 13:46:26 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 108ms (Views: 105.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/residences/1" for 127.0.0.1 at 2018-12-11 13:46:28 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"CVz16I2F/MxNR5WrUrM00dzWjzNt8VKhXe3bcx4Bb2ZhV35MpqLou0DcudKsH+cFA7UsNXgDasXNOqTTbw/UuQ==", "id"=>"1"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:18
+  [1m[36mHotsale Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 1], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:30
+  Rendered residences/show.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 100ms (Views: 84.8ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-11 13:46:33 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.5ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 68ms (Views: 62.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-11 13:46:33 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:17
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:26
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  Rendered auctions/index.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 89ms (Views: 77.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/auctions/6" for 127.0.0.1 at 2018-12-11 13:46:34 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:7
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:10
+  Rendered auctions/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/auctions/6" for 127.0.0.1 at 2018-12-11 13:46:57 -0300
+Processing by AuctionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mjPm55Db7w/m9cZPKtA3iYzpQVZ0QdFwFfBxrAuovVzS8VQfI0nnyWfL3hxHQ+JWmRj9zd+AhoAHve46Uo14xg==", "auction"=>{"monto"=>"934", "user_id"=>"2"}, "commit"=>"PUJAR", "id"=>"6"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:39
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:39
+  [1m[36mAuction Update (0.7ms)[0m  [1m[33mUPDATE "auctions" SET "user_id" = $1, "monto" = $2, "updated_at" = $3 WHERE "auctions"."id" = $4[0m  [["user_id", 2], ["monto", 934], ["updated_at", "2018-12-11 16:46:57.804727"], ["id", 6]]
+  ↳ app/controllers/auctions_controller.rb:39
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/auctions_controller.rb:39
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 41ms (ActiveRecord: 18.2ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-11 13:46:57 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:17
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:26
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  Rendered auctions/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 63ms (Views: 60.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/auctions/6" for 127.0.0.1 at 2018-12-11 13:47:01 -0300
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:18
+  Rendering auctions/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:7
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/show.html.erb:10
+  Rendered auctions/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 69ms (Views: 65.7ms | ActiveRecord: 1.2ms)
+
+
