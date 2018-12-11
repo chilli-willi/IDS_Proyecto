@@ -5,6 +5,7 @@
   <div class="col-md-5">
 
 <% if user_signed_in? %>
+    <% if current_user.creditos > 0 %>
        <h6> 
        <% @r = Residence.find(@auction.residence_id) %>
         <td>Residencia: <%=  @r.name  %></td>
@@ -17,9 +18,12 @@
 
          <%= f.submit "PUJAR", class: 'btn btn-primary' %>
          <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
+          <% end %>
+    <% else %>
+        <h4>No dispone de creditos para poder pujar</h4>
+
+   
     <% end %>
-
-
 <% end %>
 
 
