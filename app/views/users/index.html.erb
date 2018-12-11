@@ -8,8 +8,6 @@
 	<h1> Listado de Usuarios </h1>  
 	<br>
 	<table class="table">
-
-		<tr>
 			
 			<th> Email </th>
 	
@@ -40,7 +38,9 @@
 					      <% else %> 
 					        <% if user.premium == "si" %> 
 					          <td><%= link_to "Baja Premium", disable_premium_user_path(user), class: 'btn btn-info' %></td>
-					      	<% else %> 
+					          <td><%= link_to "Mas Creditos", mascreditos_user_path(user), class: 'btn btn-dark' %></td>
+					      	<% else %>
+					      	<td><%= link_to "Mas Creditos", mascreditos_user_path(user), class: 'btn btn-dark' %></td> 
 					      		<td></td>
 					      	<% end %>
 					      <% end %>
@@ -58,7 +58,10 @@
 	</table>
 
 		
-		<p> <%= link_to "Volver a pagina de inicio", root_path, class: 'btn btn-secondary' %> </p>
+		<p> <%= link_to "Volver a pagina de inicio", root_path, class: 'btn btn-secondary' %> </p><% if current_user.admin? %>
+	<td><%= link_to "Mas Creditos ADMIN", mascreditos_user_path(current_user.id), class: 'btn btn-warning' %></td> 
+		<% end %>
+
 </div>
 
   <div class="col-md-3"></div> 

@@ -7,10 +7,17 @@ Rails.application.routes.draw do
         get 'apply_premium'
         get 'enable_premium'
         get 'disable_premium'
+        get 'mascreditos'
+        get 'menoscreditos'
  		end
 	end
  match '/users',   to: 'users#index',   via: 'get'
-  resources :auctions
+  resources :auctions do
+      member do
+        get 'finalizar'
+   end
+  end     
+
   resources :hotsales
   resources :residences
   resources :home

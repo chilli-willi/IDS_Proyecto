@@ -5,7 +5,7 @@ class CreateAuctions < ActiveRecord::Migration[5.2]
       t.string :des
       t.integer :monto
       t.integer :minimapuja
-
+      t.integer :user_id
       t.timestamps
     end
   end

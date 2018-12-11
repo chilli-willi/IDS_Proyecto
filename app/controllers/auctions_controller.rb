@@ -44,11 +44,19 @@ class AuctionsController < ApplicationController
 	end
 
 	def auction_params
-		params.require(:auction).permit(:weekdate, :residence_id, :monto, :minimapuja)
+		params.require(:auction).permit(:name, :user_id, :weekdate, :residence_id, :monto, :minimapuja)
 	end
 
 	def new
 		@auction = Auction.new
 	end
+
+	def finalizar
+	    @auction = Auction.find(params[:id])
+	    @auction.name = "finalizada"
+	    @auction.save
+	    redirect_to auctions_path, notice: 'Su solicitud ha sido enviada con exito.'
+  end
+
 
 end

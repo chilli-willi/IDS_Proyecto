@@ -51,7 +51,7 @@
 
 <p><h5>Crear Subasta</h5></p>
     <%= form_for Auction.new() do |j| %>
-   
+   		<%= j.hidden_field :name, value: "iniciada" %>
 	    <%= j.label :weekdate, 'Semana' %>
 	    <%= j.week_field :weekdate %></p>
 		<%= j.hidden_field :residence_id, value: params[:id] %>

@@ -13,9 +13,9 @@
 			<th>Semana del:</th>
 			
 			<th>Base</th>
-				<% if current_user.try(:admin?) %>
+			<% if current_user.try(:admin?) %>
 			<th>Puja Minima</th>
-							<% end %>
+			<% end %>
 
 		
 		</tr>
@@ -28,12 +28,15 @@
          <td><%= date.strftime('%d/%m/%Y')   %></td>
 				
 				
-			
 				<td><%= r.monto %></td>
 	<% if current_user.try(:admin?) %>
 				<td><%= r.minimapuja %></td>
-					<% end %>
+
+
+									<% end %>
+			<% if r.name == "iniciada" %>
 				<td><%=link_to 'ver', r, class: 'btn btn-success'%></td>
+			<% end %>
 				<% if current_user.try(:admin?) %>
 				<td><%=link_to 'editar', edit_auction_path(r), class: 'btn btn-info'%></td>
 				<td><%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar subasta?'} %>

@@ -92,5 +92,19 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+   def mascreditos
+    @user = User.find(params[:id])
+    @user.creditos = @user.creditos + 1
+    @user.save
+    redirect_to users_path
+  end
+
+  def menoscreditos
+    @user = User.find(params[:id])
+    @user.creditos = @user.creditos + 1
+    @user.save
+    redirect_to users_path
+  end
+
 
 end

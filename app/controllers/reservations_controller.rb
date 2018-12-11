@@ -7,7 +7,7 @@ end
 
 def create
 	@reservation = Reservation.new( reservation_params )
-   
+    @u = User.find(@reservation.user_id)
    if @reservation.modo == "hotsale"
 		if @reservation.save
 		  	redirect_to  home_index_path, notice: 'Reservaste la residencia exitosamente'
@@ -15,9 +15,9 @@ def create
 			redirect_to  home_index_path, notice: 'Fecha imposible de reservar, vuelva a intentar'
 		end
 	else
-		if current_user.creditos > 0
+		if @u.creditos > 0
 			if @reservation.save
-			  	current_user.update(creditos: current_user.creditos - 1)
+			  	@u.update(creditos: @u.creditos - 1)
 
 		      	redirect_to  home_index_path, notice: 'Reservaste la residencia exitosamente'
 			else 
@@ -28,7 +28,7 @@ def create
 end
 
 def destroy
-		reservation = Reservation.find(params[:id])
+	reservation = Reservation.find(params[:id])
 	if reservation.modo == "hotsale"
 		if reservation.destroy
 		  	redirect_to  home_index_path, notice: 'Cancelaste la reserva exitosamente'

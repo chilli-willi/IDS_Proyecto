@@ -13,14 +13,10 @@
 	<%= form_for @auction do |f| %>
 		
 		<div class="form-group">
-        <%= f.label :name, 'NOMBRE' %>
-        <%= f.collection_select :name, Residence.all, :name , :name ,{}, class: 'form-control'%>
-
-        <p></p>
-		<div>
+        <div>
 		
-				<%= f.label :des, 'DESCRIPCION' %>
-  				<%= f.text_field :des, class: 'form-control', required: true %>
+				<%= f.label :weekdate, 'Semana' %>
+  				<%= f.week_field :weekdate, class: 'form-control', required: true %>
   		
   		</div>
 <p></p>
