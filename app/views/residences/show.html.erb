@@ -14,7 +14,12 @@
 
 
 
-  <div class="col-md-3"></div> 
+<%if Auction.exists?(residence_id: params[:id]) %>
+	<%= link_to "FECHAS EN SUBASTA DISPONIBLES", auctions_path , :class=>'btn btn-success' %>
+<% else %>
+<div class="col-md-3"></div>
+
+<h5>Reserva directa: </h5>
 <% if current_user.premium == "si" %> 
 	<%= form_for Reservation.new() do |f| %>
 	<%= f.hidden_field :modo, value: "reserva" %>
@@ -24,7 +29,7 @@
 
 	<%= f.submit "Reservar", :class=>'btn btn-primary' %>
 	<% end %>
-  
+ <% end %>
 <% end %>
   <p>
 	<%if Hotsale.exists?(residence_id: params[:id]) %>
