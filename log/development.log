@@ -46752,3 +46752,2020 @@ Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
 ActiveRecord::RecordNotFound (Couldn't find Residence with 'id'=s):
   
 app/controllers/residences_controller.rb:32:in `show'
+Started GET "/" for 127.0.0.1 at 2018-12-12 19:55:15 -0300
+  [1m[35m (31.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 12713ms (Views: 12576.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-12 19:55:37 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (779.1ms)
+Completed 200 OK in 1195ms (Views: 893.7ms | ActiveRecord: 202.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-12 19:55:43 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A9WFjt0BOFfkOhMyiNeTaIcNZFBDI+8dIhrs/Dl/+ybby4Htam2XzAuP1U4praWtkOkjl4g+/VE/ldIm6HmqwA==", "user"=>{"email"=>"ad@ad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (158.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ad@ad.com"], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 448ms (ActiveRecord: 158.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-12 19:55:43 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 67ms (Views: 65.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 19:55:49 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (495.0ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (517.6ms)
+Completed 200 OK in 614ms (Views: 78.5ms | ActiveRecord: 499.8ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-12 19:58:16 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:17
+  [1m[36mAuction Load (11.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:26
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  Rendered auctions/index.html.erb within layouts/application (82.0ms)
+Completed 200 OK in 153ms (Views: 103.1ms | ActiveRecord: 28.5ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 19:58:18 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (31.9ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (55.8ms)
+Completed 200 OK in 136ms (Views: 71.5ms | ActiveRecord: 40.0ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 19:58:24 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 61ms (Views: 58.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-12-12 19:58:26 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (16.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (124.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 258ms (Views: 157.5ms | ActiveRecord: 27.1ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 19:58:29 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 61ms (Views: 58.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/residences/3" for 127.0.0.1 at 2018-12-12 19:58:34 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"bnRRnHegwHlz17FmAClQ9J1Rnu2g5RfwKygu76i/Dh4tyVE5KqHB6ooNstkyRhFFJmB+ugnlvuPknghaaMY9Ug==", "id"=>"3"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mHotsale Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:41
+  Rendered residences/show.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 104ms (Views: 100.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 19:58:49 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgDxlCONQt/Jmo/pD4hz+3twumBPyI1LDtNYaRd7Ng4xvfExfoxDTDBAjFY95zJKwEFaN+bIJFjBZX7c1wIFQg==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `residence_id' for nil:NilClass
+Did you mean?  presence_in):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 19:59:01 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgDxlCONQt/Jmo/pD4hz+3twumBPyI1LDtNYaRd7Ng4xvfExfoxDTDBAjFY95zJKwEFaN+bIJFjBZX7c1wIFQg==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 9.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ... 1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%'...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:00:59 -0300
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:55: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/hotsales_controller.rb:55: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:01:11 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgDxlCONQt/Jmo/pD4hz+3twumBPyI1LDtNYaRd7Ng4xvfExfoxDTDBAjFY95zJKwEFaN+bIJFjBZX7c1wIFQg==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 9.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ... 1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%'...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started GET "/residences/3" for 127.0.0.1 at 2018-12-12 20:03:43 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mHotsale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:41
+  Rendered residences/show.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 137ms (Views: 98.8ms | ActiveRecord: 19.5ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:06:04 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 7.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:06:23 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 5.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:07:50 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Load (1.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' )[0m
+  ↳ app/controllers/hotsales_controller.rb:11
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 7.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ...ations".* FROM "reservations" WHERE (residence_id LIKE '%3%'...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "reservations".* FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' )):
+  
+app/controllers/hotsales_controller.rb:11:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:08:07 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' )[0m
+  ↳ app/controllers/hotsales_controller.rb:11
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ...ations".* FROM "reservations" WHERE (residence_id LIKE '%3%'...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "reservations".* FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' )):
+  
+app/controllers/hotsales_controller.rb:11:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:10:19 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' )[0m
+  ↳ app/controllers/hotsales_controller.rb:11
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ...ations".* FROM "reservations" WHERE (residence_id LIKE '%3%'...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "reservations".* FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' )):
+  
+app/controllers/hotsales_controller.rb:11:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:10:51 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Load (8.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' )[0m
+  ↳ app/controllers/hotsales_controller.rb:10
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 14.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ...ations".* FROM "reservations" WHERE (residence_id LIKE '%3%'...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "reservations".* FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' )):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:11:53 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Load (1.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE (cast(residence_id) LIKE '%3%' AND weekdate LIKE '%2099-W50%' )[0m
+  ↳ app/controllers/hotsales_controller.rb:10
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 10.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near ")"
+LINE 1: ...ns".* FROM "reservations" WHERE (cast(residence_id) LIKE '%3...
+                                                             ^
+: SELECT "reservations".* FROM "reservations" WHERE (cast(residence_id) LIKE '%3%' AND weekdate LIKE '%2099-W50%' )):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:14:17 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+Redirected to http://localhost:3000/hotsales
+Completed 302 Found in 17ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:14:17 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.4ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (63.1ms)
+Completed 200 OK in 119ms (Views: 103.9ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:18:14 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.4ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 119ms (Views: 94.9ms | ActiveRecord: 21.1ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:18:17 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ... 1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%'...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:19:00 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE (weekdate LIKE '%3%' AND residence_id LIKE '%2099-W50%' ) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 10.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ...ions" WHERE (weekdate LIKE '%3%' AND residence_id LIKE '%209...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT  1 AS one FROM "reservations" WHERE (weekdate LIKE '%3%' AND residence_id LIKE '%2099-W50%' ) LIMIT $1):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:21:54 -0300
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:10: syntax error, unexpected tCONSTANT, expecting ']'
+"%#{@hotsale.weekdate}%" LIMIT $1])
+                              ^
+/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:53: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/hotsales_controller.rb:10: syntax error, unexpected tCONSTANT, expecting ']'
+app/controllers/hotsales_controller.rb:53: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:22:53 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 11.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ... 1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%'...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:24:27 -0300
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+			redirect_to hotsales_path, notice: 'No se creo hotsale 
+			                         ^
+/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:53: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/hotsales_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/controllers/hotsales_controller.rb:53: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:26:13 -0300
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+	   	redirect_to hotsales_path, notice: 'No se creo hotsale 
+	   	                         ^
+/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:52: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/hotsales_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/controllers/hotsales_controller.rb:52: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:27:40 -0300
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+	   	redirect_to hotsales_path, notice: 'No se creo hotsale'
+	   	                         ^
+/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:52: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/hotsales_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/controllers/hotsales_controller.rb:52: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:28:32 -0300
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:12: syntax error, unexpected keyword_else, expecting ')'
+		else
+		    ^
+/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:15: syntax error, unexpected keyword_end, expecting ')'
+		end
+		   ^
+/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:52: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/controllers/hotsales_controller.rb:12: syntax error, unexpected keyword_else, expecting ')'
+app/controllers/hotsales_controller.rb:15: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/hotsales_controller.rb:52: syntax error, unexpected keyword_end, expecting ')'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:30:35 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 6.7ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0..1)):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:30:54 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 10.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ... 1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%'...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT  1 AS one FROM "reservations" WHERE (residence_id LIKE '%3%' AND weekdate LIKE '%2099-W50%' ) LIMIT $1):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:38:05 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 9.8ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0..1)):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:40:27 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/CzLe7FV3Wyq+XGiL6Jp9a8UpGA1leLsQ5vaJ5VZ188TbOIs8RW5ktx5nm60cgWbY2yxinW/ph+uEndXixUEw==", "hotsale"=>{"weekdate"=>"2099-W50", "residence_id"=>"3", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/hotsales_controller.rb:13
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:13
+  [1m[36mHotsale Create (68.1ms)[0m  [1m[32mINSERT INTO "hotsales" ("price", "created_at", "updated_at", "residence_id", "weekdate") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["price", 111], ["created_at", "2018-12-12 23:40:27.194399"], ["updated_at", "2018-12-12 23:40:27.194399"], ["residence_id", 3], ["weekdate", "2099-W50"]]
+  ↳ app/controllers/hotsales_controller.rb:13
+  [1m[35m (25.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/hotsales_controller.rb:13
+Redirected to http://localhost:3000/hotsales
+Completed 302 Found in 155ms (ActiveRecord: 113.3ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:40:27 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.9ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 86ms (Views: 75.1ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-12-12 20:40:34 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (14.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 93ms (Views: 83.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:40:37 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 60ms (Views: 57.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/residences/1" for 127.0.0.1 at 2018-12-12 20:40:39 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"xn6KrVrybqO9v7DuZ4WYmKZikzDZHYj1tTm0W7uYURiFw4oIB/NvMERls1FV6tkpHVNzZ3AdIeZ6j5Lue+FiVA==", "id"=>"1"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 1], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mHotsale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 1], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:41
+  Rendered residences/show.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 79ms (Views: 71.6ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-12-12 20:40:46 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 76ms (Views: 71.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-12 20:40:56 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-12 20:40:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 66ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-12 20:41:02 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ws7uBsjZ+1x728Tjzr48YpRFPWENrMkUQFpWCdMVdcAXeAtfx6dZDUZ/XPw8bU9NmdiplStLnLwUeBNk46+/Aw==", "user"=>{"email"=>"ad@ad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ad@ad.com"], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 137ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-12 20:41:03 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-12-12 20:41:05 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 66ms (Views: 60.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-12-12 20:41:06 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:18
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:35
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 67ms (Views: 64.4ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-12-12 20:41:28 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FWN5f+PUeecgczEW7DFJG7ig0prQDS70eGIi0H2EQ9wGVyurosdOWDLeB5e/dI3Uaj5dWjB+m8iUTYnrCX6AxQ=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 32ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-12 20:41:28 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 54ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-12 20:41:29 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-12 20:41:35 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"crd7s6Vr87DZk7cM2R+BAVH1yQrk0X5377lxdTkC4a3NzTTJFLX68gB9eYScepaSRER3q173Zw4EETk0Kr8hMg==", "user"=>{"email"=>"testuser3@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "testuser3@mail.com"], ["LIMIT", 1]]
+  ↳ /home/cristian/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 132ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-12 20:41:35 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 64ms (Views: 62.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:41:37 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/residences/1" for 127.0.0.1 at 2018-12-12 20:41:39 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"3vmLwyk8xnAuMMTLuGaxXIJtXOvVbW7vukZAZOAvJXWUxZzrT5eep9UWOplCxgu1T16QLL5h3oHdI9hRkCROqA==", "id"=>"1"}
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 1], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mHotsale Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 1], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:41
+  Rendered residences/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 63ms (Views: 58.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/residences/2" for 127.0.0.1 at 2018-12-12 20:41:42 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"3vmLwyk8xnAuMMTLuGaxXIJtXOvVbW7vukZAZOAvJXWUxZzrT5eep9UWOplCxgu1T16QLL5h3oHdI9hRkCROqA==", "id"=>"2"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mHotsale Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:41
+  Rendered residences/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 71ms (Views: 67.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/residences/3" for 127.0.0.1 at 2018-12-12 20:41:44 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"3vmLwyk8xnAuMMTLuGaxXIJtXOvVbW7vukZAZOAvJXWUxZzrT5eep9UWOplCxgu1T16QLL5h3oHdI9hRkCROqA==", "id"=>"3"}
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mHotsale Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:41
+  Rendered residences/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 61ms (Views: 58.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:41:51 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.4ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 62ms (Views: 59.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-12 20:41:52 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:17
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:26
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  Rendered auctions/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 70ms (Views: 67.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:41:56 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/residences/new" for 127.0.0.1 at 2018-12-12 20:41:58 -0300
+Processing by ResidencesController#new as HTML
+  Rendering residences/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/new.html.erb:10
+  Rendered residences/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 64ms (Views: 62.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/residences" for 127.0.0.1 at 2018-12-12 20:42:05 -0300
+Processing by ResidencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AALMZ9TFBpBKLBq7zxKF8rZFErSu+0aXkei74aOpb3+HROc2dlAeGTJZcggyfBHcTXGjKo/5RSLXJzJcwiLLqA==", "residence"=>{"name"=>"Villa4", "des"=>"sdasdasd sd asasd", "pais"=>"Argentina", "provincia"=>"Buenos Aires", "localidad"=>"Capital", "location"=>"https://www.w3schools.com/bootstrap4/chicago.jpg"}, "commit"=>"Crear residencia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/residences_controller.rb:24
+  [1m[36mResidence Create (41.9ms)[0m  [1m[32mINSERT INTO "residences" ("name", "des", "location", "created_at", "updated_at", "provincia", "localidad", "pais") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Villa4"], ["des", "sdasdasd sd asasd"], ["location", "https://www.w3schools.com/bootstrap4/chicago.jpg"], ["created_at", "2018-12-12 23:42:05.547770"], ["updated_at", "2018-12-12 23:42:05.547770"], ["provincia", "Buenos Aires"], ["localidad", "Capital"], ["pais", "Argentina"]]
+  ↳ app/controllers/residences_controller.rb:24
+  [1m[35m (66.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/residences_controller.rb:24
+Redirected to http://localhost:3000/residences
+Completed 302 Found in 113ms (ActiveRecord: 108.8ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:42:05 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 70ms (Views: 67.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/residences/4" for 127.0.0.1 at 2018-12-12 20:42:08 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"gc+MADlNDpv6pxku0YovDvk4hvud2KvGyhQ5nWiYrFHCcoylZEwPCAN9GpHj5W6/QglmrDTYAtUFoh8oqOGfHQ==", "id"=>"4"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 62ms (Views: 58.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:42:14 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/residences/4" for 127.0.0.1 at 2018-12-12 20:42:16 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"khUwaK4wTlsk2OCfcH9oDjhYjhQy/YJgtaItPerkSmbYKSdAyJsWjN/+Hs2K39Ln9WtC01nxMg7Sx7UImu8huw==", "id"=>"4"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 75ms (Views: 71.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2018-12-12 20:42:20 -0300
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YaxwpLUZuJGpoM9aNT3vaxwhJRRF+3o2jAXz6Lm2FbcrkGeM07LgRlKGMQjPnVWC0RLp0y73yljrYGvdyb1+ag==", "reservation"=>{"modo"=>"reserva", "weekdate"=>"2022-W22", "user_id"=>"2", "residence_id"=>"4"}, "commit"=>"Reservar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mReservation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."weekdate" = $1 LIMIT $2[0m  [["weekdate", "2022-W22"], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mReservation Create (18.8ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "residence_id", "created_at", "updated_at", "weekdate") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["residence_id", 4], ["created_at", "2018-12-12 23:42:20.750043"], ["updated_at", "2018-12-12 23:42:20.750043"], ["weekdate", "2022-W22"]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[35m (36.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:20
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "creditos" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["creditos", 4], ["updated_at", "2018-12-12 23:42:20.810637"], ["id", 2]]
+  ↳ app/controllers/reservations_controller.rb:20
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:20
+Redirected to http://localhost:3000/home
+Completed 302 Found in 92ms (ActiveRecord: 74.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:42:20 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 57ms (Views: 54.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:42:30 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y0eVndNSMZBl8KgGYLTyK1sN4m9LQ87T/rvJ1teo33CI+pU4jlMwA5wqq7lS27Oa4DwCOOJDZ8AxDe9jF9HsPA==", "hotsale"=>{"weekdate"=>"2022-W22", "residence_id"=>"4", "price"=>"444"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/hotsales_controller.rb:13
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:13
+  [1m[36mHotsale Create (0.7ms)[0m  [1m[32mINSERT INTO "hotsales" ("price", "created_at", "updated_at", "residence_id", "weekdate") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["price", 444], ["created_at", "2018-12-12 23:42:30.466531"], ["updated_at", "2018-12-12 23:42:30.466531"], ["residence_id", 4], ["weekdate", "2022-W22"]]
+  ↳ app/controllers/hotsales_controller.rb:13
+  [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/hotsales_controller.rb:13
+Redirected to http://localhost:3000/hotsales
+Completed 302 Found in 38ms (ActiveRecord: 30.9ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:42:30 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.3ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 60ms (Views: 57.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:42:54 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (52.7ms)
+Completed 200 OK in 105ms (Views: 89.4ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/residences/4" for 127.0.0.1 at 2018-12-12 20:42:56 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"yIU4xCSsxpQqEH6Idh7ECHGLQESkKhS/PLieLzDGWqGCuS/sQgeeQ9E2gNqMvn7hvLiMg88mpNFb3QYaQM0xfA==", "id"=>"4"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 92ms (Views: 78.8ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2018-12-12 20:43:02 -0300
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7oF5ssD12SahtaAd/efm2dVHm3zWeApz+8KXjeYaJLukvW6apl6B8VqTXk8HR1wwGHRXu710uh2cpw+4lhFPZg==", "reservation"=>{"modo"=>"reserva", "weekdate"=>"2033-W33", "user_id"=>"2", "residence_id"=>"4"}, "commit"=>"Reservar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mReservation Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."weekdate" = $1 LIMIT $2[0m  [["weekdate", "2033-W33"], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reservations_controller.rb:19
+Redirected to http://localhost:3000/home
+Completed 302 Found in 14ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:43:02 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 66ms (Views: 64.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/residences/4" for 127.0.0.1 at 2018-12-12 20:43:03 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:43:06 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 66ms (Views: 60.6ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/reservations/4" for 127.0.0.1 at 2018-12-12 20:43:09 -0300
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jVB/hmgnYjw4cVBxx4AcZPR8m1PMWfP9TYxRkj/OccnHbGiuDow668NXriM9IKaNOU9XlKdVQ5Mq6cmnT8UaFA==", "id"=>"4"}
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mReservation Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[35m (29.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "creditos" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["creditos", 5], ["updated_at", "2018-12-12 23:43:09.875987"], ["id", 2]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (47.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:40
+Redirected to http://localhost:3000/home
+Completed 302 Found in 101ms (ActiveRecord: 79.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:43:09 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:43:11 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 102ms (Views: 97.8ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/reservations/6" for 127.0.0.1 at 2018-12-12 20:43:13 -0300
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8aHe+yAv8aVnROCpG6huG4I9o9ym30MsnDgOW8xOO5C7ncnTRoSpcpxiHvvhCNTyTw5vG83T80L7XZZuvEVQTQ==", "id"=>"6"}
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mReservation Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "creditos" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["creditos", 6], ["updated_at", "2018-12-12 23:43:13.557510"], ["id", 2]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (18.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:40
+Redirected to http://localhost:3000/home
+Completed 302 Found in 45ms (ActiveRecord: 35.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:43:13 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 93ms (Views: 90.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:43:14 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 62ms (Views: 59.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:43:18 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 58ms (Views: 55.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/residences/4" for 127.0.0.1 at 2018-12-12 20:43:20 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"59eJKDmOGKzxVMMF95CYymsmjIGsedhlDJ22x8vs1O+t654AXyVAewpyPVcNMCIjphVARsd1aAtr+C7yu+e/Mg==", "id"=>"4"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 64ms (Views: 60.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2018-12-12 20:43:24 -0300
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aPoKPML02tQ0qcX3cLT9T8JKHkylh8U7RX5WsWrM/pQixh0UpF+CA8+PO6WKFEemD3nSi86LdVUiG86EGseVSQ==", "reservation"=>{"modo"=>"reserva", "weekdate"=>"2033-W33", "user_id"=>"2", "residence_id"=>"4"}, "commit"=>"Reservar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mReservation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."weekdate" = $1 LIMIT $2[0m  [["weekdate", "2033-W33"], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reservations_controller.rb:19
+Redirected to http://localhost:3000/home
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:43:24 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 69ms (Views: 67.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/residences/4" for 127.0.0.1 at 2018-12-12 20:43:25 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 62ms (Views: 56.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2018-12-12 20:43:35 -0300
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AVUwMz4ueRS1XOCurfyKqd3w0KGeMUxvyWtXE1JlyjpLaScbWIUhw056HvxXXDBAEMMcZvU9/AGuDs8mIm6h5w==", "reservation"=>{"modo"=>"reserva", "weekdate"=>"2018-W33", "user_id"=>"2", "residence_id"=>"4"}, "commit"=>"Reservar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mReservation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."weekdate" = $1 LIMIT $2[0m  [["weekdate", "2018-W33"], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reservations_controller.rb:19
+Redirected to http://localhost:3000/home
+Completed 302 Found in 10ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:43:35 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:43:45 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 66ms (Views: 62.0ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/reservations/7" for 127.0.0.1 at 2018-12-12 20:43:48 -0300
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nt0LETBJBNQlvz7IcKvp0H27QX4fiJwfCL/B4lsGqVTU4Rw5VuJcA96ZwJqKC1M5sIiNuXSELHFv2lnXKw3CiQ==", "id"=>"7"}
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mReservation Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[35m (26.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "creditos" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["creditos", 7], ["updated_at", "2018-12-12 23:43:48.537869"], ["id", 2]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:40
+Redirected to http://localhost:3000/home
+Completed 302 Found in 57ms (ActiveRecord: 46.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:43:48 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 71ms (Views: 69.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:43:49 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 64ms (Views: 59.4ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/reservations/8" for 127.0.0.1 at 2018-12-12 20:43:51 -0300
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EKHPst3MDbdWGy0bqHP8L49CgHgby0abD7qucAUdJYlandiau2dVYK0900lS00bGQnFMv3DH9vVo3zZFdRZOVA==", "id"=>"8"}
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mReservation Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "creditos" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["creditos", 8], ["updated_at", "2018-12-12 23:43:51.429679"], ["id", 2]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:40
+Redirected to http://localhost:3000/home
+Completed 302 Found in 60ms (ActiveRecord: 49.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:43:51 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:43:52 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 69ms (Views: 64.0ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/reservations/9" for 127.0.0.1 at 2018-12-12 20:43:53 -0300
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sBJVjeGcWVRU/DW1n2muBuvBR2e81oMHn60DREXg8Cr6LkKlhzcBg6/ay+dlyRTvJvKLoNfaM2n4yJtxNeub9w==", "id"=>"9"}
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:33
+  [1m[36mReservation Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/reservations_controller.rb:33
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:33
+Redirected to http://localhost:3000/home
+Completed 302 Found in 14ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:43:53 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 65ms (Views: 63.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:43:54 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 62ms (Views: 57.8ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/reservations/13" for 127.0.0.1 at 2018-12-12 20:43:56 -0300
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q5PYwd9S8B+qA8EAdjiEx2hLDMArJ/mpv1mOpZbL2TUJr8/pufmoyFElP1KMmD4upXjAB0ArScfYPBaQ5sCy6A==", "id"=>"13"}
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mReservation Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:39
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "creditos" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["creditos", 9], ["updated_at", "2018-12-12 23:43:56.203010"], ["id", 2]]
+  ↳ app/controllers/reservations_controller.rb:40
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:40
+Redirected to http://localhost:3000/home
+Completed 302 Found in 46ms (ActiveRecord: 39.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:43:56 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:43:57 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-12 20:43:58 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:17
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:26
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  Rendered auctions/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 77ms (Views: 72.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:44:00 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/residences/4" for 127.0.0.1 at 2018-12-12 20:44:03 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"3uuv2NVbI5yQ1wtq1e3DoNnfIZml9/fYBoJ1LC7mM5uU17jws/B7S2vx9TgvTXlJFOztXs77R7Zh5+0ZXu1YRg==", "id"=>"4"}
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 70ms (Views: 65.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2018-12-12 20:44:10 -0300
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oMTphfoF9p7PgB0kmtgiIS10AyNDV13kmrCKTKw/9Pnq+P6tnK6uSTSm43ZgeJjI4EfP5Chb7Yr91RJ53DSfJA==", "reservation"=>{"modo"=>"reserva", "weekdate"=>"2021-W02", "user_id"=>"2", "residence_id"=>"4"}, "commit"=>"Reservar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mReservation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."weekdate" = $1 LIMIT $2[0m  [["weekdate", "2021-W02"], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "residence_id", "created_at", "updated_at", "weekdate") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["residence_id", 4], ["created_at", "2018-12-12 23:44:10.641070"], ["updated_at", "2018-12-12 23:44:10.641070"], ["weekdate", "2021-W02"]]
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[35m (30.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reservations_controller.rb:20
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "creditos" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["creditos", 8], ["updated_at", "2018-12-12 23:44:10.675525"], ["id", 2]]
+  ↳ app/controllers/reservations_controller.rb:20
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reservations_controller.rb:20
+Redirected to http://localhost:3000/home
+Completed 302 Found in 58ms (ActiveRecord: 44.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-12-12 20:44:10 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:44:13 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 72ms (Views: 68.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/residences/4" for 127.0.0.1 at 2018-12-12 20:44:16 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 59ms (Views: 55.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:44:24 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/residences/4" for 127.0.0.1 at 2018-12-12 20:44:31 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"Haod6WtPQt6rDm9I87ec74hZ4htj6fQvFewAZCv0hIJeFx1MNk5DTVLUbPfB2N1eM2gCTMrpXTzaWibR6423zg==", "id"=>"4"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 73ms (Views: 68.4ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:44:39 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VXs6mQVir9FWmD+jW8KyZ9BnucIdxHPOaQWX357ZvH4Wxjo8WGOuQq9CPBxprfPWa1ZZlbTE2t2ms7FqXqCPMg==", "hotsale"=>{"weekdate"=>"2021-W02", "residence_id"=>"4", "price"=>"111"}, "commit"=>"Crear hotsale"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started GET "/residences/4" for 127.0.0.1 at 2018-12-12 20:45:15 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (61.0ms)
+Completed 200 OK in 137ms (Views: 97.6ms | ActiveRecord: 21.2ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:45:16 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0umvQKWK/uErzsr7EpU4FKJerIqK3oLdxfmiLv9TluWRVK/l+Iv/ctIUyUQg+nmlGW9M3SPeK84KT4SbPyqlqQ==", "hotsale"=>{"weekdate"=>"2021-W02", "residence_id"=>"4", "price"=>"111"}, "commit"=>"Crear hotsale"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for #<Class:0x007f2e8a14bc88>):
+  
+app/controllers/hotsales_controller.rb:10:in `create'
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:46:05 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0umvQKWK/uErzsr7EpU4FKJerIqK3oLdxfmiLv9TluWRVK/l+Iv/ctIUyUQg+nmlGW9M3SPeK84KT4SbPyqlqQ==", "hotsale"=>{"weekdate"=>"2021-W02", "residence_id"=>"4", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Redirected to http://localhost:3000/hotsales
+Completed 302 Found in 31ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:46:05 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.4ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (56.8ms)
+Completed 200 OK in 108ms (Views: 93.2ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-12 20:46:19 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:66
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:69
+  Rendered users/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 86ms (Views: 78.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:46:23 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:46:38 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0umvQKWK/uErzsr7EpU4FKJerIqK3oLdxfmiLv9TluWRVK/l+Iv/ctIUyUQg+nmlGW9M3SPeK84KT4SbPyqlqQ==", "hotsale"=>{"weekdate"=>"2021-W02", "residence_id"=>"4", "price"=>"111"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Redirected to http://localhost:3000/hotsales
+Completed 302 Found in 27ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:46:38 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.4ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 113ms (Views: 97.2ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:50:37 -0300
+  
+SyntaxError (/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:13: syntax error, unexpected keyword_else, expecting ')'
+		else
+		    ^
+/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:15: syntax error, unexpected keyword_end, expecting ')'
+		end
+		   ^
+/home/cristian/IDS_Proyecto/app/controllers/hotsales_controller.rb:52: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/controllers/hotsales_controller.rb:13: syntax error, unexpected keyword_else, expecting ')'
+app/controllers/hotsales_controller.rb:15: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/hotsales_controller.rb:52: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:51:01 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.5ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (71.9ms)
+Completed 200 OK in 137ms (Views: 111.7ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:51:04 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 59ms (Views: 57.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-12 20:51:06 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:17
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:26
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  Rendered auctions/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 82ms (Views: 72.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:51:10 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 72ms (Views: 69.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/residences/4" for 127.0.0.1 at 2018-12-12 20:51:12 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"6p9npb7tRgR6mD5npvvWO07bF3CTuPQpL2H7Tz9FXEipImcA4+xHl4NCPdiUlJeK9er3Jzq4XTrg1936/zxvBA==", "id"=>"4"}
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:23
+  [1m[36mHotsale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  Rendered residences/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 63ms (Views: 59.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-12 20:51:21 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MRy1cCpd+87Ro87zaTA/l8u+ohyXj/Pzz9gMYkJWJWlyobXVd1z6XSh5zUxbX34mcI9CSz6PWuAAbirXgi8WJQ==", "auction"=>{"name"=>"iniciada", "weekdate"=>"2022-W22", "residence_id"=>"4", "monto"=>"44", "minimapuja"=>"44"}, "commit"=>"Crear Subasta"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[36mAuction Create (34.2ms)[0m  [1m[32mINSERT INTO "auctions" ("name", "monto", "minimapuja", "created_at", "updated_at", "residence_id", "weekdate") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "iniciada"], ["monto", 44], ["minimapuja", 44], ["created_at", "2018-12-12 23:51:21.893895"], ["updated_at", "2018-12-12 23:51:21.893895"], ["residence_id", 4], ["weekdate", "2022-W22"]]
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (68.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 113ms (ActiveRecord: 103.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-12 20:51:22 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:17
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:26
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  Rendered auctions/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 64ms (Views: 61.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:51:27 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 72ms (Views: 68.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/residences/4" for 127.0.0.1 at 2018-12-12 20:51:30 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"a+pA9Ama/oJvWXkq6tx/9eLeD6dpYDgVfITA7KyfUFgoV0BRVJv/EZaDepXYsz5EWe/v8MBgkQazMuZZbOZjFA==", "id"=>"4"}
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mHotsale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:41
+  Rendered residences/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:51:38 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a1YRvgPYECxm/fOX/INRDXH30jfmkVg+KnaKdfR7T6oo6xEbXtkRv58n8CjO7BC8ysYyYE+R8S3lwKzANAJ85g==", "hotsale"=>{"weekdate"=>"2022-W22", "residence_id"=>"4", "price"=>"444"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+  [1m[36mAuction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Redirected to http://localhost:3000/hotsales
+Completed 302 Found in 17ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:51:38 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.3ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/residences" for 127.0.0.1 at 2018-12-12 20:51:47 -0300
+Processing by ResidencesController#index as HTML
+  Rendering residences/index.html.erb within layouts/application
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  ↳ app/views/residences/index.html.erb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/index.html.erb:63
+  Rendered residences/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 76ms (Views: 73.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/residences/4" for 127.0.0.1 at 2018-12-12 20:51:51 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"authenticity_token"=>"eijxpRw7W95g/xzY/x46dYIqJcb+cSRwW/3o4FlXkys5lfEAQTpaTZklH2fNcXvEORvFkVdxjWOUS85VmS6gZw==", "id"=>"4"}
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mHotsale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:41
+  Rendered residences/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 60ms (Views: 56.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2018-12-12 20:52:03 -0300
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NQNyGr/2DuJlTOuheyWXhagl9BsdKFIAV9B9OmGfcax2vnK/4vcPcZyW6B5JStY0ExQUTLQo+xOYZluPoeZC4A==", "auction"=>{"name"=>"iniciada", "weekdate"=>"2057-W27", "residence_id"=>"4", "monto"=>"4", "minimapuja"=>"4"}, "commit"=>"Crear Subasta"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[36mAuction Create (0.4ms)[0m  [1m[32mINSERT INTO "auctions" ("name", "monto", "minimapuja", "created_at", "updated_at", "residence_id", "weekdate") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "iniciada"], ["monto", 4], ["minimapuja", 4], ["created_at", "2018-12-12 23:52:03.317108"], ["updated_at", "2018-12-12 23:52:03.317108"], ["residence_id", 4], ["weekdate", "2057-W27"]]
+  ↳ app/controllers/auctions_controller.rb:10
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/auctions_controller.rb:10
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 35ms (ActiveRecord: 28.2ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-12-12 20:52:03 -0300
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:17
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  ↳ app/views/auctions/index.html.erb:26
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  [1m[36mCACHE Residence Load (0.0ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/auctions/index.html.erb:27
+  Rendered auctions/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 78ms (Views: 74.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/residences/4" for 127.0.0.1 at 2018-12-12 20:52:06 -0300
+Processing by ResidencesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/residences_controller.rb:32
+  Rendering residences/show.html.erb within layouts/application
+  [1m[36mAuction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:17
+  [1m[36mHotsale Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "hotsales" WHERE "hotsales"."residence_id" = $1 LIMIT $2[0m  [["residence_id", 4], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:35
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/residences/show.html.erb:41
+  Rendered residences/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 60ms (Views: 55.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/hotsales" for 127.0.0.1 at 2018-12-12 20:52:12 -0300
+Processing by HotsalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RS8RZXB6kVEVmo3EnUV4NzFgTc+A7ZHoO7Zmk5tEqTQGkhHALXuQwuxAjnuvKjmGilGtmCntOPv0AEAmWz2aeA==", "hotsale"=>{"weekdate"=>"2057-W27", "residence_id"=>"4", "price"=>"123"}, "commit"=>"Crear hotsale"}
+  [1m[36mReservation Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+  [1m[36mAuction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/hotsales_controller.rb:10
+Redirected to http://localhost:3000/hotsales
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/hotsales" for 127.0.0.1 at 2018-12-12 20:52:12 -0300
+Processing by HotsalesController#index as HTML
+  Rendering hotsales/index.html.erb within layouts/application
+  [1m[36mHotsale Load (0.3ms)[0m  [1m[34mSELECT "hotsales".* FROM "hotsales"[0m
+  ↳ app/views/hotsales/index.html.erb:19
+  [1m[36mResidence Load (0.1ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:30
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.2ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  [1m[36mResidence Load (0.3ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/hotsales/index.html.erb:21
+  Rendered hotsales/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 1.5ms)
+
+

@@ -7,10 +7,11 @@ def index
 
 	def create
 		@hotsale = Hotsale.new(params.require(:hotsale).permit(:weekdate, :residence_id, :price))
-		if @hotsale.save
-			redirect_to hotsales_path, notice: 'Se creo la hotsale exitosamente'
+		if (Reservation.exists?('SELECT * FROM WHERE residence_id LIKE "%#{@hotsale.residence_id}%" AND weekdate LIKE "%#{@hotsale.weekdate}%"') or Auction.exists?('SELECT * FROM WHERE residence_id LIKE "%#{@hotsale.residence_id}%" AND weekdate LIKE "%#{@hotsale.weekdate}%"'))
+		   	@hotsale.save
+		   	redirect_to hotsales_path, notice: 'Se creo hotsale '
 		else
-			redirect_to hotsales_path, notice: 'NO Se creo la hotsale'
+			redirect_to hotsales_path, notice: 'Fecha reservada, no se creo hotsale'
 		end
 	end
 
