@@ -16,12 +16,15 @@ def create
 		end
 	else
 		if @u.creditos > 0
-			if @reservation.save
-			  	@u.update(creditos: @u.creditos - 1)
-
-		      	redirect_to  home_index_path, notice: 'Reservaste la residencia exitosamente'
-			else 
-				redirect_to  home_index_path, notice: 'Fecha imposible de reservar, vuelva a intentar'
+		   if Hotsale.where(residence_id: @reservation.residence_id, weekdate: @reservation.weekdate).exists?
+			  redirect_to  home_index_path, notice: 'Fecha en hotsale, no puede reservar'
+		   else
+				if  @reservation.save
+				  	@u.update(creditos: @u.creditos - 1)
+			      	redirect_to  home_index_path, notice: 'Reservaste la residencia exitosamente'
+				else 
+					redirect_to  home_index_path, notice: 'Fecha imposible de reservar, vuelva a intentar'
+				end
 			end
 		end	
 	end
