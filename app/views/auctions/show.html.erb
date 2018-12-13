@@ -4,47 +4,26 @@
 <div class="col-md-3"></div>
   <div class="col-md-5">
 <% if @auction.name == "iniciada"  %>
-<% if user_signed_in? %>
+    <% if user_signed_in? %>
 
-    <%if current_user.creditos > 0 %>
-       <% @r = Residence.find(@auction.residence_id) %>
-        <td>Residencia: <%=  @r.name  %></td>
-       <h6>Puja Maxima Actual: <%= @auction.monto %></h6>
-        <h6>Minima Puja: <%= @auction.minimapuja %></h6>
-    <%= form_for @auction do |f| %>
-         <strong><h4> <%= f.label :monto, 'Monto a pujar:' %></h4></strong>
-        <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-         <%= f.submit "PUJAR", class: 'btn btn-primary' %>
-         <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
-
-    <% end %>
-    <% else %>
-      <h6>No dispone de creditos para poder pujar</h6>
-<% end %>
-<% end %>
-<% end %>
-<p>
-<% if @auction.name == "iniciada"  %>
-<% if  @auction.user_id.present?  %>
-<% if current_user.try(:admin?) %>
-      <td><%= form_for Reservation.new() do |f| %>
-        <%= f.hidden_field :modo, value: "subasta" %>
-        <%= f.hidden_field  :weekdate, value: @auction.weekdate %>
-        <%= f.hidden_field :user_id, value: @auction.user_id %>  
-        <%= f.hidden_field :residence_id, value: @auction.residence_id %>
-        <%= f.submit "Dar reserva al ganador", class: 'btn btn-success' %>
+        <%if current_user.creditos > 0 %>
+            <% @r = Residence.find(@auction.residence_id) %>
+            <td>Residencia: <%=  @r.name  %></td>
+            <h6>Puja Maxima Actual: <%= @auction.monto %></h6>
+            <h6>Minima Puja: <%= @auction.minimapuja %></h6>
+        
+        <%= form_for @auction do |f| %>
+             <strong><h4> <%= f.label :monto, 'Monto a pujar:' %></h4></strong>
+             <%= f.number_field :monto,min: @auction.minimapuja+@auction.monto , class: 'form-control' %>
+             <%= f.hidden_field :user_id, value: current_user.id %>
+             <%= f.submit "PUJAR", class: 'btn btn-primary' %>
+             <%= link_to "Volver", auctions_path, class: 'btn btn-primary' %>
         <% end %>
-
-<p>
-
-    <%= link_to "Finalizar Pujas", finalizar_auction_path(@auction), class: 'btn btn-warning' %>
-  </p><% end %>
+        <% else %>
+          <h6>No dispone de creditos para poder pujar</h6>
+        <% end %>
+  <% end %>
 <% end %>
-
-<% end %>
-
-
 
 </div>
 </div>

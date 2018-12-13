@@ -19,18 +19,16 @@
 		<% @hotsale.each do |r| %>
 			<tr>
 				<% @r = Residence.find(r.residence_id) %>
-        <td><%=  @r.name  %></td>
+        		<td><%=  @r.name  %></td>
 				<td>$<%= r.price %></td>
-				  <% date = DateTime.parse(r.weekdate)%>
-         <td><%= date.strftime('%d/%m/%Y')   %></td>
-				
-				
+				<% date = DateTime.parse(r.weekdate)%>
+         		<td><%= date.strftime('%d/%m/%Y')   %></td>		
 
 				<td><%=link_to 'ver', r, class: 'btn btn-success'%></td>
 				<% if current_user.try(:admin?) %>
 				<td><%=link_to 'editar', edit_hotsale_path(r), class: 'btn btn-info'%></td>
 				<td><%=link_to 'eliminar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea eliminar hotsale?'} %>
-						<% end %>
+				<% end %>
 
 				</td>
 				<% end %>

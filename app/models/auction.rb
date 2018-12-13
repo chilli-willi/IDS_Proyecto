@@ -9,6 +9,7 @@ class Auction < ApplicationRecord
           errors.add(:weekdate, 'Debes reservar con 6 meses de anticipacion')
       end
   end	
+  belongs_to :user
 	belongs_to :residence
 	has_many :bids
 end
