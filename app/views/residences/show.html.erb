@@ -12,11 +12,10 @@
 <h1><%= @residence.name %></h1>
 <p><%= @residence.des %></p>
 
-
-
 <%if Auction.exists?(residence_id: params[:id]) %>
 	<%= link_to "FECHAS EN SUBASTA DISPONIBLES", auctions_path , :class=>'btn btn-success' %>
 <% else %>
+
 <div class="col-md-3"></div>
 
 <h5>Reserva directa: </h5>
@@ -26,7 +25,6 @@
 	<%= f.week_field :weekdate %>
 	<%= f.hidden_field :user_id, value: current_user.id %>	
 	<%= f.hidden_field :residence_id, value: params[:id] %>
-
 	<%= f.submit "Reservar", :class=>'btn btn-primary' %>
 	<% end %>
  <% end %>
@@ -37,21 +35,18 @@
 	<% end %>
 </p>
 
-
-   <% if current_user.try(:admin?) %>
+<% if current_user.try(:admin?) %>
 
  <p><h5>Crear Hotsale</h5></p>
-
-     <p>
-    <%= form_for Hotsale.new() do |h| %>
+ 
+ <p><%= form_for Hotsale.new() do |h| %>
     <%= h.label :weekdate, 'Semana' %>
     <%= h.week_field :weekdate %></p>
 	<%= h.hidden_field :residence_id, value: params[:id] %>
-<p>
-	<%= h.label :price, 'Precio' %>
+	<p><%= h.label :price, 'Precio' %>
 	<%= h.number_field :price, class: 'form-control', required: true %></p>
-		<%= h.submit "Crear hotsale", :class=>'btn btn-primary' %>
-   <% end %>
+	<%= h.submit "Crear hotsale", :class=>'btn btn-primary' %>
+ <% end %>
    
 
 <p><h5>Crear Subasta</h5></p>

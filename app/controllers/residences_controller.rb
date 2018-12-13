@@ -1,10 +1,5 @@
 class ResidencesController < ApplicationController
 	
-
-	def index
-		@residences = Residence.all
-	end
-
 	def residence_params
 	  params.require(:residence).permit(:name, :term)
 	end
@@ -16,8 +11,6 @@ class ResidencesController < ApplicationController
 	    @residences = Residence.all
 	  end
 	end
-
-
 
 	def create
 		@residence = Residence.new(params.require(:residence).permit(:name, :des, :location, :pais, :provincia, :localidad))

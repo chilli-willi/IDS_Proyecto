@@ -1,16 +1,21 @@
 class HotsalesController < ApplicationController
 
-def index
+	def index
 		@hotsale = Hotsale.all
 	end
 
+	def new
+		@hotsale = Hotsale.new
+	end
+
 	def create
-		@hotsale = Hotsale.new(params.require(:hotsale).permit(:weekdate, :residence_id, :price))
-		if @hotsale.save
-			redirect_to hotsales_path, notice: 'Se creo la hotsale exitosamente'
-		else
-			redirect_to hotsales_path, notice: 'NO Se creo la hotsale'
-		end
+		@hotsale = Hotsale.new(params.require(:hotsale).permit(:weekdate, :residence_id, :price))			
+			if  Reservation.where(residence_id: @hotsale.residence_id, weekdate: @hotsale.weekdate).exists?
+				redirect_to hotsales_path, notice: 'No puede crear hotsale en esa fecha, ya esta reservada'
+			else 
+				@hotsale.save
+				redirect_to hotsales_path, notice: 'Se creo la hotsale'
+			end
 	end
 
 	def show
@@ -29,7 +34,7 @@ def index
 		end
 		@hotsale.destroy
 		if current_user.admin?
-			redirect_to home_index_path	, notice: "Hotsale se borro"
+			redirect_to hotsales_path	, notice: "Hotsale se borro"
 		end
 
 	end
@@ -43,16 +48,11 @@ def index
 	def update
 		@hotsale = Hotsale.find(params[:id])
 		if @hotsale.update(params.require(:hotsale).permit(:weekdate, :residence_id, :price))
-			redirect_to hotsales_path, notice: 'La hotsale se modifico correctamente'
-		
+			redirect_to hotsales_path, notice: 'La hotsale se modifico correctamente'	
 	end
 
 	end
 
-
-	def new
-		@hotsale = Hotsale.new
-	end
 
 end
 
