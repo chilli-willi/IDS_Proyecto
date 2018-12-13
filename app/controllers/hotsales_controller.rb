@@ -10,8 +10,8 @@ class HotsalesController < ApplicationController
 
 	def create
 		@hotsale = Hotsale.new(params.require(:hotsale).permit(:weekdate, :residence_id, :price))			
-			if  Reservation.where(residence_id: @hotsale.residence_id, weekdate: @hotsale.weekdate).exists?
-				redirect_to hotsales_path, notice: 'No puede crear hotsale en esa fecha, ya esta reservada'
+			if  ( Reservation.where(residence_id: @hotsale.residence_id, weekdate: @hotsale.weekdate).exists? or Auction.where(residence_id: @hotsale.residence_id, weekdate: @hotsale.weekdate).exists?)
+				redirect_to hotsales_path, notice: 'No puede crear hotsale en esa fecha, ya esta reservada o en subasta'
 			else 
 				@hotsale.save
 				redirect_to hotsales_path, notice: 'Se creo la hotsale'
