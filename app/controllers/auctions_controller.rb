@@ -8,10 +8,14 @@ class AuctionsController < ApplicationController
 	def create
 		@auction = Auction.new(auction_params)
 		@auction.user_id = 1
-		if @auction.save
-			redirect_to auctions_path, notice: 'Se creo la subasta exitosamente'
-		else
-			redirect_to auctions_path, notice: 'La subasta debe tener 6 meses de anticipacion'
+		if  ( Reservation.where(residence_id: @auction.residence_id, weekdate: @auction.weekdate).exists? or Hotsale.where(residence_id: @auction.residence_id, weekdate: @auction.weekdate).exists?)
+			redirect_to auctions_path, notice: 'No puede crear subasta en esa fecha, ya esta reservada o en hotsale'
+		else 
+			if @auction.save
+			redirect_to auctions_path, notice: 'La subasta creada'
+			else
+				redirect_to auctions_path, notice: 'La subasta no tiene 6 meses de anticipacion'
+			end
 		end
 	end
 
