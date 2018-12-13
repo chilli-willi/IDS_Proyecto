@@ -32,8 +32,10 @@
 
 <p>
 <%= form_tag(residences_path, method: :get) do %>
+  
   <%= text_field_tag :term, params[:term] %>
-  <%= submit_tag 'Buscar' %>
+
+<%= submit_tag 'Buscar' %>
 <% end %>
 </p>
 
