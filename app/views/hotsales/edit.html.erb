@@ -15,9 +15,11 @@
 
 <p></p>
   		<div>
-			
-				<%= f.label :price, 'MONTO' %>
-  				<%= f.number_field :price, class: 'form-control', required: true %>
+  			<%= f.label :weekdate, 'Semana' %>
+        <%= f.week_field :weekdate %></p>
+        <p><%= f.label :price, 'Precio' %>
+        <%= f.number_field :price, class: 'form-control', required: true %></p>
+
   		
   		</div>
 <p></p>
