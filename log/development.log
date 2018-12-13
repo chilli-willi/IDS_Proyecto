@@ -48769,3 +48769,509 @@ Processing by HotsalesController#index as HTML
 Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 1.5ms)
 
 
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (443.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto"[0m
+  ↳ bin/rails:9
+  [1m[35m (440.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1061.9ms)[0m  [1m[35mCREATE DATABASE "bd_proyecto" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (1032.7ms)[0m  [1m[35mCREATE DATABASE "bd_proyecto_test" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (170.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (86.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (97.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "auctions" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (206.5ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "name" character varying, "des" character varying, "monto" integer, "minimapuja" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "residence_id" integer, "user_id" integer, "weekdate" text)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "bids" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (98.0ms)[0m  [1m[35mCREATE TABLE "bids" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "auction_id" integer, "maxbid" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "homes" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (115.0ms)[0m  [1m[35mCREATE TABLE "homes" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "hotsales" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (165.2ms)[0m  [1m[35mCREATE TABLE "hotsales" ("id" bigserial primary key, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "residence_id" bigint, "weekdate" text)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (96.4ms)[0m  [1m[35mCREATE  INDEX  "index_hotsales_on_residence_id" ON "hotsales"  ("residence_id")[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE[0m
+  ↳ db/schema.rb:65
+  [1m[35m (181.2ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "modo" integer DEFAULT 0, "weekdate" text)[0m
+  ↳ db/schema.rb:65
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "residences" CASCADE[0m
+  ↳ db/schema.rb:74
+  [1m[35m (164.8ms)[0m  [1m[35mCREATE TABLE "residences" ("id" bigserial primary key, "name" character varying, "des" character varying, "location" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "provincia" character varying, "localidad" character varying, "pais" character varying)[0m
+  ↳ db/schema.rb:74
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:85
+  [1m[35m (213.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "password" character varying, "range" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "admin" boolean, "premium" integer DEFAULT 2, "age" date, "card" character varying, "cvv" integer, "exp" date, "creditos" integer DEFAULT 2)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (96.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (15.6ms)[0m  [1m[35mALTER TABLE "hotsales" ADD CONSTRAINT "fk_rails_7f1de5b177"
+FOREIGN KEY ("residence_id")
+  REFERENCES "residences" ("id")
+[0m
+  ↳ db/schema.rb:107
+  [1m[35m (165.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (13.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181208224324)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (16.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181207114741),
+(20181120030410),
+(20181208223408),
+(20181207204757),
+(20181207223611),
+(20181124042059),
+(20181121023029),
+(20181127211000),
+(20181127233317),
+(20181207112547),
+(20181208220508),
+(20181124031514),
+(20181114041708),
+(20181105162825),
+(20181113220631),
+(20181105040243),
+(20181128173922),
+(20181120024434),
+(20181207124224);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (156.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-13 01:32:44.864669"], ["updated_at", "2018-12-13 01:32:44.864669"]]
+  ↳ db/schema.rb:13
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (160.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (78.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (79.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "auctions" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (174.5ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "name" character varying, "des" character varying, "monto" integer, "minimapuja" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "residence_id" integer, "user_id" integer, "weekdate" text)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "bids" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (89.8ms)[0m  [1m[35mCREATE TABLE "bids" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "auction_id" integer, "maxbid" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "homes" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (106.9ms)[0m  [1m[35mCREATE TABLE "homes" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "hotsales" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (156.6ms)[0m  [1m[35mCREATE TABLE "hotsales" ("id" bigserial primary key, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "residence_id" bigint, "weekdate" text)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE  INDEX  "index_hotsales_on_residence_id" ON "hotsales"  ("residence_id")[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE[0m
+  ↳ db/schema.rb:65
+  [1m[35m (173.0ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "modo" integer DEFAULT 0, "weekdate" text)[0m
+  ↳ db/schema.rb:65
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "residences" CASCADE[0m
+  ↳ db/schema.rb:74
+  [1m[35m (189.6ms)[0m  [1m[35mCREATE TABLE "residences" ("id" bigserial primary key, "name" character varying, "des" character varying, "location" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "provincia" character varying, "localidad" character varying, "pais" character varying)[0m
+  ↳ db/schema.rb:74
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:85
+  [1m[35m (171.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "password" character varying, "range" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "admin" boolean, "premium" integer DEFAULT 2, "age" date, "card" character varying, "cvv" integer, "exp" date, "creditos" integer DEFAULT 2)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (96.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (15.7ms)[0m  [1m[35mALTER TABLE "hotsales" ADD CONSTRAINT "fk_rails_7f1de5b177"
+FOREIGN KEY ("residence_id")
+  REFERENCES "residences" ("id")
+[0m
+  ↳ db/schema.rb:107
+  [1m[35m (190.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (13.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181208224324)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (16.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181207114741),
+(20181120030410),
+(20181208223408),
+(20181207204757),
+(20181207223611),
+(20181124042059),
+(20181121023029),
+(20181127211000),
+(20181127233317),
+(20181207112547),
+(20181208220508),
+(20181124031514),
+(20181114041708),
+(20181105162825),
+(20181113220631),
+(20181105040243),
+(20181128173922),
+(20181120024434),
+(20181207124224);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (173.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-13 01:32:47.035570"], ["updated_at", "2018-12-13 01:32:47.035570"]]
+  ↳ db/schema.rb:13
+  [1m[35m (9.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-12-13 01:32:47.050610"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testadmin3@mail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "age", "card", "cvv", "exp") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["created_at", "2018-12-13 01:32:47.269615"], ["updated_at", "2018-12-13 01:32:47.269615"], ["email", "testadmin3@mail.com"], ["encrypted_password", "$2a$11$ZYN1TL60dA1tncKjrKo5A./9gePtlXgwuXi1livfs64sdrYSim47q"], ["admin", true], ["age", "1991-12-12"], ["card", "1234123412341234"], ["cvv", 123], ["exp", "2008-12-12"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (17.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser3@mail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "premium", "age", "card", "cvv", "exp") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2018-12-13 01:32:47.418122"], ["updated_at", "2018-12-13 01:32:47.418122"], ["email", "testuser3@mail.com"], ["encrypted_password", "$2a$11$520pYvkz88WyRatxg.GlUeHYLsX635/sOsYnyPaVf8Rq9Kvq3jCei"], ["admin", false], ["premium", 0], ["age", "1991-12-12"], ["card", "1234123412341234"], ["cvv", 123], ["exp", "2008-12-12"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ad@ad.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "premium", "age", "card", "cvv", "exp") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2018-12-13 01:32:47.558956"], ["updated_at", "2018-12-13 01:32:47.558956"], ["email", "ad@ad.com"], ["encrypted_password", "$2a$11$Ub1QW.vCTmSq3m4njPeQiucEy2cfAKfwrlTVCUgcwO6zeUzAhChiO"], ["admin", true], ["premium", 1], ["age", "1991-12-12"], ["card", "1234123412341234"], ["cvv", 123], ["exp", "2008-12-12"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testcustomer3@mail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "age", "card", "cvv") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", "2018-12-13 01:32:47.698955"], ["updated_at", "2018-12-13 01:32:47.698955"], ["email", "testcustomer3@mail.com"], ["encrypted_password", "$2a$11$zmsaMCFaCNZrAWFWRq91AO8FMYutvx6qWacO5lsLIonpPki9wjvwm"], ["admin", false], ["age", "1991-12-12"], ["card", "1234123412341234"], ["cvv", 123]]
+  ↳ db/seeds.rb:14
+  [1m[35m (13.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (945.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto"[0m
+  ↳ bin/rails:9
+  [1m[35m (540.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bd_proyecto_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1077.1ms)[0m  [1m[35mCREATE DATABASE "bd_proyecto" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (1039.8ms)[0m  [1m[35mCREATE DATABASE "bd_proyecto_test" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (205.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (103.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (96.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "auctions" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (181.6ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "name" character varying, "des" character varying, "monto" integer, "minimapuja" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "residence_id" integer, "user_id" integer, "weekdate" text)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "bids" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (98.2ms)[0m  [1m[35mCREATE TABLE "bids" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "auction_id" integer, "maxbid" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "homes" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (115.1ms)[0m  [1m[35mCREATE TABLE "homes" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "hotsales" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (165.0ms)[0m  [1m[35mCREATE TABLE "hotsales" ("id" bigserial primary key, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "residence_id" bigint, "weekdate" text)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE  INDEX  "index_hotsales_on_residence_id" ON "hotsales"  ("residence_id")[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE[0m
+  ↳ db/schema.rb:65
+  [1m[35m (206.0ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "modo" integer DEFAULT 0, "weekdate" text)[0m
+  ↳ db/schema.rb:65
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "residences" CASCADE[0m
+  ↳ db/schema.rb:74
+  [1m[35m (164.9ms)[0m  [1m[35mCREATE TABLE "residences" ("id" bigserial primary key, "name" character varying, "des" character varying, "location" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "provincia" character varying, "localidad" character varying, "pais" character varying)[0m
+  ↳ db/schema.rb:74
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:85
+  [1m[35m (171.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "password" character varying, "range" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "admin" boolean, "premium" integer DEFAULT 2, "age" date, "card" character varying, "cvv" integer, "exp" date, "creditos" integer DEFAULT 2)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (96.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (97.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (181.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (13.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181208224324)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (16.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181207114741),
+(20181120030410),
+(20181208223408),
+(20181207204757),
+(20181207223611),
+(20181124042059),
+(20181121023029),
+(20181127211000),
+(20181127233317),
+(20181207112547),
+(20181208220508),
+(20181124031514),
+(20181114041708),
+(20181105162825),
+(20181113220631),
+(20181105040243),
+(20181128173922),
+(20181120024434),
+(20181207124224);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (181.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-13 01:33:55.508641"], ["updated_at", "2018-12-13 01:33:55.508641"]]
+  ↳ db/schema.rb:13
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (176.8ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (86.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (88.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "auctions" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (181.6ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "name" character varying, "des" character varying, "monto" integer, "minimapuja" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "residence_id" integer, "user_id" integer, "weekdate" text)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "bids" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (89.7ms)[0m  [1m[35mCREATE TABLE "bids" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "auction_id" integer, "maxbid" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "homes" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (106.7ms)[0m  [1m[35mCREATE TABLE "homes" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "hotsales" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (181.7ms)[0m  [1m[35mCREATE TABLE "hotsales" ("id" bigserial primary key, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "residence_id" bigint, "weekdate" text)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (88.3ms)[0m  [1m[35mCREATE  INDEX  "index_hotsales_on_residence_id" ON "hotsales"  ("residence_id")[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE[0m
+  ↳ db/schema.rb:65
+  [1m[35m (181.1ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "user_id" integer, "residence_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "modo" integer DEFAULT 0, "weekdate" text)[0m
+  ↳ db/schema.rb:65
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "residences" CASCADE[0m
+  ↳ db/schema.rb:74
+  [1m[35m (164.7ms)[0m  [1m[35mCREATE TABLE "residences" ("id" bigserial primary key, "name" character varying, "des" character varying, "location" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "provincia" character varying, "localidad" character varying, "pais" character varying)[0m
+  ↳ db/schema.rb:74
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:85
+  [1m[35m (179.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "password" character varying, "range" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "admin" boolean, "premium" integer DEFAULT 2, "age" date, "card" character varying, "cvv" integer, "exp" date, "creditos" integer DEFAULT 2)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (104.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (113.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (165.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (31.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181208224324)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (14.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181207114741),
+(20181120030410),
+(20181208223408),
+(20181207204757),
+(20181207223611),
+(20181124042059),
+(20181121023029),
+(20181127211000),
+(20181127233317),
+(20181207112547),
+(20181208220508),
+(20181124031514),
+(20181114041708),
+(20181105162825),
+(20181113220631),
+(20181105040243),
+(20181128173922),
+(20181120024434),
+(20181207124224);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (231.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-13 01:33:57.784738"], ["updated_at", "2018-12-13 01:33:57.784738"]]
+  ↳ db/schema.rb:13
+  [1m[35m (18.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-12-13 01:33:57.809205"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testadmin3@mail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "age", "card", "cvv", "exp") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["created_at", "2018-12-13 01:33:57.991239"], ["updated_at", "2018-12-13 01:33:57.991239"], ["email", "testadmin3@mail.com"], ["encrypted_password", "$2a$11$wNiigs0WVO.y/5oFPlqzLOb4rigdEeBnvm49dJ2aDa19/OmNm2KZu"], ["admin", true], ["age", "1991-12-12"], ["card", "1234123412341234"], ["cvv", 123], ["exp", "2008-12-12"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (29.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser3@mail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "premium", "age", "card", "cvv", "exp") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2018-12-13 01:33:58.149859"], ["updated_at", "2018-12-13 01:33:58.149859"], ["email", "testuser3@mail.com"], ["encrypted_password", "$2a$11$K8Ft9SMMkkXGqdkIiF9al.ZOEv9k9MJwjdB9EwbVnefoCleFdFnle"], ["admin", false], ["premium", 0], ["age", "1991-12-12"], ["card", "1234123412341234"], ["cvv", 123], ["exp", "2008-12-12"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ad@ad.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "premium", "age", "card", "cvv", "exp") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2018-12-13 01:33:58.289670"], ["updated_at", "2018-12-13 01:33:58.289670"], ["email", "ad@ad.com"], ["encrypted_password", "$2a$11$/yJHPO3GMXOPwJLup3KKx.Wa/dsFOx9YarU/0dnkEM1Hjjxw4nriC"], ["admin", true], ["premium", 1], ["age", "1991-12-12"], ["card", "1234123412341234"], ["cvv", 123], ["exp", "2008-12-12"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testcustomer3@mail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "admin", "age", "card", "cvv") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", "2018-12-13 01:33:58.442940"], ["updated_at", "2018-12-13 01:33:58.442940"], ["email", "testcustomer3@mail.com"], ["encrypted_password", "$2a$11$TfaAs9pwGXAteGERQdxLv.Z.eaMd3nJiGq.hUKng51qJ357qsWzke"], ["admin", false], ["age", "1991-12-12"], ["card", "1234123412341234"], ["cvv", 123]]
+  ↳ db/seeds.rb:14
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(970077351840912840)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
