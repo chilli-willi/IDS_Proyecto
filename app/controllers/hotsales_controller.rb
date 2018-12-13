@@ -20,11 +20,18 @@ def index
 
 	def destroy
 		@hotsale = Hotsale.find(params[:id])
-		if @hotsale.destroy
-			redirect_to hotsales_path, notice: "La hotsale fue borrada"
-		else
-			redirect_to hotsales_path, notice: "La hotsale no fue borrada"	
+		
+		if current_user.present? && !current_user.admin?
+			@reservation = Reservation.new(residence: @hotsale.residence, user: current_user,  weekdate: @hotsale.weekdate, modo: "hotsale")
+			if @reservation.save
+				redirect_to hotsales_path, notice: "Hotsale comprado exitosamente"
+			else redirect_to hotsales_path, notice: "Hotsale terminado, alguien ya lo compro"	end
 		end
+		@hotsale.destroy
+		if current_user.admin?
+			redirect_to home_index_path	, notice: "Hotsale se borro"
+		end
+
 	end
 
 

@@ -22,17 +22,10 @@
 				<td>$<%= @hotsale.price %></td>
 				<td><%= @hotsale.weekdate %></td>
 		
-				
-
-	<td><%= form_for Reservation.new() do |f| %>
-	<%= f.hidden_field :modo, value: "hotsale" %>
-	<%= f.hidden_field  :weekdate, value: @hotsale.weekdate %>
-	<%= f.hidden_field :user_id, value: current_user.id %>	
-	<%= f.hidden_field :residence_id, value: @hotsale.residence_id %>
-	<%= f.submit "Comprar HotSale" %>
+				<%=link_to 'Comprar', @hotsale, method: :delete,  class: 'btn btn-danger'%>
 	<% end %>
 
-	<% end %>
+
 
 	</tbody>
 </table>
