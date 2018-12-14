@@ -9,10 +9,9 @@ class ResidencesController < ApplicationController
 	  	@tasks = if !params[:weekini].blank? and !params[:weekfin].blank?
 	      			@NoPueden = Reservation.all.where('weekdate BETWEEN ? AND ?', "#{params[:weekini]}", "#{params[:weekfin]}").select('residence_id').collect(&:residence_id)
 					@Sipueden = Residence.all.where('id NOT IN (?)', Array.wrap(@NoPueden))
-					@residences = @Sipueden
+					@residences = @Sipueden	
 				#else 
-					#if params[:weekini].blank? or params[:weekend].blank?
-					#	flash[:notice] = 'Debe ingresar dos fechas' end
+				#	flash[:notice] = 'Inicial menor de 6 meses' end
 				end
 
 				if !params[:term].blank?

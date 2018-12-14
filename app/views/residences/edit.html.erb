@@ -10,27 +10,46 @@
 
 	<%= form_for @residence do |f| %>
 		
-		<div>
-			
-				<%= f.label :name, 'NOMBRE' %>
-  				<%= f.text_field :name, class: 'form-control',required: true %>
-  			</div>
-  		
-
-  		<p></p>
-		<div >
-		
-				<%= f.label :des, 'DESCRIPCION' %>
-  				<%= f.text_field :des, class: 'form-control', required: true %>
-  			</div>
-  		
-<p></p>
-   
-      <div >
-        <%= f.label :location, 'LOCATION (url imagen por ahora)' %>
-          <%= f.text_field :location, class: 'form-control', required: true%>
+	   <div>
+      <div>
+        <%= f.label :name, 'NOMBRE' %>
+          <%= f.text_field :name, class: 'form-control',required: true %>
         </div>
-     
+      </div>
+
+      <p></p>
+    <div>
+      <div>
+        <%= f.label :des, 'DESCRIPCION' %>
+          <%= f.text_field :des, class: 'form-control',required: true %>
+        </div>
+      </div>
+<p></p>
+<div>
+      <div>
+        <%= f.label :pais, 'PAIS' %>
+          <%= f.text_field :pais, class: 'form-control',required: true %>
+        </div>
+      </div>
+<p></p>
+      <div><div>
+      <div>
+        <%= f.label :provincia, 'PROVINCIA' %>
+          <%= f.text_field :provincia, class: 'form-control',required: true %>
+        </div>
+      </div>
+<p></p>
+<div>
+      <div>
+        <%= f.label :localidad, 'LOCALIDAD' %>
+          <%= f.text_field :localidad, class: 'form-control',required: true %>
+        </div>
+      </div>
+<p></p>
+      <div>
+        <%= f.label :location, 'URL IMAGEN' %>
+          <%= f.text_field :location, class: 'form-control', required: true %>
+        </div>
 
   		<p></p>
   		<%= f.submit "Editar residencia", class: 'btn btn-primary' %>
