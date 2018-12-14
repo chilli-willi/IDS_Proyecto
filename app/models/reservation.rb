@@ -7,9 +7,11 @@ class Reservation < ApplicationRecord
 
   def validate_week
   	  date = DateTime.parse(weekdate)
-      if date.present? && date < Date.today + 6.month
-          errors.add(:weekdate, 'Debes reservar con 6 meses de anticipacion')
-      end
+      if modo != "hotsale"
+	      if date.present? && date < Date.today + 6.month
+	          errors.add(:weekdate, 'Debes reservar con 6 meses de anticipacion')
+	      end
+	   end
   end
 
 	enum modo: { reserva: 0, subasta: 1, hotsale: 2 }

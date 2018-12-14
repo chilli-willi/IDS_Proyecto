@@ -31,7 +31,8 @@ class HotsalesController < ApplicationController
 			@reservation = Reservation.new(residence: @hotsale.residence, user: current_user,  weekdate: @hotsale.weekdate, modo: "hotsale")
 			if @reservation.save
 				redirect_to hotsales_path, notice: "Hotsale comprado exitosamente"
-			else redirect_to hotsales_path, notice: "Hotsale terminado, alguien ya lo compro"	end
+			else 
+				redirect_to hotsales_path, notice: "Hotsale terminado, alguien ya lo compro"	end
 		end
 		@hotsale.destroy
 		if current_user.admin?
