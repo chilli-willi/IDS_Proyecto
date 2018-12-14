@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_224324) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "residence_id"
+    t.integer "residence_id"
     t.text "weekdate"
     t.index ["residence_id"], name: "index_hotsales_on_residence_id"
   end
