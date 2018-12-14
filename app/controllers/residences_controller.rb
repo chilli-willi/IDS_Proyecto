@@ -17,9 +17,9 @@ class ResidencesController < ApplicationController
 
 				if !params[:term].blank?
 					if @Sipueden != nil
-						@residences = @Sipueden.where('name ILIKE ? OR pais ILIKE ? OR localidad ILIKE ? OR provincia ILIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
+						@residences = @Sipueden.where('name ILIKE ? OR pais ILIKE ? OR localidad ILIKE ? OR provincia ILIKE ? OR des ILIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
 	  				else 
-	  					@residences = Residence.all.where('name ILIKE ? OR pais ILIKE ? OR localidad ILIKE ? OR provincia ILIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
+	  					@residences = Residence.all.where('name ILIKE ? OR pais ILIKE ? OR localidad ILIKE ? OR provincia ILIKE ? OR des ILIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
 	  				end
 	   			end	   
 	end
