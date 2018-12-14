@@ -38,7 +38,7 @@
 			<% end %>
 				
 			<% if current_user.try(:admin?) %>
-					<%=link_to 'editar', finalizar_auction_path(r), class: 'btn btn-info'%>
+				
 				<td><%=link_to 'editar', edit_auction_path(r), class: 'btn btn-info'%></td>
 				<td><%=link_to 'Finalizar', r, method: :delete,  class: 'btn btn-danger', data: { confirm: 'Realmente desea finalizar subasta?'} %>
 			<% end %>

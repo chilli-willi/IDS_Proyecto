@@ -3,7 +3,7 @@ class HotsalesController < ApplicationController
 	def index
 		@hotsale = Hotsale.all
 	end
-
+ 	
 	def new
 		@hotsale = Hotsale.new
 	end
