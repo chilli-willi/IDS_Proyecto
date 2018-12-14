@@ -16,7 +16,7 @@
 <p></p>
   		<div>
   			<%= f.label :weekdate, 'Semana' %>
-        <%= f.week_field :weekdate %></p>
+        <%= f.week_field :weekdate, min: Date.today, max: Date.today + 180, required: true %></p>
         <p><%= f.label :price, 'Precio' %>
         <%= f.number_field :price, class: 'form-control', required: true %></p>
 

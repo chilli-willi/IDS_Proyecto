@@ -20,14 +20,18 @@
 
 <h5>Reserva directa: </h5>
 <% if current_user.premium == "si" %> 
+  <%if current_user.creditos > 0 %>
 	<%= form_for Reservation.new() do |f| %>
 	<%= f.hidden_field :modo, value: "reserva" %>
-	<%= f.week_field :weekdate %>
+	<%= f.week_field :weekdate, min: Date.today + 180 %>
 	<%= f.hidden_field :user_id, value: current_user.id %>	
 	<%= f.hidden_field :residence_id, value: params[:id] %>
 	<%= f.submit "Reservar", :class=>'btn btn-primary' %>
 	<% end %>
- <% end %>
+<% else %>
+     <h6>No dispone de creditos para poder reservar</h6>
+<% end %>
+<% end %>
 <% end %>
   <p>
 	<%if Hotsale.exists?(residence_id: params[:id]) %>
@@ -37,23 +41,33 @@
 
 <% if current_user.try(:admin?) %>
 
- <p><h5>Crear Hotsale</h5></p>
- 
- <p><%= form_for Hotsale.new() do |h| %>
-    <%= h.label :weekdate, 'Semana' %>
-    <%= h.week_field :weekdate %></p>
-	<%= h.hidden_field :residence_id, value: params[:id] %>
-	<p><%= h.label :price, 'Precio' %>
-	<%= h.number_field :price, class: 'form-control', required: true %></p>
-	<%= h.submit "Crear hotsale", :class=>'btn btn-primary' %>
- <% end %>
+
+<%= form_for Hotsale.new() do |h| %>
+	<div class="form-group">
+		<%= h.hidden_field :residence_id, value: params[:id] %>
+	</div>
+	
+	<div class="form-group">
+	<%= h.label :price, 'Precio del hot sale' %>
+	<%= h.number_field :price, class: 'form-control', placeholder: 'Ingrese el valor del hotsale', required: true, min: 0 %>
+	</div>
+
+	
+  	<div class="form-group">
+		<%= h.label :weekdate, 'Semana en hot sale' %></br>
+		<%= h.week_field :weekdate, min: Date.today, max: Date.today + 180, required: true %>
+	</div>
+
+  	<%= h.submit 'Guardar hot sale', class: 'btn btn-primary' %>
+	<% end %>
+
    
 
 <p><h5>Crear Subasta</h5></p>
     <%= form_for Auction.new() do |j| %>
    		<%= j.hidden_field :name, value: "iniciada" %>
 	    <%= j.label :weekdate, 'Semana' %>
-	    <%= j.week_field :weekdate %></p>
+	    <%= j.week_field :weekdate, min: Date.today + 180, required: true %>
 		<%= j.hidden_field :residence_id, value: params[:id] %>
 		<%= j.label :monto, 'Monto Base' %>
 		<%= j.number_field :monto, class: 'form-control', required: true %>

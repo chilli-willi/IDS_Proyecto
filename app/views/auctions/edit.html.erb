@@ -16,7 +16,7 @@
         <div>
 		
 				<%= f.label :weekdate, 'Semana' %>
-  				<%= f.week_field :weekdate, class: 'form-control', required: true %>
+  				<%= f.week_field :weekdate, min: Date.today + 180, class: 'form-control', required: true %>
   		
   		</div>
 <p></p>

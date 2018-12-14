@@ -12,7 +12,7 @@ def create
 		if @reservation.save
 		  	redirect_to  home_index_path, notice: 'Reservaste la residencia exitosamente'
 		else 
-			redirect_to  home_index_path, notice: 'Fecha imposible de reservar, vuelva a intentar'
+			redirect_to  residences_path, notice: 'Fecha imposible de reservar, vuelva a intentar con otra'
 		end
 	else
 		if @u.creditos > 0

@@ -15,7 +15,7 @@ class HotsalesController < ApplicationController
 			else 
 				if @hotsale.save
 					redirect_to hotsales_path, notice: 'Se creo la hotsale'
-				else redirect_to hotsales_path, notice: 'No puedes crear en fechas que ya pasaron' end
+				else redirect_to hotsales_path, notice: 'No puedes crear en fechas que ya pasaron o mayores a 6 meses' end
 			end
 	end
 
@@ -49,16 +49,14 @@ class HotsalesController < ApplicationController
 
 	def update
 		@hotsale = Hotsale.find(params[:id])
-			
-		if  (Reservation.where(residence_id: @hotsale.residence_id, weekdate: @hotsale.weekdate).exists? or Auction.where(residence_id: @hotsale.residence_id, weekdate: @hotsale.weekdate).exists?)
+		if  (Reservation.where(residence_id: @hotsale.residence_id, weekdate: @hotsale.weekdate).exists?)
 			redirect_to hotsales_path, notice: 'No puede crear hotsale en esa fecha, ya esta reservada o en subasta'
-		else    
-			@hotsale.update(params.require(:hotsale).permit(:weekdate, :residence_id, :price))
-		    redirect_to hotsales_path, notice: 'Se modifico hotsale'
+		else 
+			if @hotsale.update(params.require(:hotsale).permit(:weekdate, :residence_id, :price))
+				redirect_to hotsales_path, notice: 'Se actualizo hotsale'
+			else redirect_to hotsales_path, notice: 'No puedes crear en fechas que ya pasaron o mayores a 6 meses' end
+			end
 		end
 	end
-
-
-end
 
 
