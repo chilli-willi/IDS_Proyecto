@@ -29,12 +29,20 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
-
-<p>
+<p></p>
 
 <%= form_tag(residences_path, method: :get) do %>
-  <%= text_field_tag :term, params[:term] %>
-  <%= submit_tag 'Buscar' %>
+<p> Buscar: 
+  <%= text_field_tag :term, params[:term] %></p>
+
+<p> Disponibilidad desde semana inicial:
+  <%= week_field_tag :weekini, params[:weekini] %></p>
+
+<p> Disponibilidad desde semana final:
+  <%= week_field_tag :weekfin, params[:weekfin] %></p>
+
+<%= submit_tag 'Buscar' %>
+
 <% end %>
 </p>
 

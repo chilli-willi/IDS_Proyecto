@@ -5,12 +5,23 @@ class ResidencesController < ApplicationController
 	end
 
 	def index
-	  	@tasks = if params[:term]
-	    @residences = Residence.where('name LIKE ? OR pais LIKE ? OR localidad LIKE ? OR provincia LIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
-	  	@reservation = Reservation.where(residence_id: params[:id], weekdate: params[:term])
-	  else
-	    @residences = Residence.all
-	  end
+		@residences = Residence.all
+	  	@tasks = if !params[:weekini].blank? and !params[:weekfin].blank?
+	      			@NoPueden = Reservation.all.where('weekdate BETWEEN ? AND ?', "#{params[:weekini]}", "#{params[:weekfin]}").select('residence_id').collect(&:residence_id)
+					@Sipueden = Residence.all.where('id NOT IN (?)', Array.wrap(@NoPueden))
+					@residences = @Sipueden
+				#else 
+					#if params[:weekini].blank? or params[:weekend].blank?
+					#	flash[:notice] = 'Debe ingresar dos fechas' end
+				end
+
+				if !params[:term].blank?
+					if @Sipueden != nil
+						@residences = @Sipueden.where('name ILIKE ? OR pais ILIKE ? OR localidad ILIKE ? OR provincia ILIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
+	  				else 
+	  					@residences = Residence.all.where('name ILIKE ? OR pais ILIKE ? OR localidad ILIKE ? OR provincia ILIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
+	  				end
+	   			end	   
 	end
 
 	def create
