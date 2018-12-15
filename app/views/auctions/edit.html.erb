@@ -12,14 +12,7 @@
 <% if current_user.try(:admin?) %>
 	<%= form_for @auction do |f| %>
 		
-		<div class="form-group">
-        <div>
-		
-				<%= f.label :weekdate, 'Semana' %>
-  				<%= f.week_field :weekdate, min: Date.today + 180, class: 'form-control', required: true %>
-  		
-  		</div>
-<p></p>
+	
   		<div>
 			
 				<%= f.label :monto, 'MONTO' %>
