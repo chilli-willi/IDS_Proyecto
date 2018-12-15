@@ -2,6 +2,16 @@ class HotsalesController < ApplicationController
 
 	def index
 		@hotsale = Hotsale.all
+		@tasks = if !params[:weekini].blank? and !params[:weekfin].blank?
+          
+        @NoPueden = Hotsale
+        .where('weekdate BETWEEN ? AND ?', "#{params[:weekini]}", "#{params[:weekfin]}")
+        #.pluck(:residence_id)
+     	#@Sipueden = Residence.all.where.('id NOT IN (?)', Array.wrap(@NoPueden))
+    	@Sipueden = Hotsale.where(id: @NoPueden)
+     	@hotsale = @Sipueden 
+     	end
+    	
 	end
  	
 	def new

@@ -5,9 +5,23 @@
   <div class="col-md-6">
 
 
-
+<p></p>
 <table class="table">
 	<thead>
+<%= form_tag(hotsales_path, method: :get) do %>
+<div class="form-group">
+ Disponibilidad desde semana inicial:
+	<%= week_field_tag :weekini, params[:weekini] %>
+</div>
+<div class="form-group">
+ Disponibilidad desde semana final:
+  <%= week_field_tag :weekfin, params[:weekfin] %>
+</div>
+<%= submit_tag 'Buscar' %>
+<% end %>
+<table class="table">
+	<thead>
+
 		<tr>
 		
 			<th>Residencia</th>
@@ -16,6 +30,10 @@
 		</tr>
 	</thead>
 	<tbody>
+
+
+
+
 		<% @hotsale.each do |r| %>
 			<tr>
 				<% @r = Residence.find(r.residence_id) %>

@@ -1,8 +1,19 @@
 class AuctionsController < ApplicationController
 
-	def index
+def index
 		@auction = Auction.all
+		@tasks = if !params[:weekini].blank? and !params[:weekfin].blank?
+          
+        @NoPueden = Auction
+        .where('weekdate BETWEEN ? AND ?', "#{params[:weekini]}", "#{params[:weekfin]}")
+        #.pluck(:residence_id)
+     	#@Sipueden = Residence.all.where.('id NOT IN (?)', Array.wrap(@NoPueden))
+    	@Sipueden = Auction.where(id: @NoPueden)
+     	@auction = @Sipueden 
+     	end
+    	
 	end
+
 
 
 	def create

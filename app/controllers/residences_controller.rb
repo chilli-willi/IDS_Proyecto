@@ -11,23 +11,19 @@ class ResidencesController < ApplicationController
           @NoPueden = Reservation
             .where('weekdate BETWEEN ? AND ?', "#{params[:weekini]}", "#{params[:weekfin]}")
             .pluck(:residence_id)
-     
-
-
-     #@Sipueden = Residence.all.where.('id NOT IN (?)', Array.wrap(@NoPueden))
-     @Sipueden = Residence.where.not(id: @NoPueden)
-     @residences = @Sipueden 
+    #@Sipueden = Residence.all.where.('id NOT IN (?)', Array.wrap(@NoPueden))
+    @Sipueden = Residence.where.not(id: @NoPueden)
+    @residences = @Sipueden 
     #else 
     # flash[:notice] = 'Inicial menor de 6 meses' end
     end
-
     if !params[:term].blank?
      if @Sipueden != nil
       @residences = @Sipueden.where('name ILIKE ? OR pais ILIKE ? OR localidad ILIKE ? OR provincia ILIKE ? OR des ILIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
-       else 
+      else 
         @residences = Residence.all.where('name ILIKE ? OR pais ILIKE ? OR localidad ILIKE ? OR provincia ILIKE ? OR des ILIKE ? ', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%")
-       end
-       end    
+      end
+     end    
  end
 
 	def create
