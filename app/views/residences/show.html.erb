@@ -42,7 +42,7 @@
 
 <% if current_user.try(:admin?) %>
 
-
+<p><h5>Crear Hotsale</h5></p>
 <%= form_for Hotsale.new() do |h| %>
 	<div class="form-group">
 		<%= h.hidden_field :residence_id, value: params[:id] %>
