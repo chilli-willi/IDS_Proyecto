@@ -59,14 +59,12 @@ class HotsalesController < ApplicationController
 
 	def update
 		@hotsale = Hotsale.find(params[:id])
-		if  (Reservation.where(residence_id: @hotsale.residence_id, weekdate: @hotsale.weekdate).exists?)
-			redirect_to hotsales_path, notice: 'No puede crear hotsale en esa fecha, ya esta reservada o en subasta'
-		else 
+		
 			if @hotsale.update(params.require(:hotsale).permit(:weekdate, :residence_id, :price))
 				redirect_to hotsales_path, notice: 'Se actualizo hotsale'
-			else redirect_to hotsales_path, notice: 'No puedes crear en fechas que ya pasaron o mayores a 6 meses' end
+			else redirect_to hotsales_path, notice: 'No se actualizo hotsale' end
 			end
-		end
+		
 	end
 
 
