@@ -47,8 +47,9 @@ def index
 					   @auction.destroy
 					   redirect_to auctions_path, notice: "Subasta vendida exitosamente"
 					end
-			  else 
-				redirect_to auctions_path, notice: "Error en la venta de subasta, usuario sin creditos" 
+			  else
+			    @auction.update( user_id: 1 ) 
+			    redirect_to auctions_path, notice: "Error en la venta de subasta, pulse nuevamente para eliminar o espere a que otro usuario puje" 
 			  end
 		   else @auction.destroy
 				redirect_to auctions_path, notice: "Nadie pujo, subasta eliminada" 
