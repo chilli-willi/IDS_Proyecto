@@ -19,7 +19,7 @@ def index
 	def create
 		@auction = Auction.new(auction_params)
 		@auction.user_id = 1
-		if  ( Reservation.where(residence_id: @auction.residence_id, weekdate: @auction.weekdate).exists? or Hotsale.where(residence_id: @auction.residence_id, weekdate: @auction.weekdate).exists? )
+		if  ( Reservation.where(residence_id: @auction.residence_id, weekdate: @auction.weekdate).exists? or Hotsale.where(residence_id: @auction.residence_id, weekdate: @auction.weekdate).exists? or Auction.where(residence_id: @auction.residence_id, weekdate: @auction.weekdate).exists?)
 			redirect_to auctions_path, notice: 'No puede crear subasta en esa fecha, ya esta reservada o en hotsale o en subasta'
 		else 
 			if @auction.save
